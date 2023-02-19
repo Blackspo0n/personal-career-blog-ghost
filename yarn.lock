@@ -571,6 +571,11 @@
     "@tryghost/debug" "^0.1.17"
     "@tryghost/logging" "^2.2.3"
 
+"@tryghost/shared-theme-assets@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@tryghost/shared-theme-assets/-/shared-theme-assets-2.0.1.tgz#fc15936df777e870cb91885608d3444c4288ede0"
+  integrity sha512-q1ik1ucdun6xNbeQSygzalGAgV3xUnzZo4ebQ6h1feaR3zxJRaq7cpugC18PQaHDx+bDcN8Wox0VhKsuu42fhw==
+
 "@tryghost/tpl@^0.1.21":
   version "0.1.21"
   resolved "https://registry.yarnpkg.com/@tryghost/tpl/-/tpl-0.1.21.tgz#60ba975d0acc7af6911e7b021b2235d6338ab6c7"

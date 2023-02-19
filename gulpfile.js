@@ -19,8 +19,8 @@ const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const REPO = 'Blackspo0n/personal-career-blog-ghost';
+const REPO_READONLY = 'Blackspo0n/personal-career-blog-ghost';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -46,10 +46,9 @@ function hbs(done) {
 
 function css(done) {
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
+        src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyimport,
-            colorFunction(),
             autoprefixer(),
             cssnano()
         ]),

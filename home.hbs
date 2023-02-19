@@ -1,0 +1,13 @@
+{{!< default}}
+<section title="Homepage">
+    <h2>Homepage</h2>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="post-feed">
+    {{#foreach posts~}}
+        {{> "post-card"}}
+    {{/foreach~}}
+    </div>
+    {{pagination}}
+</main>
