@@ -3,62 +3,124 @@
 
 :root {
     --page-width: 1440px;    
-    --white: #f9f9f9; 
+    --color-white: #ffffff; 
     --whiteA: rgba(249,249,249,0.5);
     --black: #36383F;
+    --color-logo: #000000;
     --gray: #85888C;
     --color-border: rgba(0, 0, 0, 0.08);
     --gap: clamp(24px, 1.7032rem + 1.9355vw, 48px);
-    --head-nav-gap: 32px;
+    --head-nav-gap: 24px;
     --container-width: 1440px;
     --content-font-size: clamp(1.7rem, 0.38vw + 1.4rem, 2rem);
+    --color-green: #a4d037;
+    --color-yellow: #fecd35;
+    --color-red: #f05230;
+    --color-darkgrey: #15171A;
+    --color-midgrey: #738a94;
+    --color-lightgrey: #f1f1f1;
+    --color-secondary-text: #979797;
+    --color-border: #e1e1e1;
+    --color-wash: #e5eff5;
+    --color-darkmode: #151719;
+    --font-sans-serif: "Inter var",sans-serif;
+}
+
+html {
+    font-family: var(--font-sans-serif);
 }
 
 body {
-    margin: 0 auto;
-    background-color: #36383F
-}
-
-.pcb-outer-header {
-    background-color: var(--whiteA);
-}
-.pcb-outer-header header {
+    font-family: var(--font-sans-serif);
     display: grid;
-    column-gap: 32px;
-    grid-auto-flow: dense;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    max-width: var(--page-width);
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 var(--gap);
-    
+    grid-template-rows: auto 1fr auto auto;
+    height: 100%;
+}
+
+
+.pcb-text-small {
+    font-size: 1.5rem;
+}
+
+/** Javascript less navigation **/
+
+.gh-head {
+    background-color: var(--whiteA);
+    position: sticky;
     height: 64px;
+    top: 0;
 }
 
-.pcb-outer-header header nav {
-    margin-left: 16px;
-    margin-right: 64px;
+.gh-head .pcb-brand a {
+    background-color: var(--color);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    position: relative;
+    white-space: nowrap;
 }
 
-/* Menu Icon */
+.gh-head .gh-head-inner {
+    grid-template-columns: auto 1fr;
+    max-width: var(--page-width);
+    overflow: hidden;
+}
+
+.gh-head ul {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    align-items: center;
+    gap: var(--head-nav-gap);
+}
+
+.gh-head .gh-head-inner ul.nav li {
+    opacity: 1;
+}
+
+.gh-head nav a {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: none;
+}
+
+.gh-head nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
 .hamb {
     cursor: pointer;
     float: right;
     padding: 20px 20px;
-}/* Style label tag */
+}
 
 .hamb-line {
-    background: var(--white);
+    background: var(--black);
     display: block;
     height: 2px;
     position: relative;
     width: 24px;
 
-} /* Style span tag */
+}
 
 .hamb-line::before, .hamb-line::after {
-    background: var(--white);
+    background: var(--black);
     content: '';
     display: block;
     height: 100%;
@@ -70,6 +132,7 @@ body {
 .hamb-line::before {
     top: 5px;
 }
+
 .hamb-line::after {
     top: -5px;
 }
@@ -78,33 +141,162 @@ body {
     display: none;
 }
 
-.pcb-brand .gh-search {
-    display: none;
-}
 .hamb {
     display: none;
 }
 
-.pcb-outer-header nav ul {
-    margin: 0;
-    padding: 0;
+
+
+/** Content **/
+
+.pcb-outer-content {
+    background-color: var(--color-white);
 }
 
-.pcb-outer-header ul {
-    display: inline-flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.pcb-outer-content {
+    padding-bottom: 64px;
+}
+
+section.content {
+    background-color: var(--color-white);
+    max-width: var(--container-width);
+    margin: 0 auto;
+    align-items: center;
+}
+
+.content-divider {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+    column-gap: 32px;
+    padding: 0 var(--gap);
+}
+
+.article-sidebar {
+    background-color: #a4d037;
+    width:100%;
+}
+
+
+
+/** footer **/
+.gh-foot {
+    background-color:rgb(21 23 26);
+    border-top:rgb(31 41 55) 1px solid;
+    color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.gh-foot a:hover, .gh-foot .secondary .nav a:hover {
+    color: var(--ghost-accent-color);
+}
+.gh-foot-menu ul.nav:not(.nav-vertical) {
+    gap: 32px;
+}
+
+.gh-foot-menu {
+    margin-top: 6px;
+}
+
+.gh-foot-menu ul.nav-vertical {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+
+.gh-foot-menu ul.nav li + li::before {
+    display: unset;
+    content: unset;
+    padding: unset;
+}
+
+.gh-foot .primary-footer {
+    max-width: var(--container-width);
+    width:100%;
+    display: grid; 
+    margin: 0 auto;
+    gap: 24px; 
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: auto 1fr; 
+    grid-template-areas: 
+      "secondary secondary secondary"
+      "resources-1 resources-2 newsletter";
+}
+
+.gh-foot .primary-footer section {
+    padding-bottom: var(--gap);
+}
+.gh-foot-second {
+    background-color: black;
+    min-height: 42px;
+}
+
+.gh-foot .second-footer {
+    max-width: var(--container-width);
+    width:100%;
+    height: 100%;
+    display: grid; 
+    gap: 24px; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto; 
+    grid-template-areas: 
+      "legal social"; 
+    align-items: center;
+}
+
+.gh-foot .legal { 
+    grid-area: legal; 
+}
+
+.gh-foot .social { 
+    grid-area: social;
+    text-align: right;
+}
+
+.gh-foot .secondary { 
+    grid-area: secondary;
+    display: grid;
+    border-bottom:rgb(31 41 55) 1px solid;
+    grid-auto-flow: dense;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    overflow: hidden;
+    padding: 24px 0 !important;
+    gap: 32px;
+}
+
+.gh-foot .secondary a {
+    color: var(--color-white);
+}
+
+.gh-foot .secondary .pcb-brand a {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    position: relative;
     white-space: nowrap;
+} 
+
+.gh-foot .resources-1 { grid-area: resources-1; }
+.gh-foot .resources-2 { grid-area: resources-2; }
+.gh-foot .newsletter { grid-area: newsletter; }
+
+footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: var(--color-white);
 }
 
-.pcb-outer-header a {
-    font-size: 2.6rem;
-    font-weight: 600;
-    text-transform: none;
+@media (max-width: 64em) {
+    .article-sidebar {
+        display: none;
+    } 
+    .content-divider {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 767px) {
+    /** navbar collapsed **/ 
     .pcb-brand .gh-search {
         display: inherit;
     }
@@ -112,30 +304,11 @@ body {
         display: inherit;
     }
 
-    .side-menu:checked ~ .pcb-outer-header {
-        max-height: 100%;
-        height: 100%;
-        inset: 0;
-        position: fixed;
-        z-index: 3999999;
-        background-color: var(--white);
-    }
-
-    .pcb-outer-header header {
+    .gh-head .gh-head-inner {
         grid-template-columns: 1fr;
     }
 
-    .side-menu:checked ~ .pcb-outer-header header {
-        gap: 48px;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
-        height: 100%;
-    }
-
-    .pcb-outer-header .pcb-head-actions {
-        display: none;
-    }
-    .pcb-outer-header .pcb-brand {
+    .gh-head .pcb-brand {
         align-items: center;
         display: grid;
         grid-column-start: 1;
@@ -143,48 +316,125 @@ body {
         height: 64px;
     }
 
-    .pcb-outer-header nav {
+    .gh-head nav {
         justify-content: center;
         opacity: 0;
         position: fixed;
         visibility: hidden;
     }
 
-    .side-menu:checked ~ .pcb-outer-header nav {
+    /** navbar checked/open **/
+    .side-menu:checked ~ .gh-head {
+        max-height: 100%;
+        height: 100% !important;
+        inset: 0;
+        position: fixed;
+        z-index: 3999999;
+        background-color: var(--color-white);
+    }
+
+    .side-menu:checked ~ #gh-head header.gh-head-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    
+    .side-menu:checked ~ #gh-head .gh-head-inner .gh-head-menu {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr auto; 
+        align-content: center;
+        justify-items: center;
+        display: grid; 
+        gap: 32px;     
+    }
+    .side-menu:checked ~ #gh-head .gh-head-inner .gh-head-menu , .side-menu:checked ~ #gh-head .gh-head-inner .gh-head-menu .gh-head-actions {
         opacity: 1;
         position: static;
         visibility: visible;
-        display: flex;
     }
     
-    .side-menu:checked ~ .pcb-outer-header ul {
+    .side-menu:checked ~ .gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-}
-.side-menu:checked ~ .hamb .hamb-line {
-    background: transparent;
-}
-.side-menu:checked ~ .hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top:0;
-}
-.side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top:0;
-}
 
-@media (min-width: 768px) {
-    
-header nav {
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
+    .side-menu:checked ~ #gh-head .gh-head-menu .nav li {
+        opacity: 1;
     }
 
+    /** footer **/
+    .gh-foot-menu .nav {
+        flex-direction: row;
+    }
 
+    .gh-foot-menu {
+        margin-top: 0;
+    }
+
+    .gh-foot .primary-footer {
+        max-width: var(--container-width);
+        width:100%;
+        display: grid; 
+        margin: 0 auto;
+        gap: 24px; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto 1fr; 
+        grid-template-areas: 
+          "secondary secondary"
+          "newsletter newsletter"
+          "resources-1 resources-2";
+    }    
+}
+
+@media (max-width: 530px) {
+    .gh-foot .primary-footer {
+        max-width: var(--container-width);
+        width:100%;
+        display: grid; 
+        margin: 0 auto;
+        gap: 24px; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr; 
+        grid-template-areas: 
+          "secondary"
+          "newsletter"
+          "resources-1"
+          "resources-2";
+    }
+    
+    footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, .gh-foot-menu ul.nav-vertical {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gh-foot .secondary .pcb-brand {
+        display: none;
+    }
+
+    .gh-foot .secondary {
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+    .gh-foot .primary-footer section {
+        border-bottom:rgb(31 41 55) 1px solid;
+    }
+    
+    .gh-foot .second-footer {
+        padding-top: 5px;
+        gap: 0;
+        text-align: center;
+        justify-content: center; 
+        grid-template-columns:1fr; 
+        grid-template-rows: auto auto; 
+        grid-template-areas:       
+            "social"
+            "legal"; 
+        align-items: center;
+    }
+    .gh-foot .social { 
+        text-align: center;
+    }
 }

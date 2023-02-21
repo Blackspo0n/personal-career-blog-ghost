@@ -60,11 +60,10 @@ function css(done) {
 function js(done) {
     pump([
         src([
-            // pull in lib files first so our own code can depend on it
             'assets/js/lib/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
-        concat('casper.js'),
+        concat('main.min.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()

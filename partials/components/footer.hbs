@@ -1,3 +1,63 @@
-<footer>
-    <nav>{{~navigation type="secondary"~}}</nav>
-</footer>
+
+<div class="pcb-outer-footer gh-foot gh-outer">
+    <footer class="primary-footer gh-inner">
+        <section class="secondary">
+            <div class="pcb-brand">
+                <a href="{{@site.url}}">
+                    {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}">{{else}}{{@site.title}}{{/if}}
+                </a>
+            </div>
+            <nav class="gh-foot-menu">{{~navigation type="secondary"~}}</nav>
+        </section>
+
+        <section class="resource-1">
+            <h6>This is a Linkcollection</h6>
+            <nav class="gh-foot-menu">
+                <ul class="nav nav-vertical">
+                    <li><a href="/link1/">Link 1</a></li>
+                    <li><a href="/link2/">Long Link 2 that has a long text</a></li>
+                    <li><a href="/link3">Pretty Link 3</a></li>
+                    <li><a href="/link4">Exemple</a></li>
+                </ul>
+            </nav>
+        </section>
+        
+        <section class="resource-2">
+            <h6>More Links</h6>
+            <nav class="gh-foot-menu">
+                <ul class="nav nav-vertical">
+                    <li><a href="/link1/">Link 1</a></li>
+                    <li><a href="/link2/">Long Link 2</a></li>
+                    <li><a href="/link3">Pretty Link 3</a></li>
+                    <li><a href="/link4">Exemple</a></li>
+                    <li><a href="/link3">Pretty Link 3</a></li>
+                    <li><a href="/link4">Exemple</a></li>
+                    <li><a href="/link3">Pretty Link 3</a></li>
+                    <li><a href="/link4">Exemple</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="newsletter">
+            <h6>NewsLetter</h6>
+            {{#if @member}}
+            <a href="javascript:" data-members-signout>Sign out</a>
+            {{else}}
+            <form data-members-form="subscribe">
+                <input data-members-email type="email" required="true"/><br/>
+                <button type="submit">Subscribe</button>
+            </form>
+            {{/if}}
+        </section>
+    </footer>
+</div>
+<div class="gh-foot-second gh-foot gh-outer">
+        <div class="second-footer gh-inner">
+        <section class="legal">
+            {{@site.title}} © {{date format="YYYY"}} - License <STRONG>MIT</STRONG>
+        </section>
+        <section class="social">
+            {{~>components/navbarButtons~}}
+        </section>
+    </div>
+</div>

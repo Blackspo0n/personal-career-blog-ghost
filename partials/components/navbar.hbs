@@ -1,17 +1,17 @@
 <input type="checkbox" class="side-menu" id="side-menu" />
-<div class="pcb-outer-header">
-    <header>
-        <div class="pcb-brand">
-            <a  href="{{@site.url}}">
+<div id="gh-head" class="gh-head gh-outer">
+    <header class="gh-head-inner gh-inner">
+        <div class="pcb-brand gh-head-brand">
+            <a class="gh-head-logo" href="{{@site.url}}">
                 {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}">{{else}}{{@site.title}}{{/if}}
             </a>
-            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
             <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
         </div>
-        
-        <nav class="nav">{{~navigation~}}</nav>
-        <div class="pcb-head-actions">
-            <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-        </div>
+        <nav class="gh-head-menu">
+            {{~navigation~}}
+            <div class="pcb-head-actions gh-head-actions">
+                {{~> components/navbarButtons~}}
+            </div>
+        </nav>
     </header>
 </div>

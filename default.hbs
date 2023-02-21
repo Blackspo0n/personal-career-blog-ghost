@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" {{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     {{ghost_head}}
+    <script src="{{asset "built/main.min.js"}}" defer></script>
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">
 {{~> components/navbar~}}
-<section class="content">
+<div class="pcb-outer-content">
+    <section class="content">
 {{~{body}~}}
 </section>
+</div>
 {{~> components/footer~}}
 {{~ghost_foot~}}
 </body>
