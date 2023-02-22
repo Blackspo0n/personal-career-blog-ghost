@@ -1,0 +1,188 @@
+
+/** footer **/
+.gh-foot {
+    background-color:rgb(21 23 26);
+    border-top:rgb(31 41 55) 1px solid;
+    color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.gh-foot a:hover, .gh-foot .secondary .nav a:hover {
+    color: var(--ghost-accent-color);
+}
+.gh-foot-menu ul.nav:not(.nav-vertical) {
+    gap: 32px;
+}
+
+.gh-foot-menu {
+    margin-top: 6px;
+}
+
+.gh-foot-menu ul.nav-vertical {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+
+.gh-foot-menu ul.nav li + li::before {
+    display: unset;
+    content: unset;
+    padding: unset;
+}
+
+.gh-foot .primary-footer {
+    max-width: var(--container-width);
+    width:100%;
+    display: grid; 
+    margin: 0 auto;
+    gap: 24px; 
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: auto 1fr; 
+    grid-template-areas: 
+      "secondary secondary secondary"
+      "resources-1 resources-2 newsletter";
+}
+
+.gh-foot .primary-footer section {
+    padding-bottom: var(--gap);
+}
+.gh-foot-second {
+    background-color: black;
+    min-height: 42px;
+}
+
+.gh-foot .second-footer {
+    max-width: var(--container-width);
+    width:100%;
+    height: 100%;
+    display: grid; 
+    gap: 24px; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto; 
+    grid-template-areas: 
+      "legal social"; 
+    align-items: center;
+}
+
+.gh-foot .legal { 
+    grid-area: legal; 
+}
+
+.gh-foot .social { 
+    grid-area: social;
+    text-align: right;
+}
+
+.gh-foot .secondary { 
+    grid-area: secondary;
+    display: grid;
+    border-bottom:rgb(31 41 55) 1px solid;
+    grid-auto-flow: dense;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    overflow: hidden;
+    padding: 24px 0 !important;
+    gap: 32px;
+}
+
+.gh-foot .secondary a {
+    color: var(--color-white);
+}
+
+.gh-foot .secondary .pcb-brand a {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    position: relative;
+    white-space: nowrap;
+} 
+
+.gh-foot .resources-1 { grid-area: resources-1; }
+.gh-foot .resources-2 { grid-area: resources-2; }
+.gh-foot .newsletter { grid-area: newsletter; }
+
+footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: var(--color-white);
+}
+
+
+
+@media (max-width: 767px) {
+    /** footer **/
+    .gh-foot-menu .nav {
+        flex-direction: row;
+    }
+
+    .gh-foot-menu {
+        margin-top: 0;
+    }
+
+    .gh-foot .primary-footer {
+        max-width: var(--container-width);
+        width:100%;
+        display: grid; 
+        margin: 0 auto;
+        gap: 24px; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto 1fr; 
+        grid-template-areas: 
+          "secondary secondary"
+          "newsletter newsletter"
+          "resources-1 resources-2";
+    }    
+}
+
+@media (max-width: 530px) {
+    .gh-foot .primary-footer {
+        max-width: var(--container-width);
+        width:100%;
+        display: grid; 
+        margin: 0 auto;
+        gap: 24px; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr; 
+        grid-template-areas: 
+          "secondary"
+          "newsletter"
+          "resources-1"
+          "resources-2";
+    }
+    
+    footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, .gh-foot-menu ul.nav-vertical {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gh-foot .secondary .pcb-brand {
+        display: none;
+    }
+
+    .gh-foot .secondary {
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+    .gh-foot .primary-footer section {
+        border-bottom:rgb(31 41 55) 1px solid;
+    }
+    
+    .gh-foot .second-footer {
+        padding-top: 5px;
+        gap: 0;
+        text-align: center;
+        justify-content: center; 
+        grid-template-columns:1fr; 
+        grid-template-rows: auto auto; 
+        grid-template-areas:       
+            "social"
+            "legal"; 
+        align-items: center;
+    }
+    .gh-foot .social { 
+        text-align: center;
+    }
+}
