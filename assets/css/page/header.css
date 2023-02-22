@@ -2,16 +2,15 @@
 /** Javascript less navigation **/
 
 .gh-head {
-    background-color: var(--whiteA);
+    background-color: var(--color-background-blended);
     position: sticky;
-    height: 70px;
+    height: 80px;
     top: 0;
     backdrop-filter: blur(6px);
     border-bottom:rgba(36, 36, 36, 0.26) 1px solid;
 }
 
 .gh-head .pcb-brand a {
-    background-color: var(--color);
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: -.02em;
@@ -33,6 +32,7 @@
     white-space: nowrap;
     align-items: center;
     gap: var(--head-nav-gap);
+    justify-content: center;
 }
 
 .gh-head .gh-head-inner ul.nav li {
@@ -40,13 +40,14 @@
 }
 
 .gh-head nav a {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
     text-transform: none;
+    color: var(--color-text-accient-1);
 }
 
 .gh-head nav a:hover {
-    color: var(--ghost-accent-color);
+    color: var(--color-primary);
 }
 
 .gh-head .gh-head-actions {

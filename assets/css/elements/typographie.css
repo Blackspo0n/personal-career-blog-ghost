@@ -1,0 +1,27 @@
+
+.highlight {
+    color: var(--color-primary);
+}
+
+header .pretext {
+    
+    color: var(--color-primary);
+}
+
+header.with-action {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+header.with-action .pretext {
+    width: 100%;
+}
+
+p {
+    margin: 12px 0;
+}
+
+h1 {
+    font-size: 5.5rem;
+}

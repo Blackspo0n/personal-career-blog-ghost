@@ -6,16 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" async />
+    <style>
+        :root {
+            --color-secondary: {{@custom.secondary_color}};
+        }
+    </style>
     {{ghost_head}}
-    <script src="{{asset "built/main.min.js"}}" defer></script>
+    <!--<script src="{{asset "built/main.min.js"}}" defer></script>-->
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">
 {{~> components/navbar~}}
-<div class="pcb-outer-content gh-outer">
-    <section class="content">
+<div class="gh-outer">
+<main class="gh-main gh-inner">
 {{~{body}~}}
-</section>
+</main>
 </div>
 {{~> components/footer~}}
 {{~ghost_foot~}}

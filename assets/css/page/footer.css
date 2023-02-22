@@ -1,15 +1,16 @@
 
 /** footer **/
 .gh-foot {
-    background-color:rgb(21 23 26);
-    border-top:rgb(31 41 55) 1px solid;
-    color: white;
+    background-color: var(--color-background-primary-footer);
+    
+    border-top: var(--color-border) 1px solid;
+    color: var(--color-text-reverse);
     padding-top: 0;
     padding-bottom: 0;
 }
 
 .gh-foot a:hover, .gh-foot .secondary .nav a:hover {
-    color: var(--ghost-accent-color);
+    color: var(--color-primary);
 }
 .gh-foot-menu ul.nav:not(.nav-vertical) {
     gap: 32px;
@@ -33,6 +34,8 @@
 }
 
 .gh-foot .primary-footer {
+    
+    background: radial-gradient(circle, rgba(36,39,45,1) 20%, rgba(21,23,26,1) 56%);
     max-width: var(--container-width);
     width:100%;
     display: grid; 

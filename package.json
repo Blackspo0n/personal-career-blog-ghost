@@ -94,6 +94,10 @@
         },
         "card_assets": true,
         "custom": {
+            "secondary_color": {
+                "type": "color",
+                "default": "#15171a"
+            },
             "color_scheme": {
                 "type": "select",
                 "options": [

@@ -1,0 +1,40 @@
+.gh-btn {
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: -0.008rem;
+    font-size: 1.5rem;
+    color: var(--color-primary-text);
+    line-height: 1.8rem;
+    background-color: var(--color-background);
+}
+
+.gh-outline-btn {
+    border: 2px solid var(--color-border);
+}
+
+.gh-outline-btn:hover {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary)
+}
+
+.gh-primary-btn {
+    color: var(--color-text-reverse);
+}
+
+.gh-gardient-btn {
+    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200%;
+}
+
+.gh-outline-secondary-btn {
+    border: 2px solid var(--color-text-accient-3);
+    color: var(--color-text-accient-2);
+}
+
+.gh-outline-secondary-btn:hover {
+    background-color: var(--color-background-accient-2);
+}
+
+.gh-search {
+    margin:0;
+    padding:0;
+}

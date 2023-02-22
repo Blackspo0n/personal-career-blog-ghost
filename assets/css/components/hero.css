@@ -1,0 +1,22 @@
+/** hero segment */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.hero .about-hero main {
+    text-align: justify;
+}
+
+.hero .about-hero footer {
+    justify-content: center;
+    text-align: center;
+    display:flex;
+    gap: var(--gap);
+}
+
+.hero .hero-image {
+
+}

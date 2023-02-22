@@ -1,0 +1,46 @@
+/** colours */
+:root {
+
+    /** absolute colors */
+    --color-white: #ffffff; 
+    --color-black: #36383F;
+    --color-gray: #555555;
+    --color-logo: #000000;
+    --color-gray: #85888C;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-green: #a4d037;
+    --color-yellow: #fecd35;
+    --color-red: #f05230;
+    --color-darkgrey: #15171A;
+    --color-midgrey: #949494;
+    --color-lightgrey: #f1f1f1;
+    --color-secondary-text: #979797;
+    --color-border: #e1e1e1;
+    --color-wash: #e5eff5;
+    --font-sans-serif: "Inter var",sans-serif;
+
+    /* dynamic colors*/
+    --color-primary: var(--ghost-accent-color, rgba(70, 140, 245, 1));
+    --color-secondary: var(--color-red, rgb(41, 102, 194));
+    --color-primary-text: var(--color-darkgrey);
+    --color-text-accient-1: var(--color-gray);
+    --color-text-accient-2: var(--color-midgrey);
+    --color-text-accient-3: var(--color-lightgrey);
+    --color-text-reverse: var(--color-white);
+    --color-border: rgb(100, 100, 100);
+    --color-border-2: rgb(31 41 55);
+    --color-background: var(--color-white);
+    --color-background-accient-1: var(--color-midgrey);
+    --color-background-accient-2: var(--color-lightgrey);
+    --color-background-blended: rgba(255,255,255,0.7);
+    --color-background-body: var(--color-white);
+    --color-background-primary-footer: rgb(21 23 26);
+    --color-background-primary-secondary: #1f1f1f;
+    --color-background-light: #262626;
+    --color-background-reverse: var(--color-light);
+    --color-background-highlight: var();
+    --color-bg-alpha-25: rgba(0,0,0,.25);
+    --color-bg-alpha-50: rgba(0,0,0,.5);
+    --color-bg-alpha-75: rgba(0,0,0,.75);
+    --color-neutral: var(--color-grey);
+}
