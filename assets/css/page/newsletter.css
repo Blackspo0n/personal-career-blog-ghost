@@ -1,0 +1,42 @@
+.status {
+    text-align: center;
+    padding: 2rem;
+    border: var(--color-border) 1px solid;
+    border-radius: 6px;
+    max-width:40rem;
+    margin: 2rem 0;
+    background-color: rgba(133, 255, 109, 0.2);
+    display: none;
+}
+
+.status.status-error {
+    background-color: rgba(255, 109, 109, 0.2);
+}
+
+.error .status-error {
+    display:block;
+}
+
+.success .status-success {
+    display:block;
+}
+
+.subscribe-form .la-spinner {
+    display:none;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+.subscribe-form.loading .la-spinner {
+    display: block;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

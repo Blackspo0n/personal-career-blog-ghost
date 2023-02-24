@@ -40,14 +40,7 @@
 
         <section class="newsletter">
             <h6>NewsLetter</h6>
-            {{#if @member}}
-            <a href="javascript:" data-members-signout>Sign out</a>
-            {{else}}
-            <form data-members-form="subscribe">
-                <input data-members-email type="email" required="true"/><br/>
-                <button type="submit">Subscribe</button>
-            </form>
-            {{/if}}
+            {{> newsletter}}
         </section>
     </footer>
 </div>

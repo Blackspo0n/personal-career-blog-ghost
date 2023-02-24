@@ -19,6 +19,7 @@
 
 .gh-primary-btn {
     color: var(--color-text-reverse);
+    background-color: var(--ghost-accent-color);
 }
 
 .gh-gardient-btn {
@@ -37,4 +38,32 @@
 .gh-search {
     margin:0;
     padding:0;
+}
+
+.gh-connected-input {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-background-blended);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
+.gh-connected-input * {
+    width: 100%;
+}
+
+.gh-connected-input input[type=text],
+.gh-connected-input input[type=password],
+.gh-connected-input input[type=email] {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.gh-connected-input *:first-child {
+    flex: 2;
+}
+.gh-connected-input *:last-child {
+    flex: 1;
 }

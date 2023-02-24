@@ -104,7 +104,11 @@
 
 .gh-foot .resources-1 { grid-area: resources-1; }
 .gh-foot .resources-2 { grid-area: resources-2; }
-.gh-foot .newsletter { grid-area: newsletter; }
+.gh-foot .newsletter { 
+    grid-area: newsletter; 
+    text-align: center;
+    margin: 0 auto;
+}
 
 footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
     color: var(--color-white);
