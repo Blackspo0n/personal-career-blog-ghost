@@ -2,9 +2,13 @@
 .about-me {
     padding-top: 3rem;
     display: grid;
-    grid-template-columns: 0.75fr 1fr;
-    gap: var(--gap);
+    grid-template-columns: 0.5fr 1fr;
+    gap: calc(var(--gap)*2);
     align-items: center;
+}
+
+.about-me .about-keyfacts{
+    height: 100%;
 }
 
 .about-me .about-content {
@@ -15,7 +19,7 @@
     text-align: justify;
 }
 
-.about-me .about-content .badge-line {
+.about-me .badge-line {
     justify-content: center;
     text-align: center;
     display:flex;
@@ -23,18 +27,38 @@
     flex-wrap: wrap;
 }
 
-.about-me .about-content .badge {
+.about-me .badge {
     background-color: var(--color-background-accient-3);
     border-radius: 6px;
     padding: 1rem 2rem;
     color: var(--color-text-accient-1)
 }
 
+.about-me ul {
+    list-style: none;
+    padding: 0;
+}
+.about-me ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 0.5em;
+}
 
-.about-me header {
-    padding-top: 3rem;
+.about-me ul li:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-2);
+}
+
+.about-me ul li i {
+    color: green;
+    font-size: 2.5rem;
 }
 
 .hero .hero-image {
-    /** todo **/
+    text-align: center;
+}
+
+.hero .hero-image img {
+    display: inline;
 }

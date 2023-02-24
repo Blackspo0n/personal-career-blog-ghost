@@ -48,3 +48,9 @@ h1 {
     overflow-x: hidden;
   }
 }
+@media (min-width: 1400px) {
+    .attention {
+        margin-left: -5vw;
+        margin-right: -5vw;
+      }
+}
