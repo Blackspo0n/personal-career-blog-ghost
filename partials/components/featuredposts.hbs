@@ -11,6 +11,8 @@
     <main class="grid grid-columns-3">
         {{#foreach posts max="3"}}
             {{> components/post-card}}
+        {{else}}
+            <p>There were no tags...</p>
         {{/foreach}}
     </main>
 </section>

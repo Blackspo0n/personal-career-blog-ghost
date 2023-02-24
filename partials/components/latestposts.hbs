@@ -1,17 +1,19 @@
 <section class="latest-posts">
 <header class="with-action">
     <div class="pretext">I love to learn new things!</div>
-    <h2 class="heading">Topics on this blog</h2>
+    <h2 class="heading">Relevant topics on this site</h2>
     <div class="actions">
-        <a href="Thee"  class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
+        <a href="/tag"  class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
     </div>
 </header>
 
-<div class="gh-feed gh-inner">
-{{#foreach posts limit="7"}}
-    {{> components/post-card}}
+<main class="grid grid-columns-3">
+{{#get "tags" limit=7}}
+{{#foreach tags}}
+    {{> components/tag-card}}
+{{else}}
+<p>There were no tags...</p>
 {{/foreach}}
-</div>
-
-
+{{/get}}
+</main>
 </section>

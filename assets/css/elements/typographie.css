@@ -26,6 +26,15 @@ p {
 h1 {
     font-size: 5.5rem;
 }
+
+.text-gardient {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to left,var(--color-primary),var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--color-primary);    
+}
+
 @media (min-width: 330px) {
   .full-width {
     width: 100vw;
