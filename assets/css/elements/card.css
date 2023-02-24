@@ -30,6 +30,25 @@
     gap: 0.8rem;
 }
 
+.gh-card .gh-header-title {
+    position: absolute;    
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gh-card .gh-header-title h2 {
+    border-radius: 6px;
+    padding: 0.25rem 1rem;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
 
 .gh-card .gh-card-image-content .gh-header-tags .tag {
     background-color: var(--color-background-blended);

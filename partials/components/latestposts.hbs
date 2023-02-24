@@ -8,7 +8,7 @@
 </header>
 
 <main class="grid grid-columns-3">
-{{#get "tags" limit=7}}
+{{#get "tags" limit=7 include="count.posts" order="count.posts desc"}}
 {{#foreach tags}}
     {{> components/tag-card}}
 {{else}}
