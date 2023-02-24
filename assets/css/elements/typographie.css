@@ -12,6 +12,7 @@ header.with-action {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: var(--gap);
 
 }
 header.with-action .pretext {
@@ -24,4 +25,17 @@ p {
 
 h1 {
     font-size: 5.5rem;
+}
+@media (min-width: 330px) {
+  .full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  body {
+    overflow-x: hidden;
+  }
 }

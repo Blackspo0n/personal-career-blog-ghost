@@ -1,0 +1,41 @@
+<article class="gh-card post-card {{post_class}}">
+<div class="gh-card-image-content post-card-header">
+    <a class="gh-card-link post-card-link" href="{{url}}">
+    <figure class="gh-card-image">
+        <div class="aspect-ratio aspect-ratio-lengthy">
+            {{#if feature_image}}
+        <img class="aspect-ratio-in"
+                srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w"
+                src="{{img_url feature_image size="m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" data-sizes="auto" />
+        {{else}}
+            <div class="aspect-ratio-in gh-gardient-btn" style="background-color: var(--color-secondary);"></div>
+        {{/if}}
+        </div>
+        
+    </figure>
+    </a>
+    <div class="gh-header-tags">
+    {{#foreach tags}}
+        <a href="{{url}}" class="tag {{id}}">{{name}}</a>
+    {{/foreach}}
+    </div>
+</div>
+<main class="gh-card-content">
+    
+        <h2 class="gh-card-header"><a class="gh-card-link post-card-link" href="{{url}}">{{title}}</a></h2>
+        
+    <div class="gh-card-meta">
+        <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
+        <time class="gh-card-date" datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{date}}</time>
+    </div>
+    <div class="gh-card-text">{{excerpt}}</div>
+
+</main>
+
+<a class="gh-card-link post-card-link" href="{{url}}">
+<footer class="gh-card-footer">
+    read more
+</footer>    
+</a>
+</article>

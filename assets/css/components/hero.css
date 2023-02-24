@@ -15,8 +15,9 @@
     text-align: center;
     display:flex;
     gap: var(--gap);
+    padding-top: calc(var(--gap)/2); 
 }
 
 .hero .hero-image {
-
+        /** todo*/
 }

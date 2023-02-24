@@ -28,7 +28,9 @@
     --color-text-accient-3: var(--color-lightgrey);
     --color-text-reverse: var(--color-white);
     --color-border: rgb(100, 100, 100);
-    --color-border-2: rgb(31 41 55);
+    --color-border-1: rgb(31 41 55);
+    --color-border-2: rgb(209,213,219);
+    --color-border-blendet: rgb(209,213,219);
     --color-background: var(--color-white);
     --color-background-accient-1: var(--color-midgrey);
     --color-background-accient-2: var(--color-lightgrey);

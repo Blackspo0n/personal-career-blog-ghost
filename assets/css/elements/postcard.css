@@ -1,0 +1,75 @@
+.gh-card {
+    border: var(--color-border-2) 1px solid;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.gh-card:hover {
+    transform: scale(1.02);
+
+}
+
+.gh-card .gh-card-image-content {
+    position: relative;
+}
+
+.gh-card .gh-card-image-content .gh-header-tags {
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    right:0;
+    position: absolute;
+    align-items: right;
+    text-align: right;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem;
+    gap: 0.8rem;
+}
+
+
+.gh-card .gh-card-image-content .gh-header-tags .tag {
+    background-color: var(--color-background-blended);
+    padding: 0.3rem;
+    border-radius: 6px;
+    padding: 0.05rem 0.85rem;
+    letter-spacing: -0.05rem;
+}
+
+.gh-card .gh-card-content {
+    padding: 1rem 2rem;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.gh-card .gh-card-meta {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
+    color: var(--color-text-accient-1);
+}
+
+.gh-card-meta *:not(:first-child):before {
+    content: '•';
+    padding: 0 1.2rem;
+    color: var(--color-text-accient-3)
+
+}
+
+.gh-card .gh-card-header {
+    font-size: 2.5rem;
+}
+.gh-card .gh-card-footer {
+    border-top: 1px solid var(--color-border-2);
+    padding: 1rem 2rem;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing:  -0.05rem;
+}

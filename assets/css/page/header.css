@@ -8,6 +8,7 @@
     top: 0;
     backdrop-filter: blur(6px);
     border-bottom:rgba(36, 36, 36, 0.26) 1px solid;
+    z-index: 2000;
 }
 
 .gh-head .pcb-brand a {
@@ -79,7 +80,7 @@
 }
 
 .hamb-line {
-    background: var(--black);
+    background: var(--color-primary-text);
     display: block;
     height: 2px;
     position: relative;
@@ -88,7 +89,7 @@
 }
 
 .hamb-line::before, .hamb-line::after {
-    background: var(--black);
+    background: var(--color-primary-text);
     content: '';
     display: block;
     height: 100%;
