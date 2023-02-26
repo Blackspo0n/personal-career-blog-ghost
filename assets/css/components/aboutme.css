@@ -5,14 +5,17 @@
     grid-template-columns: 0.5fr 1fr;
     gap: calc(var(--gap)*2);
     align-items: center;
+    grid-template-areas: "a b";
 }
 
-.about-me .about-keyfacts{
+.about-me .about-keyfacts {
+    grid-area: a;
     height: 100%;
 }
 
 .about-me .about-content {
     height: 100%;
+    grid-area: b;
 }
 
 .about-me .about-content main {
@@ -67,4 +70,13 @@
 
 .hero .hero-image img {
     display: inline;
+}
+
+@media (max-width: 950px) {
+    .about-me {
+        grid-template-columns: 1fr;
+        grid-auto-flow: column;
+        grid-template-areas: "b"
+                            "a";
+    }
 }

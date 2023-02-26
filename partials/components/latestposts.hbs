@@ -1,4 +1,4 @@
-<section class="latest-posts">
+<section class="relevant-tags">
 <header class="with-action">
     <div class="pretext">I love to learn new things!</div>
     <h2 class="heading">Relevant topics on this site</h2>
@@ -7,7 +7,7 @@
     </div>
 </header>
 
-<main class="grid grid-columns-3">
+<main class="grid grid-auto-fill">
 {{#get "tags" limit=7 include="count.posts" order="count.posts desc"}}
 {{#foreach tags}}
     {{> components/tag-card}}
