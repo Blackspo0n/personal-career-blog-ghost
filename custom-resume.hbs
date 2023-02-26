@@ -1,7 +1,47 @@
 {{!< default}}
-<main class="main-content">
 {{#post}}
-hi {{content}}
 
- {{/post}}
- </main>
+
+<article class="resume">
+    <main>
+        <section id="myprofile">
+            <h1>My profile</h1>
+            <hr />
+            <p>
+                Ich betreue seit zwei Jahren als „Technical Head of Automation“ Kundenprojekte aus der Energieversorgerbranche.
+Zu meinen derzeitigen Hauptaufgaben in dieser Position zählen etwa Analysen komplexer IT-Infrastrukturen, Projektkoordination, Prozessanalysen und -automatisierungen und Problembewältigung größerer IT-Problematiken.
+Durch meine vorherige Anstellung bei mention Software GmbH als Schnittstellenentwickler, konnte ich fundierte Kenntnisse in den Programmiersprachen C#, Java und C++ sowie in der Skriptsprache PHP erwerben.
+            </p>
+        </section>
+        <section id="myworkexperience">
+            <h1>My Experience</h1>
+            <main>
+                <div class="timeline">
+                    {{>timeline-entry}}
+                    {{>timeline-entry}}
+                    {{>timeline-entry}}
+                    {{>timeline-entry}}
+                    {{>timeline-entry}}
+                </div>
+            </main>
+        </section>
+        <section id="Education">
+            <h1>My Education</h1>
+        </section>
+        <section id="skills">
+            <h1>My Capabilities &amp; Skills</h1>
+        </section>
+        <section id="hobbies">
+            <h1>My Interests</h1>
+        </section>
+    </main>
+    <aside>
+        <figure class="cv-photo">
+            <img src="{{img_url @site.cover_image size="m"}}"/>
+        </figure>
+        <div class="toc">
+            <ul><li>My Pofile</li><li>My Pofile</li><li>My Pofile</li><li>My Pofile</li></ul>
+        </div>
+    </aside>
+</article>
+{{/post}}
