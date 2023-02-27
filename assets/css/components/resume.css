@@ -1,7 +1,7 @@
 .resume {
     display: grid;
     grid-template-areas: "a b";
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 25rem 1fr;
     gap: var(--gap);
     position: relative;
 }
@@ -19,15 +19,25 @@
     grid-area: b;
 }
 
+.resume main section {
+    scroll-margin: 100px;
+    padding-bottom: 4rem;
+}
+
 .resume h1 {
     font-size: 3rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: dashed var(--color-border-2) 2px;
 }
 
 .resume h2 {
     font-size: 2.2rem;
 }
 
+.resume section p {
+    text-align: justify;
+}
 .resume h3 {
     font-size: 1.8rem;
     color: var(--color-text-accient);
@@ -35,6 +45,15 @@
     letter-spacing: -0.05rem;
 }
 
+.resume h4 {
+    font-size: 1.6rem;
+    letter-spacing: -0.05rem;
+}
+
+.resume h5 {
+    font-size: 1.5rem;
+    letter-spacing: -0.05rem;
+}
 .timeline-entry {
     display: grid;
     grid-auto-flow: column;
@@ -74,10 +93,42 @@
 
 }
 
-
 .timeline-entry .timespan-inner {
     display: none;
 }
+
+.resume aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume aside {
+    display: flex;
+    flex-flow: column;
+    gap: 32px;
+}
+
+.resume .toc {
+    text-align: center;
+}
+
+.resume aside ul {
+    display: flex;
+    flex-flow: column;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.cv-photo {
+    transform: rotate(5deg);
+    border-width: 2px;
+    border-style: dashed;
+    padding: 0.6rem;
+    border-image-source: linear-gradient(to left, var(--color-primary), var(--color-secondary));
+    border-image-slice: 1;
+}
+
 
 @media (max-width: 768px) {
     
@@ -88,4 +139,9 @@
 .timeline-entry  .timespan {
         display: none;
     }
+}
+
+.resume .skills {
+    display: grid;
+
 }

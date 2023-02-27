@@ -1,0 +1,52 @@
+.tab-menu-entry { 
+    display: inline-block;
+    background-color: var(--color-background-accient-2);
+    cursor: pointer;
+}
+
+input[type=radio] { display: none; }
+input[type=radio] ~ .tab-elements .tab { display: none }
+
+#tab1:checked ~ .tab-elements .tab.content1,
+#tab2:checked ~ .tab-elements .tab.content2,
+#tab3:checked ~ .tab-elements .tab.content3,
+#tab4:checked ~ .tab-elements .tab.content4,
+#tab5:checked ~ .tab-elements .tab.content5 { display: block; }
+
+.tabbed.vertical .tab-menu{
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+    text-align: center;
+}
+
+.tabbed.vertical .tab-menu label:active,
+input#tab1:checked ~ .tab-menu label[for=tab1],
+input#tab2:checked ~ .tab-menu label[for=tab2],
+input#tab3:checked ~ .tab-menu label[for=tab3],
+input#tab4:checked ~ .tab-menu label[for=tab4],
+input#tab5:checked ~ .tab-menu label[for=tab5] {
+    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200%;
+    color: var(--color-white);
+}
+
+.tabbed {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.tabbed.vertical {
+    grid-template-columns: auto 1fr;
+    
+}
+
+.tabbed.vertical .tab-menu-entry {
+    padding: 1rem 3rem;
+    margin: 0 3rem;
+    border: 2px solid var(--color-border-2);
+    border-radius: 6px;
+}
+
+.tabbed {
+    margin: 2rem 0;
+}
