@@ -18,9 +18,10 @@
     grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
 }
 
-.content-divider {
+.grid-content {
     display: grid;
-    grid-template-columns: 0.75fr 0.25fr;
-    column-gap: 32px;
+    grid-template-columns: 0.15fr 1fr 0.2fr;
+    column-gap: calc(var(--gap)/2);
     padding: 0 var(--gap);
+    width: 100%;
 }

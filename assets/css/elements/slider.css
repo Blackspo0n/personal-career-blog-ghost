@@ -1,0 +1,96 @@
+.sliderElements,
+.sliderElements figure,
+.sliderControls {
+    margin: 0;
+}
+ 
+.sliderElements:after {
+    content: ".";
+    display: block;
+    height: .1px;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    overflow: hidden;
+}
+ 
+.cssSlider {
+    overflow-x: hidden;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-2);
+    
+    background: var(--color-background);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);;
+    margin: 2rem;
+}
+
+.sliderElements {
+    list-style: none;
+    position: relative;
+    left: 0;
+    width: 400%;
+    margin-bottom: .8em;
+    padding: 0;
+    transition: left .8s ease-in-out;
+}
+ 
+.sliderElements > li {
+    float: left;
+    width: 25%;
+    position: relative;
+    padding: 2rem;
+}
+ 
+#slide02:checked ~ .sliderElements {
+    left: -100%;
+}
+ 
+#slide03:checked ~ .sliderElements {
+    left: -200%;
+}
+ 
+#slide04:checked ~ .sliderElements {
+    left: -300%;
+}
+ 
+ 
+.sliderElements img {
+    width: 100%;
+    height: auto;
+}
+
+.cssSlider input {
+    display: none;
+}
+ 
+
+.sliderControls {
+    text-align: center;
+}
+.sliderControls li {
+    display: inline-block;
+}
+ 
+.sliderControls label {
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    border-radius: 6px;
+    display: block;
+    cursor: pointer;
+    background: var(--color-background-accient-1);
+    color: var(--color-background-accient-1);
+    
+    box-shadow: inset 0px 0px 3px 0px #696969;
+}
+
+.sliderControls label:hover,
+#slide01:checked ~ .sliderControls label[for="slide01"],
+#slide02:checked ~ .sliderControls label[for="slide02"],
+#slide03:checked ~ .sliderControls label[for="slide03"],
+#slide04:checked ~ .sliderControls label[for="slide04"] {
+    background: var(--color-primary);
+    color: var(--color-primary);
+}

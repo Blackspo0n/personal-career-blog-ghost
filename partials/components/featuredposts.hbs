@@ -10,7 +10,7 @@
 
     <main class="grid grid-auto">
         {{#foreach posts limit="6"}}
-            {{> components/post-card}}
+            {{> components/post-card showExcerp=true}}
         {{else}}
             <p>There were no tags...</p>
         {{/foreach}}

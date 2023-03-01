@@ -12,7 +12,7 @@
     --color-yellow: #fecd35;
     --color-red: #f05230;
     --color-darkgrey: #15171A;
-    --color-midgrey: #949494;
+    --color-midgrey: #a3a3a3;
     --color-lightgrey: #f1f1f1;
     --color-secondary-text: #979797;
     --color-border: #e1e1e1;
@@ -29,7 +29,7 @@
     --color-text-reverse: var(--color-white);
     --color-border: rgb(100, 100, 100);
     --color-border-1: rgb(31 41 55);
-    --color-border-2: rgb(209,213,219);
+    --color-border-2: #e5e7eb;
     --color-border-blendet: rgb(209,213,219);
     --color-background: var(--color-white);
     --color-background-accient-1: var(--color-midgrey);
@@ -46,4 +46,5 @@
     --color-bg-alpha-50: rgba(0,0,0,.5);
     --color-bg-alpha-75: rgba(0,0,0,.75);
     --color-neutral: var(--color-grey);
+    --color-washed: rgb(249 250 251);
 }

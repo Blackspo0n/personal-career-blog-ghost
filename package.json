@@ -2,38 +2,25 @@
     "name": "personal-career-blog",
     "description": "A theme for ghost.js to host a career boosting blog with resume and thinks a indiviual could love.",
     "demo": "https://www.kellner-digital.com",
+    "private" : true,
     "version": "1.0.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
+        "pretest": "gulp build"
     },
     "author": {
         "name": "Mario Kellner",
         "email": "mario@kellner-digital.com",
         "url": "https://www.kellner-digital.com/"
     },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "vcard",
-            "personal-blog",
-            "resumee"
-        ]
-    },
+
     "keywords": [
         "ghost",
         "theme",
@@ -42,12 +29,6 @@
         "resumee",
         "vcard"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Blackspo0n/personal-career-blog-ghost.git"
-    },
-    "bugs": "https://github.com/Blackspo0n/personal-career-blog-ghost/issues",
-    "contributors": ["https://github.com/Blackspo0n/personal-career-blog-ghost/contributors"],
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "autoprefixer": "10.4.7",
@@ -67,11 +48,9 @@
         "pump": "3.0.0",
         "@tryghost/shared-theme-assets": "2.0.1"
     },
-    "browserslist": [
-        "defaults"
-    ],
     "config": {
         "posts_per_page": 25,
+        "card_assets": true,
         "image_sizes": {
             "xxs": {
                 "width": 30
@@ -92,12 +71,17 @@
                 "width": 2000
             }
         },
-        "card_assets": true,
         "custom": {
             "secondary_color": {
                 "type": "color",
                 "default": "#15171a"
             },
+
+            "hero_image": {
+                "type": "image",
+                "group": "homepage"
+            },
+            
             "color_scheme": {
                 "type": "select",
                 "options": [
@@ -108,10 +92,5 @@
                 "default": "Light"
             }
         }
-    },
-    "renovate": {
-        "extends": [
-            "@tryghost:theme"
-        ]
     }
 }

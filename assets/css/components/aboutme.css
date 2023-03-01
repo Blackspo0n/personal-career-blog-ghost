@@ -35,7 +35,13 @@
     background-color: var(--color-background-accient-3);
     border-radius: 6px;
     padding: 1rem 2rem;
-    color: var(--color-text-accient-1)
+    color: var(--color-text-accient-1);
+    justify-content: space-between;
+    display: flex;
+    gap: calc(var(--gap)/2);
+    align-items: center;
+    text-align: left; 
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
 }
 
 .about-me ul {

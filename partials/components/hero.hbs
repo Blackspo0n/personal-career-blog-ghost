@@ -1,8 +1,8 @@
 <div class="hero">
     <section class="about-hero">
         <header>
-            <div class="pretext">If it is new, I'll try to come up with usecases!</div>
-            <h1 class="heading">It's a me, <span class="highlight text-gardient">Mario Kellner</span>!<br/>I'm an IT-Solution architect.</h1>
+            <div class="pretext">Understanding requirements and combining them to solutions!</div>
+            <h1 class="heading">It's a me, <span class="highlight text-gardient">Mario Kellner</span>!<br/>I'm an IT solution architect.</h1>
         </header>
         <main>
             <p>
@@ -14,10 +14,14 @@
         <footer>
             <a href="/blog"class="gh-btn gh-outline-btn">To my blog</a>
             <a href="mailto:kmario-kellner@web.de" class="gh-btn gh-primary-btn gh-gardient-btn">Get in contact</a>
-            <a href="/resume" class="gh-btn gh-outline-btn">To my resume</a>
         </footer>
     </section>
     <section class="hero-photo">
+        {{#if @custom.hero_image}}
+        <img src="{{img_url @custom.hero_image size="l"}}"/>
+        {{else}}
         <img src="{{img_url @site.cover_image size="l"}}"/>
+        {{/if}}
     </section>
 </div>
+<hr />

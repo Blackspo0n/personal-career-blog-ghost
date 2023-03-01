@@ -1,0 +1,25 @@
+.toc {
+    text-align: left;
+}
+
+.toc ul {
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc li:has(.highlight) {
+    border-left: 2px solid var(--color-primary);
+}
+
+.toc li {
+    padding: 0 1rem;
+}
+.toc .toc-H3 {
+    padding-left: 2rem;
+    font-size: 1.2rem;
+}

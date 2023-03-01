@@ -1,26 +1,26 @@
 {{!< default}}
 {{#post}}
-
-
 <article class="resume">
     <main>
         <section id="myprofile">
             <header>
+                {{#primary_author}}
                 <div class="pretext">My Resume!</div>
-                <h1 class="heading">Who is <span class="highlight text-gardient">Mario Kellner</span></h1>
+                <h1 class="heading">Who is <span class="highlight text-gardient">{{name}}</span></h1>
+                {{/primary_author}}
             </header>
             <p>
-                Introtext
+                {{content}}
             </p>
         </section>
         <section id="contact">
-            <h1>Contact &amp; Plattforms</h1>
+            <h1>Contact <span class="highlight text-gardient">&amp;</span> Platforms</h1>
             <p>
                 Contact
             </p>
         </section>
         <section id="experience">
-            <h1>My Experience</h1>
+            <h1>My <span class="highlight text-gardient">Experience</span></h1>
             <main>
                 <div class="timeline">
                     {{>timeline-entry}}
@@ -28,7 +28,7 @@
             </main>
         </section>
         <section id="education">
-            <h1>My Education</h1>
+            <h1>My <span class="highlight text-gardient">Education</span></h1>
             <main>
                 <div class="timeline">
                     {{>timeline-entry}}
@@ -36,13 +36,14 @@
             </main>
         </section>
         <section id="skills">
-            <h1>My Capabilities &amp; Skills</h1>
+            <h1>My Capabilities <span class="highlight text-gardient">&amp;</span> Skills</h1>
             <p>
                 At the following list you can get an Impression what m skills are.
                 My goal is not to understand everything to reach 110 % out of 100 %.
 
-                My Goal is to get a wide dield of knowledge to combine and analyse komplex systems much easier.
+                My Goal is to get a wide field of knowledge to combine and analyse komplex systems much easier.
                 
+                following a list of skills which are curcual.
             </p>
             <div class="tabbed vertical">
                 <input type="radio" name="tabs" id="tab1" checked />
@@ -73,14 +74,74 @@
                 </div>
             </div>
         </section>
+        <section id="personal-feedback">
+            <h1><span class="highlight text-gardient">References</span></h1>
+            <p>
+                This are people opionen about my work.  
+            </p>
+<div class="cssSlider">
+    <input type="radio" name="slider" id="slide01" checked="checked">
+    <input type="radio" name="slider" id="slide02">
+    <input type="radio" name="slider" id="slide03">
+    <input type="radio" name="slider" id="slide04">
+    <ul class="sliderElements">
+        <li>
+            <section>
+                <h2>Test</h2>
+                <h3>Town - Customer</h3>
+                <hr>
+                <p>Up or well must less rent read walk so be. Easy sold at do hour sing spot. Any meant has cease too the decay. Since party burst am it match. By or blushes between besides offices noisier as. Sending do brought winding compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has cease too the decay.</p>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h2>Test</h2>
+                <h3>Town - Customer</h3>
+                <hr>
+                <p>Up or well must less rent read walk so be. Easy sold at do hour sing spot. Any meant has cease too the decay. Since party burst am it match. By or blushes between besides offices noisier as. Sending do brought winding compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has cease too the decay.</p>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h2>Test</h2>
+                <h3>Town - Customer</h3>
+                <hr>
+                <p>Up or well must less rent read walk so be. Easy sold at do hour sing spot. Any meant has cease too the decay. Since party burst am it match. By or blushes between besides offices noisier as. Sending do brought winding compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has cease too the decay.</p>
+            </section>
+        </li>
+        <li>
+            <section>
+                <h2>Test</h2>
+                <h3>Town - Customer</h3>
+                <hr>
+                <p>Up or well must less rent read walk so be. Easy sold at do hour sing spot. Any meant has cease too the decay. Since party burst am it match. By or blushes between besides offices noisier as. Sending do brought winding compass in. Easy sold at do hour sing spot less rent read walk so be. Any meant has cease too the decay.</p>
+            </section>
+        </li>
+    </ul>
+ 
+    <!-- Eine Steuerung -->
+    <ul class="sliderControls">
+        <li><label for="slide01">1</label></li>
+        <li><label for="slide02">2</label></li>
+        <li><label for="slide03">3</label></li>
+        <li><label for="slide04">4</label></li>
+    </ul>
+</div>
+        </section>
         <section id="projects">
-            <h1>My Projects (including projects in the full-time position too)</h1>
+            <h1><span class="highlight text-gardient">Projects</span> I am worked on</h1>
+            <p>
+                Portofolio Component
+            </p>
+        </section>
+        <section id="certifications">
+            <h1><span class="highlight text-gardient">Certifications</span></h1>
             <p>
                 Portofolio Component
             </p>
         </section>
         <section id="hobbies">
-            <h1>My Interests</h1>
+            <h1>My <span class="highlight text-gardient">Interests</span></h1>
             <p>
                 My hobbies
             </p>
@@ -88,18 +149,22 @@
     </main>
     <aside>
         <figure class="cv-photo">
-            <img src="{{img_url @site.cover_image size="m"}}"/>
+            {{#if primary_author.profile_image}}
+            <img src="{{img_url primary_author.profile_image size="m"}}"/>
+            {{else}}
+            <img src="{{img_url  @custom.hero_image size="m"}}"/>
+            {{/if}}
         </figure>
         <nav class="toc">
-            
-        <h4>Content</h4>
+            <h4>Resume Content</h4>
             <ul>
-                <li><a href="#myprofile">My Pofile</a></li>
+                <li><a href="#myprofile">Me!</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#hobbies">My Interests</a></li>
             </ul>
         </nav>

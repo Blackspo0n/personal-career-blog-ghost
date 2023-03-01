@@ -1,0 +1,140 @@
+.main-content {
+    padding: 0;
+}
+
+.article-content {
+    margin-top: 0;
+    background-color: var(--color-background);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+    position: relative;
+    margin-top: -6rem;
+    border-left: 1px solid var(--color-border-2);
+    border-right: 1px solid var(--color-border-2);
+}
+
+.main-content aside {
+    position: sticky;
+    top: 10rem;
+    align-self: start;
+
+}
+
+.main-content:not(:has(.toc)) {
+    grid-template-columns: 1fr .2fr;
+}
+
+.main-content aside:first-child:not(:has(.toc)) {
+    display: none;
+}
+
+.main-content aside:first-child nav {
+    border-radius: 6px;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border-2);
+    border-top: 1px solid var(--color-border-2);
+    padding: 1rem 0;
+
+}
+
+.gh-content {
+    margin: 0;
+    padding: 2rem;
+}
+
+
+.gh-content h2, .gh-content h3 {
+    scroll-margin: 100px;
+}
+
+.gh-content *:first-child {
+    margin-top: 0;
+}
+
+.gh-article img {
+    border-radius: 0;
+}
+
+.gh-article .gh-article-header {
+    padding: 1rem 2rem;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gh-article .gh-article-title {
+    font-weight: 800;
+    font-size: 3.5rem;
+    width: 100%;
+}
+
+
+
+.author-line {
+    background-color: var(--color-background);
+    margin-top: -46px;
+    
+    border-top: 1px solid var(--color-border-2);
+    border-bottom: 1px solid var(--color-border-2);
+}
+
+.author-line-inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: var(--gap);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.author-line .newsletter {
+    
+    background-color: var(--color-wash);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* make cards responsive without javascript and reframe!!!! */
+.gh-content .kg-card.kg-embed-card {
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+
+.gh-content .kg-card.kg-embed-card iframe {    
+    height: 100%;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+
+}
+
+.primary-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    border-radius: 3rem;
+    
+    padding: 1.5rem;
+    border: 5px dashed var(--color-background-accient-2);
+    font-size: 1.2rem;
+    
+}
+
+.primary-author img {
+    width: 128px;
+    border-radius: 50%;
+}
+
+.primary-author h4 {
+}
+
+.gh-article-footer {
+    padding: 1.5rem;
+    background-color: var(--color-background-accient-2);
+    font-size: 1.2rem;
+}

@@ -19,7 +19,7 @@
     grid-area: b;
 }
 
-.resume main section {
+.resume main > section {
     scroll-margin: 100px;
     padding-bottom: 4rem;
 }
@@ -66,24 +66,33 @@
     align-self: start;
 }
 
-.timeline-entry .timespan {
+.timeline-entry .timespan .timespan-inner {
     display: flex;
     flex-flow: column;
-    text-align: right;
+    text-align: center;
     color: var(--color-text-accient-1);
     font-size: 1.6rem;
+    padding: 0.5rem;
+    border: var(--color-border-2) solid 1px;
+    background-color: var(--color-background);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    line-height: 2rem;
 }
 
 .timeline-entry .station {
     border-left: var(--color-border-2) solid 2px;
     padding-left: 2.5rem;
     position: relative;
+    background-color: var(--color-background);
+    padding: 1rem 2rem;
+    border-radius:   0 10px 10px 0 ;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
 }
 .timeline-entry .station:before {
     background-color: var(--color-background);
     content: "\f1ce";
     position: absolute;
-    padding-top:6px;
     left: -11px;
     font-family: Line Awesome Free;
     font-size: 20px;
@@ -97,27 +106,10 @@
     display: none;
 }
 
-.resume aside nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 .resume aside {
     display: flex;
     flex-flow: column;
     gap: 32px;
-}
-
-.resume .toc {
-    text-align: center;
-}
-
-.resume aside ul {
-    display: flex;
-    flex-flow: column;
-    gap: 6px;
-    flex-wrap: wrap;
 }
 
 .cv-photo {
@@ -144,4 +136,8 @@
 .resume .skills {
     display: grid;
 
+}
+
+.resume .toc h4 {
+    padding-bottom: 1rem;;
 }
