@@ -53,7 +53,7 @@ function ObserveHeaders() {
   sections.forEach(section => observer.observe(section));
 }
 
-function ObserverSections() {
+function ObserveSections() {
   const sections = Array.from(document.querySelectorAll("section[id]"));
 
   sections.forEach(section => observer.observe(section));

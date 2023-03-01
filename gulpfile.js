@@ -60,6 +60,7 @@ function css(done) {
 function js(done) {
     pump([
         src([
+            'node_modules/@tryghost/shared-theme-assets/assets/js/v1/lib/**/*.js',
             'assets/js/lib/*.js',
             'assets/js/*.js'
         ], {sourcemaps: true}),
