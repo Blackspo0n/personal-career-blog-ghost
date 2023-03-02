@@ -1,5 +1,3 @@
-
-/** footer **/
 .gh-foot {
     background-color: var(--color-background-primary-footer);
     
@@ -94,7 +92,7 @@
     color: var(--color-white);
 }
 
-.gh-foot .secondary .pcb-brand a {
+.gh-foot .secondary .gh-brand a {
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: -.02em;
@@ -164,7 +162,7 @@
         text-align: center;
     }
 
-    .gh-foot .secondary .pcb-brand {
+    .gh-foot .secondary .gh-brand {
         display: none;
     }
 

@@ -1,28 +1,21 @@
 {{!< default}}
 {{#post}}
-<main class="main-content grid-content">
-      <aside class="nav-sidebar"></aside>
+<div class="gh-outer">
+<main class="gh-inner main-content grid-content">
+    <aside class="nav-sidebar"></aside>
     <div class="article-content">
         <article class="gh-article {{post_class}}">
             {{#if feature_image}}
                 <header class="gh-article-header">
-                    <div class="gh-header-tags">
-                        {{#primary_tag}}
-                        <a href="{{url}}" class="primary tag {{id}}">{{name}}</a>
-                        {{/primary_tag}}
-                    {{#foreach tags}}
-                        <a href="{{url}}" class="tag {{id}}">{{name}}</a>
-                    {{/foreach}}
-                    </div>
-                     <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
+                    <div class="gh-header-tags">{{tags seperator=", "}}</div>
+                    <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
                     <time class="gh-card-date" datetime="{W{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{date}}</time>
                     <h1 class="gh-article-title">{{title}}</h1>
                 </header>                    
-                    
-                    <figure class="article-image aspect-ratio">
-                        <div class="aspect-ratio">
-                        {{#if feature_image}}
-                    <img class="aspect-ratio-in"
+                <figure class="article-image aspect-ratio">
+                    <div class="aspect-ratio">
+                    {{#if feature_image}}
+                        <img class="aspect-ratio-in"
                            srcset="{{img_url feature_image size="s"}} 300w,
                                     {{img_url feature_image size="m"}} 600w,
                                     {{img_url feature_image size="l"}} 1000w,
@@ -34,22 +27,22 @@
                         <div class="aspect-ratio-in{{#if accent_color}}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color}}{{accent_color}}{{/if}};"></div>
                     {{/if}}
                     </div>
-                    </figure>
-                    {{#if custom_excerpt}}
-                    <p class="gh-article-excerpt">{{custom_excerpt}}</p>
-                    {{/if}}
+                </figure>
+                {{#if custom_excerpt}}
+                <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+                {{/if}}
             {{/if}}
 
             <section class="gh-content">
-                {{content}}
-                {{#unless feature_image}}
-                    <header class="gh-article-header">
-                        <h1 class="gh-article-title">{{title}}</h1>
-                        {{#if custom_excerpt}}
-                            <p class="gh-article-excerpt">{{custom_excerpt}}</p>
-                        {{/if}}
-                    </header>
-                {{/unless}}
+            {{content}}
+            {{#unless feature_image}}
+                <header class="gh-article-header">
+                    <h1 class="gh-article-title">{{title}}</h1>
+                    {{#if custom_excerpt}}
+                        <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+                    {{/if}}
+                </header>
+            {{/unless}}
 
             </section>
             <footer class="gh-article-footer">
@@ -66,9 +59,7 @@
                             <a class="gh-navigation-link" href="{{url}}">← Previous</a>
                         {{/prev_post}}
                     </div>
-
                     <div class="gh-navigation-middle"></div>
-
                     <div class="gh-navigation-next">
                         {{#next_post}}
                             <a class="gh-navigation-link" href="{{url}}">Next →</a>
@@ -80,7 +71,7 @@
     </div>
     <aside>
         <section id="related-posts">
-            <h3>Related posts</h3>
+            <h4>Related posts</h4>
             <div class="grid grid-auto">
                 {{#get "posts" include="tags,authors" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
                 {{#foreach related}}
@@ -103,6 +94,7 @@
 </div>
 {{> comments}}
 {{/post}}
+</div>
 
 <script type="application/javascript">
 window.addEventListener("load", () => {

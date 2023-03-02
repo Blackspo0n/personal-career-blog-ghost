@@ -1,8 +1,5 @@
 const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
-const path = require('path');
-const releaseUtils = require('@tryghost/release-utils');
-const inquirer = require('inquirer');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
@@ -11,17 +8,12 @@ const zip = require('gulp-zip');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
-const fs = require('fs');
 
 // postcss plugins
 const autoprefixer = require('autoprefixer');
 const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
-
-const REPO = 'Blackspo0n/personal-career-blog-ghost';
-const REPO_READONLY = 'Blackspo0n/personal-career-blog-ghost';
-const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
     livereload.listen();
@@ -49,6 +41,7 @@ function css(done) {
         src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyimport,
+            colorFunction(),
             autoprefixer(),
             cssnano()
         ]),

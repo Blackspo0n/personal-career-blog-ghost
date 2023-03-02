@@ -11,7 +11,7 @@
 }
 
 .grid-auto {
-    grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 300px));
 }
 
 .grid-auto-fill {
@@ -20,7 +20,7 @@
 
 .grid-content {
     display: grid;
-    grid-template-columns: 0.15fr 1fr 0.2fr;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
     column-gap: calc(var(--gap)/2);
     padding: 0 var(--gap);
     width: 100%;

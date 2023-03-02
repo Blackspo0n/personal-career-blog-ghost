@@ -17,6 +17,7 @@
     --content-spacing-multiplier: 0.5;
     --content-font-size: 1.6rem;
     --content-letter-spacing: 0.002rem;
+    --content-width: var(--container-width);
 }
 
 html {
@@ -35,6 +36,10 @@ body {
     
 }
 
+a:hover {
+    color: var(--color-primary);
+}
+
 /** Content **/
 .gh-main {
     padding-top: 6rem;
@@ -42,8 +47,6 @@ body {
     flex-flow: column;
     gap: var(--gap);
 }
-
-
 
 .article-sidebar {
     background-color: #a4d037;
@@ -65,11 +68,10 @@ body {
     height: 0;
     padding-bottom: 56.25%; /* 16:9 default*/
 }
+
 .aspect-ratio-lengthy {
     padding-bottom: 40% !important;
 }
-
-
 
 @media (max-width: 64em) {
     .article-sidebar {

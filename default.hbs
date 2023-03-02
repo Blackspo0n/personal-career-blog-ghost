@@ -17,11 +17,8 @@
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">
 {{~> components/navbar~}}
-<div class="gh-outer">
-<main class="gh-main gh-inner">
 {{~{body}~}}
-</main>
-</div>
+
 {{~> components/footer~}}
 {{#is "post, page"}}
     {{> "pswp"}}

@@ -7,6 +7,9 @@
     grid-template-areas: "a b";
 }
 
+.hero h1 {
+    font-size: 5.5rem;
+}
 .hero .about-hero {
     grid-area: a;
 }

@@ -9,10 +9,12 @@
     </header>
 
     <main class="grid grid-auto">
+        {{#get "posts" filter="featured:true" limit="all"}}
         {{#foreach posts limit="6"}}
             {{> components/post-card showExcerp=true}}
         {{else}}
-            <p>There were no tags...</p>
+            <p>There were no featured posts...</p>
         {{/foreach}}
+        {{/get}}
     </main>
 </section>

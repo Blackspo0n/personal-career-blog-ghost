@@ -1,0 +1,46 @@
+.page-template .gh-page {
+
+}
+
+.page-template .gh-page .article-header {
+    background: rgb(71,170,245);
+    background: linear-gradient(to right,  rgba(71,170,245,1) 0%,rgba(0,86,179,1) 100%,rgba(71,170,245,1) 100%);
+    padding: 2rem var(--gap);
+    border-bottom: 1px solid var(--color-border-2);
+
+}
+
+.page-template .gh-page h1 {
+    color: var(--color-text-reverse);
+    margin: 0 auto;
+    max-width: var(--container-width);
+    font-size: 3.5rem;
+
+}
+
+.page-template .gh-page .article-image {
+    box-shadow:  inset 0px 30px 22px -32px rgba(0,0,0,0.75), inset 0px -29px 22px -32px rgba(0,0,0,0.75);
+
+}
+.page-template .gh-page .article-image div {
+    height: 25rem;
+    padding-bottom: 0;
+    
+}
+.page-template .gh-page .article-image img {
+    z-index: -2;
+    border-radius: 0;;
+}
+.page-template .gh-page .gh-article-footer {
+    background-color: var(--color-background-accient-2);
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-border-2);
+    font-size: 1.2rem;
+    padding: 1rem var(--gap);
+}
+
+.page-template .gh-page .gh-article-meta-inner {
+    margin: 0 auto;
+    max-width: var(--container-width);
+}
+
