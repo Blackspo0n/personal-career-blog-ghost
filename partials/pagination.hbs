@@ -1,0 +1,15 @@
+<nav class="gh-navigation">
+    <div class="gh-navigation-previous">
+    {{#if prev}}
+        <a class="gh-navigation-link" href="{{page_url prev}}">← Previous</a>
+    {{/if}}
+    </div>
+    <div class="gh-navigation-middle">
+        <span class="page-number">Page {{page}} of {{pages}}</span>
+    </div>
+    <div class="gh-navigation-next">
+    {{#if next}}
+        <a class="gh-navigation-link" href="{{page_url next}}">Next →</a><br />
+    {{/if}}
+    </div>
+</nav>

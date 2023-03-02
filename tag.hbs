@@ -1,0 +1,59 @@
+{{!< default}}
+{{#tag}}
+
+<article class="gh-page article {{post_class}} {{page_class}}">
+    {{#if feature_image}}
+    <figure class="article-image">
+        <div class="aspect-ratio">
+        {{#if feature_image}}
+            <img class="aspect-ratio-in"
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(min-width: 1400px) 1400px, 92vw"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{name}}{{/if}}"/>
+        {{else}}
+            <div class="aspect-ratio-in{{#if accent_color }}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};"></div>
+        {{/if}}
+        </div>
+    </figure>
+    {{/if}}
+    <header class="article-header{{#if accent_color }}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};">
+        <div class="article-title">
+            <h1>{{name}}</h1>
+            {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+        </div>
+    </header>
+    
+    <div class="gh-outer">
+        <main class="gh-inner">
+            <div class="tag-description">{{description}}</div>
+            <hr />
+            
+    {{/tag}}
+            <section class="featured-posts grid grid-auto">
+                {{#foreach posts }}
+                    {{> components/post-card showExcerp=true}}
+                {{else}}
+                    <p>There were no featured posts...</p>
+                {{/foreach}}
+            </section>
+        </main>
+    </div>
+    {{#tag}}
+    <footer class="gh-article-footer">
+        <div class="gh-article-meta-inner">
+            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Published
+            {{#if primary_tag}} in <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+            {{/if}} on {{date}}</time><br />
+            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Last updated on {{date}}</time>
+    {{/tag}}            
+        
+        </div>
+        <hr />
+        {{pagination}}
+    </footer>
+
+</article>

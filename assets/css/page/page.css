@@ -5,7 +5,7 @@
 .page-template .gh-page .article-header {
     background: rgb(71,170,245);
     background: linear-gradient(to right,  rgba(71,170,245,1) 0%,rgba(0,86,179,1) 100%,rgba(71,170,245,1) 100%);
-    padding: 2rem var(--gap);
+    padding: 1.5rem var(--gap);
     border-bottom: 1px solid var(--color-border-2);
 
 }

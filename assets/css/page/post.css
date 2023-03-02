@@ -134,3 +134,7 @@
     background-color: var(--color-background-accient-2);
     font-size: 1.2rem;
 }
+
+.post-template .gh-navigation-next {
+    text-align: right;
+}
