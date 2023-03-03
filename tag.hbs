@@ -1,5 +1,8 @@
 {{!< default}}
 {{#tag}}
+{{#if accent_color}}
+{{#contentFor "themecolor"}}{{accent_color}}{{/contentFor}}
+{{/if}}
 
 <article class="gh-page article {{post_class}} {{page_class}}">
     {{#if feature_image}}
@@ -15,12 +18,12 @@
                 src="{{img_url feature_image size="xl"}}"
                 alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{name}}{{/if}}"/>
         {{else}}
-            <div class="aspect-ratio-in{{#if accent_color }}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};"></div>
+            <div class="aspect-ratio-in{{#if accent_color }} gradient-effect{{else}} default-color{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};"></div>
         {{/if}}
         </div>
     </figure>
     {{/if}}
-    <header class="article-header{{#if accent_color }}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};">
+    <header class="article-header{{#if accent_color }} gradient-effect{{else}} default-color{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};">
         <div class="article-title">
             <h1>{{name}}</h1>
             {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}

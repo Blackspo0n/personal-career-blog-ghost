@@ -1,0 +1,41 @@
+.blog-template {
+
+}
+
+.blog-template > * {
+    width: 100%;
+}
+
+
+.blog-template .tags {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+
+}
+.blog-template .post-article-annoucement {
+    max-width: calc(var(--container-width)/2);
+}
+.blog-template .post-article-annoucement header {
+    
+    text-align: center;
+}
+
+.blog-template header {
+    margin-bottom: 0;
+}
+
+.blog-template .first-row {
+    
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 16px;
+
+}
+.blog-template > header:first-child {
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 .grid {
     display: grid;
     gap: calc(var(--gap)/2);
+    justify-content: center;
 }
 
 .grid-columns-3 {
@@ -12,6 +13,9 @@
 
 .grid-auto {
     grid-template-columns: repeat(auto-fit, minmax(min(27rem, 100%), 300px));
+}
+.grid-auto-full-two-columns {
+    grid-template-columns: repeat(auto-fit, minmax(min(50rem, 100%), 1fr));
 }
 
 .grid-auto-fill {

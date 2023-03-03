@@ -1,10 +1,22 @@
 {{!< default}}
 {{#post}}
+{{#if primary_tag.accent_color}}
+{{#contentFor "themecolor"}}{{primary_tag.accent_color}}{{/contentFor}}
+{{else}}
+{{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
+{{/if}}
+
 <div class="gh-outer">
 <main class="gh-inner main-content grid-content">
-    <aside class="nav-sidebar"></aside>
+    <aside class="nav-sidebar">
+        <h4>Table of Conents</h4>
+        <hr/>
+    </aside>
     <div class="article-content">
         <article class="gh-article {{post_class}}">
+            {{#primary_tag}}
+                <div class="primary-tag{{#if accent_color }} gradient-effect{{else}} default-color{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};"></div>
+            {{/primary_tag}}
             {{#if feature_image}}
                 <header class="gh-article-header">
                     <div class="gh-header-tags">{{tags seperator=", "}}</div>
@@ -82,6 +94,8 @@
                 {{#get "posts" include="tags,authors" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
                 {{#foreach related}}
                 {{> components/post-card showExcerp=false}}
+                {{else}}
+                <p> Nothing is here jet</p>
                 {{/foreach}}
                 {{/get}}
             </div>

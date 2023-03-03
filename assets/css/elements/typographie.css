@@ -1,11 +1,23 @@
 
 .highlight {
     color: var(--color-primary);
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to left,var(--color-primary),var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--color-primary);    
 }
 
 header .pretext {
     
     color: var(--color-primary);
+}
+
+
+header .heading {
+    border-bottom: 2px dashed var(--color-border-2);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem
 }
 
 header.with-action {

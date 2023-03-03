@@ -1,5 +1,6 @@
 <article class="gh-card post-card {{tag_class}}">
 <a class="gh-card-link post-card-link" href="{{url}}">
+{{^if small}}
 <div class="gh-card-image-content post-card-header">
     <figure class="gh-card-image">
         <div class="aspect-ratio">
@@ -25,5 +26,11 @@
 <footer class="gh-card-footer">
     Explore {{count.posts}} posts in {{name}}
 </footer>    
+
+{{else}}
+<div>
+     {{name}}
+</div>
+{{/if}}
 </a>
 </article>

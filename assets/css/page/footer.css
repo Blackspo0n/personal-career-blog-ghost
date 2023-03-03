@@ -112,7 +112,9 @@
     color: var(--color-white);
 }
 
-
+.gh-foot .gh-brand img {
+    height: 32px;
+}
 
 @media (max-width: 767px) {
     /** footer **/

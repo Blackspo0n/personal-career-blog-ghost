@@ -1,3 +1,7 @@
+:root {
+    --toc-primary-color: var(--color-primary);
+}
+
 .toc {
     text-align: left;
 }
@@ -12,8 +16,17 @@
     margin: 0;
 }
 
+.toc a {
+    width:100%;
+    display: block;
+}
+
+.toc a:hover, .toc .highlight {
+    color: var(--toc-primary-color);
+}
+
 .toc li:has(.highlight) {
-    border-left: 2px solid var(--color-primary);
+    border-left: 2px solid var(--toc-primary-color);
 }
 
 .toc li {

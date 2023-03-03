@@ -16,7 +16,6 @@
     top: 9rem;
     align-self: start;
     text-align: center;
-
 }
 
 .main-content:not(:has(.toc)) {
@@ -27,13 +26,12 @@
     display: none;
 }
 
-.main-content aside:first-child nav {
+.main-content aside:first-child {
     border-radius: 6px;
     background-color: var(--color-background);
     border: 1px solid var(--color-border-2);
     border-top: 1px solid var(--color-border-2);
     padding: 1rem 0;
-
 }
 
 .post-template .gh-content {
@@ -44,6 +42,9 @@
 
 .gh-content h2, .gh-content h3 {
     scroll-margin: 100px;
+}
+.main-content h4 {
+    font-size: 1.6rem;
 }
 
 .post-template .gh-content *:first-child {
@@ -137,4 +138,15 @@
 
 .post-template .gh-navigation-next {
     text-align: right;
+}
+
+
+/**** new with page class selector ***/
+
+.post-template .primary-tag {
+    height: 10px;
+}
+
+.post-template .gh-page .article-header {
+    border-bottom: 1px solid var(--color-border-2);
 }

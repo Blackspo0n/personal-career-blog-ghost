@@ -11,7 +11,7 @@
     z-index: 2000;
 }
 
-.gh-head .pcb-brand a {
+.gh-head .gh-brand a {
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: -.02em;
@@ -55,6 +55,12 @@
     display: block;
 }
 
+.gh-head .gh-head-actions a {
+    font-size: 3rem;
+    padding: 18px;
+    color: var(--color-primary-text);
+}
+
 .gh-head nav {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -75,8 +81,8 @@
 
 .hamb {
     cursor: pointer;
-    float: right;
-    padding: 20px 20px;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 .hamb-line {

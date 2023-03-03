@@ -9,17 +9,23 @@
 }
 
 .gh-outline-btn {
-    border: 2px solid var(--color-border);
+    /* border: 2px solid var(--color-border); */
 }
 
 .gh-outline-btn:hover {
-    border: 2px solid var(--color-primary);
+    /* border: 2px solid var(--color-primary); */
     color: var(--color-primary)
 }
 
 .gh-primary-btn {
     color: var(--color-text-reverse);
     background-color: var(--ghost-accent-color);
+    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200%;
+    transition: background 0.3s ease;
+}
+
+.gh-primary-btn:hover {
+    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 / 400%;
 }
 
 .gh-gardient-btn {
@@ -29,6 +35,7 @@
 .gh-outline-secondary-btn {
     border: 2px solid var(--color-text-accient-3);
     color: var(--color-text-accient-2);
+    transition: background 0.3s ease;
 }
 
 .gh-outline-secondary-btn:hover {

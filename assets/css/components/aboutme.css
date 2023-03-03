@@ -1,6 +1,5 @@
 /** about-me segment */
 .about-me {
-    padding-top: 3rem;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     gap: calc(var(--gap)*2);

@@ -1,3 +1,8 @@
+
+{{~>theme-config~}}
+{{~^is "tag, page, post"}}
+{{~#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor~}}
+{{/is~}}
 <!DOCTYPE html>
 <html lang="{{@site.locale}}" {{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
@@ -12,18 +17,19 @@
             --color-secondary: {{@custom.secondary_color}};
         }
     </style>
-    {{ghost_head}}
     <script src="{{asset "built/main.min.js"}}" defer></script>
+    <meta name="theme-color" content="{{{block "themecolor"}}}">
+    <meta name="color-scheme" content="light">
+    {{ghost_head}}
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">
 {{~> components/navbar~}}
 {{~{body}~}}
-
 {{~> components/footer~}}
 {{#is "post, page"}}
-    {{> "pswp"}}
+    {{~> pswp~}}
 {{/is}}
-
 {{~ghost_foot~}}
 </body>
 </html>
+

@@ -8,7 +8,6 @@ function makeToc() {
   const list = document.createElement("ul");
 
   sections.forEach(entry => {
-    const section = entry.target;
     const sectionId = entry.id;
     const anker = document.createElement("a");
     anker.href = "#" + sectionId;

@@ -36,7 +36,7 @@ body {
     
 }
 
-a:hover {
+a:not(.gh-btn):hover {
     color: var(--color-primary);
 }
 

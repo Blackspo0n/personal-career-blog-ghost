@@ -1,39 +1,60 @@
 {{!< default}}
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#unless @custom.show_publication_cover}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}{{/unless}}">
-    {{#if @custom.show_publication_cover}}
-        {{#if @site.cover_image}}
-            {{!-- This is a responsive image, it loads different sizes depending on device
-            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <img class="site-header-cover"
-                srcset="{{img_url @site.cover_image size="s"}} 300w,
-                        {{img_url @site.cover_image size="m"}} 600w,
-                        {{img_url @site.cover_image size="l"}} 1000w,
-                        {{img_url @site.cover_image size="xl"}} 2000w"
-                sizes="100vw"
-                src="{{img_url @site.cover_image size="xl"}}"
-                alt="{{@site.title}}"
-            />
-        {{/if}}
-    {{/if}}
+<div class="gh-main gh-outer blog-template">
+<header class="gh-inner">
+    <div class="pretext"></div>
+    <h1 class="heading">Browse <span class="highlight text-gardient">{{@site.title}}</span>!</h1>
+    <p>{{@site.description}}</p>
+</header>
+    <aside class="populartags gh-inner">        
+        <header class="with-action">
+            <div class="pretext">Browse some topics!</div>
+            <h2 class="heading">Tags &amp; Categories:</h2>
+            <div class="actions">
+                <a href="/tags" class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
+            </div>
+        </header>
+        <main class="tags">
+        {{#get "tags" limit=11 order="count.posts desc"}}
+        {{#foreach tags}}
+            <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
+                {{name}}
+            </a>
+        {{else}}
+        <p>There were no tags...</p>
+        {{/foreach}}
+        {{/get}}
+        </main>
+    </aside>
 
-    {{#match @custom.header_style "!=" "Hidden"}}
-        <div class="site-header-inner inner">
-            {{#match @custom.navigation_layout "Logo on cover"}}
-                {{#if @site.logo}}
-                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
-                {{else}}
-                    <h1 class="site-title">{{@site.title}}</h1>
-                {{/if}}
-            {{/match}}
-            {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
-            {{/if}}
-        </div>
-    {{/match}}
+    <section id="announced" class="post-article-annoucement gh-inner ">
+            <header>
+                <div class="pretext">Imho good stuff to read.</div>
+                <h2 class="heading">Featured article</h2>
+            </header>
+            {{#get "posts" limit="1" filter="tag:hash-announcement" orderby="published_at desc"}}
+                {{#foreach posts}}
+                    <article>
+                        {{> components/post-card showExcerp=true vertical=true}}
+                    </article>
+                {{/foreach}}
+            {{/get}}
+            
+    </section>
 
-</div>
-<main id="site-main" class="site-main outer">
-{{#foreach posts}}
-    {{> components/post-card}}
-{{/foreach}}
+<main id="content" class="gh-inner">
+    <header class="with-action">
+        <div class="pretext">My last writings. Please be kind!</div>
+        <h2 class="heading">Recently writings:</h2>
+    </header>
+    <section id="latest" class="grid grid-auto">
+    {{#foreach posts}}
+        {{> components/post-card showExcerp=true}}
+    {{/foreach}}
+    </section>
 </main>
+
+<footer class="">
+    <hr />
+    {{pagination}}
+</footer>
+</div>
