@@ -106,4 +106,7 @@ dist
 
 assets/built/*
 assets/built/
-yarn.lock
+assets/built/screen.css
+
+*.lock
+assets/built/screen.css.map

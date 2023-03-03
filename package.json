@@ -77,6 +77,16 @@
                 "default": "#15171a"
             },
 
+            "github_link": {
+                "type": "text"
+            },
+            
+            "xing_link": {
+                "type": "text"
+            },
+            "linkedin_link": {
+                "type": "text"
+            },
             "hero_image": {
                 "type": "image",
                 "group": "homepage"

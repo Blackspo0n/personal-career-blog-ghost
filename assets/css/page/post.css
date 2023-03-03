@@ -18,6 +18,9 @@
     text-align: center;
 }
 
+.main-content .sidebar-right h4 {
+    padding-bottom: 1rem;
+}
 .main-content:not(:has(.toc)) {
     grid-template-columns: 1fr .2fr;
 }
@@ -37,10 +40,12 @@
 .post-template .gh-content {
     margin: 0;
     padding: 2rem;
+    scroll-behavior: smooth;
 }
 
 
 .gh-content h2, .gh-content h3 {
+    scroll-behavior: smooth;
     scroll-margin: 100px;
 }
 .main-content h4 {
@@ -122,6 +127,10 @@
     
 }
 
+.primary-author footer {
+    text-align: right;
+}
+
 .primary-author img {
     width: 128px;
     border-radius: 50%;
@@ -140,13 +149,29 @@
     text-align: right;
 }
 
-
-/**** new with page class selector ***/
-
 .post-template .primary-tag {
     height: 10px;
 }
 
 .post-template .gh-page .article-header {
     border-bottom: 1px solid var(--color-border-2);
+}
+
+
+@media (max-width: 1028px) {
+    .post-template .grid-content {
+        grid-template-columns: .3fr 1fr;
+    }
+    .post-template .grid-content .sidebar-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-template .grid-content {
+        grid-template-columns: 1fr;
+    }
+    .post-template .grid-content .sidebar-left {
+        display: none;
+    }
 }

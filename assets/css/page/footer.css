@@ -10,7 +10,7 @@
 .gh-foot a:hover, .gh-foot .secondary .nav a:hover {
     color: var(--color-primary);
 }
-.gh-foot-menu ul.nav:not(.nav-vertical) {
+ section.secondary .gh-foot-menu ul {
     gap: 32px;
 }
 
@@ -18,14 +18,30 @@
     margin-top: 6px;
 }
 
-.gh-foot-menu ul.nav-vertical {
+.gh-foot-menu ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.gh-foot-menu .nav li {
+    display: flex;
+    align-items: center;
+}
+
+.gh-foot section:not(.secondary) .gh-foot-menu  ul {
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
 
 
-.gh-foot-menu ul.nav li + li::before {
+.primary-footer section .gh-foot-menu ul li + li::before {
     display: unset;
     content: unset;
     padding: unset;
@@ -47,7 +63,7 @@
 }
 
 .gh-foot .primary-footer section {
-    padding-bottom: var(--gap);
+    padding-bottom: calc(var(--gap)/2);
 }
 .gh-foot-second {
     background-color: black;
@@ -108,8 +124,20 @@
     margin: 0 auto;
 }
 
-.gh-foot a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
     color: var(--color-white);
+}
+
+.gh-foot .second-footer .social a {
+    font-size: 2rem;
+    padding: 15px;
+    color: var(--color-primary-text);
+    background: var(--color-background-blended);
+}
+
+.gh-foot .second-footer .social a:hover {
+    color: var(--color-primary);
+
 }
 
 .gh-foot .gh-brand img {
@@ -142,6 +170,9 @@
 }
 
 @media (max-width: 530px) {
+    .gh-foot-menu {
+        text-align: center;
+    }
     .gh-foot .primary-footer {
         max-width: var(--container-width);
         width:100%;
@@ -157,13 +188,16 @@
           "resources-2";
     }
     
-    footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, .gh-foot-menu ul.nav-vertical {
+    footer a, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, .gh-foot-menu ul, .gh-foot-menu li {
         justify-content: center;
         align-items: center;
         width: 100%;
         text-align: center;
+        align-items: center;
+    display: flex;
     }
 
+    
     .gh-foot .secondary .gh-brand {
         display: none;
     }
