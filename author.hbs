@@ -1,38 +1,41 @@
 {{!< default}}
-
-<main class="gh-main gh-outer">
-    {{#author}}
-        <section class="gh-article gh-inner">
-            <header class="gh-article-header">
-                {{#if profile_image}}
-                    <img class="gh-author-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
-                {{/if}}
-                <h1 class="gh-article-title">{{name}}</h1>
-                {{#if bio}}
-                    <p class="gh-article-excerpt">{{bio}}</p>
-                {{/if}}
-            </header>
-            <footer class="gh-author-meta">
-                {{#if location}}
-                    <div class="gh-author-location">{{location}}</div>
-                {{/if}}
-                <div class="gh-author-social">
-                    {{#if website}}
-                        <a class="gh-author-social-link" href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
-                    {{/if}}
-                    {{#if twitter}}
-                        <a class="gh-author-social-link" href="{{twitter_url}}" target="_blank" rel="noopener"></a>
-                    {{/if}}
-                    {{#if facebook}}
-                        <a class="gh-author-social-link" href="{{facebook_url}}" target="_blank" rel="noopener"></a>
-                    {{/if}}
-                </div>
-            </footer>
-        </section>
-    {{/author}}
-    <div class="gh-feed{{#match @custom.header_section_layout "!=" "Large background"}} gh-inner{{/match}}">
-        {{#foreach posts}}
-            {{>  components/post-card}}
-        {{/foreach}}
+{{#author}}
+<div class="author-excerp gh-outer" style="--var-author-background: url('{{img_url cover_image size="xxl"}}')">
+    <div class="gh-inner">
+        {{#if profile_image}}
+            <img class="gh-author-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
+        {{/if}}
+        <h1>{{name}}</h1>
+        <p class="bio">{{bio}}</p>
+        <div class="gh-author-social"><i class="las la-map-marked-alt"></i> {{location}} 
+        {{#if website}}
+            <a href="{{website}}" target="_blank" rel="noopener"><i class="las la-link"></i></a>
+        {{/if}}
+        {{#if twitter}}
+            <a href="{{twitter_url}}" target="_blank" rel="noopener"><i class="lab la-twitter"></i></a>
+        {{/if}}
+        {{#if facebook}}
+            <a  href="{{facebook_url}}" target="_blank" rel="noopener"><i class="lab la-facebook-f"></i></a>
+        {{/if}}
+        </div>
     </div>
-</main>
+</div>
+
+<div class="post-line gh-outer">
+    <div class="gh-inner">
+    <header class="gh-inner">
+        <div class="pretext">More to see</div>
+        <h2 class="heading">Browse latest posts from <span class="highlight text-gardient">{{name}}</span>!</h1>
+{{/author}}        
+    </header>
+    <section id="latest" class="grid grid-auto">
+    {{#foreach posts}}
+        {{> components/post-card showExcerp=true}}
+    {{/foreach}}
+    </section>
+    <footer >
+        <hr />
+        {{pagination}}
+    </footer>
+    </div>
+</div>

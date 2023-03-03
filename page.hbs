@@ -1,8 +1,11 @@
 {{!< default}}
 {{#post}}
-
+{{#if primary_tag.accent_color}}
+{{#contentFor "themecolor"}}{{primary_tag.accent_color}}{{/contentFor}}
+{{else}}
+{{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
+{{/if}}
 <article class="gh-page article {{post_class}} {{page_class}}">
-
     {{#if feature_image}}
         <figure class="article-image">
             <div class="aspect-ratio">
@@ -21,19 +24,29 @@
             </div>
         </figure>
     {{/if}}
-        <header class="article-header gh-gardient-btn">
+    <header class="article-header{{#primary_tag}}
+    {{#if accent_color }} gradient-effect{{else}} default-color{{/if}}
+    {{/primary_tag}}" {{#primary_tag}}{{#if accent_color}}style="background-color: {{accent_color}};"{{/if}}{{/primary_tag}}>
         <h1 class="article-title">{{title}}</h1>
     </header>
-    <main class="gh-content gh-canvas">
-        {{content}}
-    </main>
-    <footer class="gh-article-footer">
-        <div class="gh-article-meta-inner">
-            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Published
-            {{#if primary_tag}} in <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            {{/if}} on {{date}}</time><br />
-            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Last updated on {{date}}</time>
-        </div>
-    </footer>
+    <div class="gh-inner gh-article">
+        <header class="gh-article-header">
+            <div class="gh-header-tags">{{tags seperator=", "}}</div>
+            <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
+
+        </header> 
+        <main class="gh-content">
+            {{content}}
+        </main>
+        <footer class="gh-article-footer">
+            <div class="gh-article-meta-inner">
+                <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Published
+                {{#if primary_tag}} in category <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                {{/if}} on {{date}}</time><br />
+                <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Last updated on {{date}}</time>
+            </div>
+        </footer>
+    </div>
+</div>
 </article>
 {{/post}}

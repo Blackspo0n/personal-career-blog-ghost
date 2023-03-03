@@ -4,7 +4,7 @@
 {{#contentFor "themecolor"}}{{accent_color}}{{/contentFor}}
 {{/if}}
 
-<article class="gh-page article {{post_class}} {{page_class}}">
+<article class="gh-page tag {{post_class}} {{page_class}}">
     {{#if feature_image}}
     <figure class="article-image">
         <div class="aspect-ratio">
@@ -32,8 +32,10 @@
     
     <div class="gh-outer">
         <main class="gh-inner">
+            {{#if description}}
             <div class="tag-description">{{description}}</div>
             <hr />
+            {{/if}}
             
     {{/tag}}
             <section class="featured-posts grid grid-auto">

@@ -1,7 +1,12 @@
 
 .tag-template .article-header {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    }
+}
+
+.tag-template .tag {
+        display: grid;
+        grid-template-rows: min-content 1fr auto;        
+}
 
 .tag-template .gh-page .gh-inner {
     padding: 2rem 0 ;

@@ -1,13 +1,41 @@
 .page-template .gh-page {
+    display: grid;
+    grid-template-rows: min-content 1fr auto;
 
 }
 
-.page-template .gh-page .article-header {
-    background: rgb(71,170,245);
-    background: linear-gradient(to right,  rgba(71,170,245,1) 0%,rgba(0,86,179,1) 100%,rgba(71,170,245,1) 100%);
-    padding: 1.5rem var(--gap);
-    border-bottom: 1px solid var(--color-border-2);
+.page-template .primary-tag {
+    height: 10px;
+}
+.page-template .gh-page .gradient-effect {
+    background: linear-gradient(to left top, transparent, rgba(255,255,255,0.3) 100%) var(--color-primary);
+} 
+.page-template .gh-article {
+    margin-top: 0;
+    background-color: var(--color-background);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+    position: relative;
+    border-left: 1px solid var(--color-border-2);
+    border-right: 1px solid var(--color-border-2);
+    width: 100%;
+    display: grid;
+    grid-template-rows: min-content 1fr auto;
+}
 
+.page-template .gh-page .article-header {
+    background-color: rgb(71,170,245);
+    /*background: linear-gradient(to right,  rgba(71,170,245,1) 0%,rgba(0,86,179,1) 100%,rgba(71,170,245,1) 100%); */
+    padding: 1.5rem var(--gap);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index:2;
+    
+    position: relative;
+
+}
+
+.page-template .gh-content {
+    margin: 0;
+    padding: 2rem;
 }
 
 .page-template .gh-page h1 {
