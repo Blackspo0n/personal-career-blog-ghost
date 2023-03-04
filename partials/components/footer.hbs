@@ -1,10 +1,9 @@
-
 <div class="gh-foot gh-outer">
     <footer class="primary-footer gh-inner">
         <section class="secondary">
             <div class="gh-brand">
                 <a href="{{@site.url}}">
-                    {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}">{{else}}{{@site.title}}{{/if}}
+                {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}">{{else}}{{@site.title}}{{/if}}
                 </a>
             </div>
             <nav class="gh-foot-menu">{{~navigation type="secondary"~}}</nav>
@@ -17,11 +16,7 @@
             <nav class="gh-foot-menu">
                 {{content}}
             </nav>
-            {{else}}
-            <p  style="white-space: normal;
-    inline-size: 150px;
-    overflow-wrap: break-word;
-  word-break: break-all; ">No information provided. Please create a page with the tag #footer-contact</p>
+            {{else}} <p style="white-space: normal; inline-size: 150px; overflow-wrap: break-word;word-break: break-all;">No information provided. Please create a page with the tag #footer-contact</p>
             {{/foreach}}
             {{/get}}
         </section>
@@ -33,11 +28,7 @@
             <nav class="gh-foot-menu">
             {{content}}
             </nav>
-            {{else}}
-            <p style="white-space: normal;
-    inline-size: 150px;
-    overflow-wrap: break-word;
-  word-break: break-all;">No information provided. Please create a page with the tag #footer-links</p>
+            {{else}}<p style="white-space: normal; inline-size: 150px; overflow-wrap: break-word;word-break: break-all;">No information provided. Please create a page with the tag #footer-links</p>
             {{/foreach}}
         {{/get}}
         </section>
@@ -48,6 +39,7 @@
         </section>
     </footer>
 </div>
+
 <div class="gh-foot-second gh-foot gh-outer">
         <div class="second-footer gh-inner">
         <section class="legal">

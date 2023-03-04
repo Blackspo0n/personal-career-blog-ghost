@@ -2,14 +2,14 @@
 <div id="gh-head" class="gh-head gh-outer">
     <header class="gh-head-inner gh-inner">
         <div class="pcb-brand gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
+            <a class="gh-head-logo" href="{{@site.url}}/blog">
                 {{#if @site.logo}}<img src="{{@site.logo}}" alt="{{@site.title}}">{{else}}{{@site.title}}{{/if}}
             </a>
             <label for="side-menu" class="hamb gh-btn gh-outline-btn"><span class="hamb-line"></span></label>
         </div>
         <nav class="gh-head-menu">
             {{~navigation~}}
-            <div class="pcb-head-actions gh-head-actions">
+            <div class="gh-head-actions">
                 {{~> components/navbarButtons~}}
             </div>
         </nav>

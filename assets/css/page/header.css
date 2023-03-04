@@ -122,7 +122,7 @@
 
 @media (max-width: 767px) {
     /** navbar collapsed **/ 
-    .pcb-brand .gh-search {
+    .gh-brand .gh-search {
         display: inherit;
     }
     .hamb {
@@ -133,7 +133,7 @@
         grid-template-columns: 1fr;
     }
 
-    .gh-head .pcb-brand {
+    .gh-head .gh-brand {
         align-items: center;
         display: grid;
         grid-column-start: 1;

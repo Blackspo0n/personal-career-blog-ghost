@@ -11,10 +11,11 @@
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     overflow-x: auto;
     padding: 1rem;
+
 
 }
 .blog-template .post-article-annoucement {

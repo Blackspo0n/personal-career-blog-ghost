@@ -1,7 +1,6 @@
 .page-template .gh-page {
     display: grid;
     grid-template-rows: min-content 1fr auto;
-
 }
 
 .page-template .primary-tag {
@@ -24,7 +23,6 @@
 
 .page-template .gh-page .article-header {
     background-color: rgb(71,170,245);
-    /*background: linear-gradient(to right,  rgba(71,170,245,1) 0%,rgba(0,86,179,1) 100%,rgba(71,170,245,1) 100%); */
     padding: 1.5rem var(--gap);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     z-index:2;

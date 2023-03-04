@@ -1,17 +1,16 @@
 <div class="hero">
+    {{#get "pages" limit="1" filter="tag:hash-hero-description" as |hero|  }}
+
+    {{#hero}}
     <section class="about-hero">
         <header>
             <div class="pretext">Understanding requirements and combining them to solutions!</div>
             <h1 class="heading">It's a me, <span class="highlight text-gardient">Mario Kellner</span>!<br/>I'm an IT solution architect.</h1>
         </header>
         <main>
-            <p>
-                Glad to see you here! Let me quickly define what an IT solution architect is. Such a person must come up with possible solutions to solve business problems using IT. And that's exactly what I do. I enjoy understanding different IT systems, technologies, interfaces, frameworks, etc. in order to prototype different solutions for a problem or use case.
-            </p>
-            <p>    
-                Currently, I am based in Bocholt, Germany, a small town near Münster, and I work full-time for the company Cronos. I want to get more into writing and also improve my language skills futher.
-            </p>
-        </main> 
+            <p>Glad to see you here! Let me quickly define what an IT solution architect is. Such a person must come up with possible solutions to solve business problems using IT. And that's exactly what I do. I enjoy understanding different IT systems, technologies, interfaces, frameworks, etc. in order to prototype different solutions for a problem or use case.</p>
+            <p>Currently, I am based in Bocholt, Germany, a small town near Münster, and I work full-time for the company Cronos Automation GmbH. I want to get more into writing and also improve my language skills further.</p>
+        </main>
         <footer>
             <a href="/blog"class="gh-btn gh-outline-btn">To my blog</a>
             <a href="mailto:kmario-kellner@web.de" class="gh-btn gh-primary-btn gh-gardient-btn">Get in contact</a>
@@ -23,5 +22,7 @@
         {{else}}
         <img src="{{img_url @site.cover_image size="l"}}"/>
         {{/if}}
-    </section>
+    </section>            
+    {{/hero}}
+    {{/get}}
 </div>
