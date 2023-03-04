@@ -1,11 +1,10 @@
-{{!< default}}
 {{#post}}
 {{#if primary_tag.accent_color}}
 {{#contentFor "themecolor"}}{{primary_tag.accent_color}}{{/contentFor}}
 {{else}}
 {{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
 {{/if}}
-
+{{!< default}}
 <div class="gh-outer">
 <main class="gh-inner main-content grid-content">
     <aside class="nav-sidebar sidebar-left">

@@ -20,7 +20,7 @@ Im a big fan of the plugin Noscript and I like sites that are at least viewable 
 
 There also come downsites with my try to use less javascript. 
 Some Ghost features like "Sign up" to a newsletter and even the searchbar aren´t functional without javascript. 
-But Ii will try to implement solution that work even without it.
+But I will try to implement solution that work even without it.
 
 But for now my goal is to create at least my expected theme without javascript.
 

@@ -1,10 +1,10 @@
-{{!< default}}
 {{#post}}
 {{#if primary_tag.accent_color}}
 {{#contentFor "themecolor"}}{{primary_tag.accent_color}}{{/contentFor}}
 {{else}}
 {{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
 {{/if}}
+{{!< default}}
 <article class="gh-page article {{post_class}} {{page_class}}">
     {{#if feature_image}}
         <figure class="article-image">

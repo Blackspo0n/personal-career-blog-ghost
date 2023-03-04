@@ -9,7 +9,6 @@
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel="shortcut icon" href="{{@site.icon}}" />
 
     {{! meta for mobile}}
     <meta name="HandheldFriendly" content="True">
@@ -26,6 +25,7 @@
      {{{block "preload"}}}
 
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" async />
+    <link rel="shortcut icon" href="{{@site.icon}}" />
     <style>
         :root {
             --color-secondary: {{@custom.secondary_color}};

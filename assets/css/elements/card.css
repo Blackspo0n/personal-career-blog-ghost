@@ -28,7 +28,8 @@
     flex-wrap: wrap;
     width: 100%;
     padding: 1rem;
-    gap: 0.8rem;
+    gap: 0.8rem;;
+    overflow: hidden;
 }
 
 .gh-card .gh-header-title {
