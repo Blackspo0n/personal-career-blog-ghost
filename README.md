@@ -42,7 +42,7 @@ The following features are active in development:
 
 Copyright &copy; 2023 by Mario Kellner. Released under the [MIT license](https://github.com/Blackspo0n/personal-career-blog-ghost/blob/main/LICENSE).
 
-Excepted are the following files:
+The following files are excluded from MIT licensing:
 
 * custom-resume.hbs
 * hero.hbs
@@ -59,8 +59,11 @@ These files **must** modified before production use because containing my person
 ## Credits - Contribution
 
 The base of the template comes from the Ghost theme [Casper](https://github.com/TryGhost/Casperhttps:/).
+
 I tried to orientate at the this theme as much as I could.
+
 I used many of the css classes from [@tryghost/shared-theme-assets](https://socket.dev/npm/package/@tryghost/shared-theme-assets)
+
 I took insperation from the following site: [Developer Portfolios](https://github.com/emmabostian/developer-portfolios)
 
 ---
