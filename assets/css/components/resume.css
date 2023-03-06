@@ -56,7 +56,7 @@
 }
 .timeline-entry {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: auto 1fr;
     gap: 16px;
 }
 
@@ -64,6 +64,10 @@
     position: sticky;
     top: 10rem;
     align-self: start;
+    display: flex;
+    flex-flow: column;
+    gap: 32px;
+    align-items: center;
 }
 
 .timeline-entry .timespan .timespan-inner {
@@ -78,6 +82,8 @@
     box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
     border-radius: 6px;
     line-height: 2rem;
+    max-width: 10rem;
+    white-space: nowrap;
 }
 
 .timeline-entry .station {
@@ -87,6 +93,7 @@
     background-color: var(--color-background);
     padding: 1rem 2rem;
     border-radius:   0 10px 10px 0 ;
+    white-space: normal;
     box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
 }
 .timeline-entry .station:before {
@@ -106,12 +113,6 @@
     display: none;
 }
 
-.resume aside {
-    display: flex;
-    flex-flow: column;
-    gap: 32px;
-}
-
 .cv-photo {
     transform: rotate(5deg);
     border-width: 2px;
@@ -119,19 +120,50 @@
     padding: 0.6rem;
     border-image-source: linear-gradient(to left, var(--color-primary), var(--color-secondary));
     border-image-slice: 1;
+    width: fit-content;
+}
+.timeline-entry .responsive-icon {
+    display: none;
 }
 
+@media (max-width: 767px) {
+    .resume aside {
+        position: unset;
 
-@media (max-width: 768px) {
+    }
+    .resume aside .toc {
+        display: none;
+    }
     
-.timeline-entry .timespan-inner {
+.timeline-entry .responsive-icon {
+    display: block;
+}
+        
+    .resume {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "a"
+        "b";
+    }
+    
+    .timeline-entry .timespan-inner {
         display: block;
+    }
+    .timeline-entry header {
+        
+    display: grid;
+    grid-template-columns: 1fr auto;
+
     }
    
 .timeline-entry  .timespan {
         display: none;
     }
+.timeline-entry {
+    grid-template-columns: 1fr;
 }
+}
+
 
 .resume .skills {
     display: grid;

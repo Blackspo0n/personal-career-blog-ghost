@@ -1,0 +1,38 @@
+<section class="timeline-entry">
+    <div class="timespan">
+        <div class="timespan-inner">
+            {{#if imgURL}}                
+            <img width="64" src="{{imgURL}}" />
+            <hr />
+            {{/if}}
+            <time>{{from}}</time>
+            <time>{{to}}</time>
+        </div>
+    </div>
+    <div class="station">
+        <header>
+            <div class="timeline-wrapper">
+                <h2>{{position}}</h2>
+                <h3>{{company}}</h3>
+                <div class="timespan-inner">
+                    <time>{{from}}</time>
+                    <span>-</span>
+                    <time>{{to}}</time>
+                </div>
+            </div>
+            {{#if imgURL}}                
+            <img class="responsive-icon" width="64" src="{{imgURL}}" />
+            {{/if}}
+        </header>
+        <hr/>
+        <main>
+        {{{description}}}
+        </main>
+        {{#if companyURL}}
+        <hr />
+        <footer>
+        <a href="{{companyURL}}" class="highlight" target="_blank">> Go to {{company}}</a>
+        </footer>
+        {{/if}}
+    </div>
+</section>
