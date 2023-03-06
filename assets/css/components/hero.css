@@ -15,7 +15,7 @@
 }
 
 .hero .about-hero main {
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .hero .about-hero footer {
@@ -33,15 +33,29 @@
     text-align: center;
 }
 
-.hero-photo img {
-
+.hero footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
+@media (max-width:640px) { 
+    .hero .gh-btn {
+        width: 100%;
+         font-size: 1.75em; 
+         font-weight: 800;
+    }
+}
+  
 @media (max-width: 950px) {
     .hero {
         grid-template-columns: 1fr;
         grid-auto-flow: column;
         grid-template-areas: "b"
                             "a";
+    }
+
+    .hero header {
+        text-align: center;
     }
 }

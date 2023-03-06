@@ -2,7 +2,7 @@
 .about-me {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
-    gap: calc(var(--gap)*2);
+    gap: calc(var(--gap));
     align-items: center;
     grid-template-areas: "a b";
 }
@@ -29,11 +29,15 @@
     gap: calc(var(--gap)/2);
     flex-wrap: wrap;
 }
+.about-me .badge i {
+    font-size: 2.5rem;
+    color: var(--color-primary-text);
+}
 
 .about-me .badge {
     background-color: var(--color-background-accient-3);
     border-radius: 6px;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem 1rem 2rem;
     color: var(--color-text-accient-1);
     justify-content: space-between;
     display: flex;
@@ -83,5 +87,13 @@
         grid-auto-flow: column;
         grid-template-areas: "b"
                             "a";
+    }
+
+    .about-me ul li {
+        display: block;
+    }
+
+    .about-me ul li h4 {
+        display: inline;
     }
 }

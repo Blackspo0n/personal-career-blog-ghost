@@ -1,7 +1,4 @@
 <div class="hero">
-    {{#get "pages" limit="1" filter="tag:hash-hero-description" as |hero|  }}
-
-    {{#hero}}
     <section class="about-hero">
         <header>
             <div class="pretext">Understanding requirements and combining them to solutions!</div>
@@ -22,7 +19,5 @@
         {{else}}
         <img src="{{img_url @site.cover_image size="l"}}"/>
         {{/if}}
-    </section>            
-    {{/hero}}
-    {{/get}}
+    </section>
 </div>
