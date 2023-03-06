@@ -6,6 +6,7 @@
 {{/if}}
 {{!< default}}
 <article class="gh-page article {{post_class}} {{page_class}}">
+    <div class="wrapper">
     {{#if feature_image}}
         <figure class="article-image">
             <div class="aspect-ratio">
@@ -24,11 +25,10 @@
             </div>
         </figure>
     {{/if}}
-    <header class="article-header{{#primary_tag}}
-    {{#if accent_color }} gradient-effect{{else}} default-color{{/if}}
-    {{/primary_tag}}" {{#primary_tag}}{{#if accent_color}}style="background-color: {{accent_color}};"{{/if}}{{/primary_tag}}>
-        <h1 class="article-title">{{title}}</h1>
-    </header>
+        <header class="article-header{{#primary_tag}}{{#if accent_color }} gradient-effect{{else}} default-color{{/if}}{{/primary_tag}}" {{#primary_tag}}{{#if accent_color}}style="background-color: {{accent_color}};"{{/if}}{{/primary_tag}}>
+            <h1 class="article-title">{{title}}</h1>
+        </header>
+    </div>
     <div class="gh-inner gh-article">
         <header class="gh-article-header">
             <div class="gh-header-tags">{{tags seperator=", "}}</div>
