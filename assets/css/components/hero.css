@@ -1,8 +1,6 @@
 /** hero segment */
 .hero {
-    display: grid;
     grid-template-columns: 1fr auto;
-    gap: var(--gap);
     align-items: center;
     grid-template-areas: "a b";
 }
@@ -12,10 +10,6 @@
 }
 .hero .about-hero {
     grid-area: a;
-}
-
-.hero .about-hero main {
-    /* text-align: justify; */
 }
 
 .hero .about-hero footer {
@@ -42,12 +36,14 @@
 @media (max-width:640px) { 
     .hero .gh-btn {
         width: 100%;
-         font-size: 1.75em; 
-         font-weight: 800;
+        font-weight: 800;
+    }
+    .hero h1 {
+        font-size: 4rem;
     }
 }
   
-@media (max-width: 950px) {
+@media (max-width: 767px) {
     .hero {
         grid-template-columns: 1fr;
         grid-auto-flow: column;
