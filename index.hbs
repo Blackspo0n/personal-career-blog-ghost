@@ -31,7 +31,7 @@
                 <div class="pretext">Imho good stuff to read.</div>
                 <h2 class="heading">Featured article</h2>
             </header>
-            {{#get "posts" limit="1" filter="tag:hash-announcement" orderby="published_at desc"}}
+            {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
                 {{#foreach posts}}
                     <article>
                         {{> components/post-card showExcerp=true vertical=true}}

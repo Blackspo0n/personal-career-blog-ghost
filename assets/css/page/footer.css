@@ -1,6 +1,5 @@
 .gh-foot {
     background-color: var(--color-background-primary-footer);
-    
     border-top: var(--color-border) 1px solid;
     color: var(--color-text-reverse);
     padding-top: 0;
@@ -191,13 +190,13 @@ footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
           "resources-2";
     }
     
-    .gh-foot a,  .gh-foot h1,  .gh-foot h2,  .gh-foot h3,  .gh-foot h4,  .gh-foot h5,  .gh-foot h6, .gh-foot-menu ul, .gh-foot-menu li {
+    .gh-foot footer a,  .gh-foot footer h1,  .gh-foot footer h2,  .gh-foot footer h3,  .gh-foot footer h4,  .gh-foot footer h5,  .gh-foot footer h6, .gh-foot-menu ul, .gh-foot-menu li {
         justify-content: center;
         align-items: center;
         width: 100%;
         text-align: center;
         align-items: center;
-    display: flex;
+        display: flex;
     }
 
     

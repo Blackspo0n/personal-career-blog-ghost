@@ -9,7 +9,7 @@
     </header>
 
     <main class="grid grid-auto">
-        {{#get "posts" filter="featured:true" limit="all"}}
+        {{#get "posts" filter="featured:true" include="tags" limit="all"}}
         {{#foreach posts limit="6"}}
             {{> components/post-card showExcerp=true}}
         {{else}}
