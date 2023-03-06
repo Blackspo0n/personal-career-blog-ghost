@@ -31,6 +31,10 @@ header.with-action .pretext {
     width: 100%;
 }
 
+figcaption {
+    margin-top: 0;
+}
+
 p {
     margin: 12px 0;
     font-size: 1.6rem;
