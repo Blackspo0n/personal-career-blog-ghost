@@ -1,45 +1,41 @@
 {{!< default}}
 <div class="gh-main gh-outer blog-template">
 <header class="gh-inner">
-    <div class="pretext"></div>
     <h1 class="heading">Browse <span class="highlight text-gardient">{{@site.title}}</span>!</h1>
     <p>{{@site.description}}</p>
 </header>
-    <aside class="populartags gh-inner">        
-        <header class="with-action">
-            <div class="pretext">Browse some topics!</div>
-            <h2 class="heading">Tags &amp; Categories:</h2>
-            <div class="actions">
-                <a href="/tags" class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
-            </div>
+<aside class="populartags gh-inner">        
+    <header class="with-action">
+        <div class="pretext">Browse some topics!</div>
+        <h2 class="heading">Tags &amp; Categories:</h2>
+        <div class="actions">
+            <a href="/tags" class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
+        </div>
+    </header>
+    <main class="tags">
+    {{#get "tags" limit=11 order="count.posts desc"}}
+    {{#foreach tags}}
+        <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
+            {{name}}
+        </a>
+    {{else}}
+    <p>There were no tags...</p>
+    {{/foreach}}
+    {{/get}}
+    </main>
+</aside>
+
+<section id="announced" class="post-article-annoucement gh-inner">
+        <header>
+            <div class="pretext">Imho good stuff to read.</div>
+            <h2 class="heading">Featured article</h2>
         </header>
-        <main class="tags">
-        {{#get "tags" limit=11 order="count.posts desc"}}
-        {{#foreach tags}}
-            <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
-                {{name}}
-            </a>
-        {{else}}
-        <p>There were no tags...</p>
+        {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
+        {{#foreach posts}}
+            {{> components/post-card showExcerp=true vertical=true}}
         {{/foreach}}
         {{/get}}
-        </main>
-    </aside>
-
-    <section id="announced" class="post-article-annoucement gh-inner ">
-            <header>
-                <div class="pretext">Imho good stuff to read.</div>
-                <h2 class="heading">Featured article</h2>
-            </header>
-            {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
-                {{#foreach posts}}
-                    <article>
-                        {{> components/post-card showExcerp=true vertical=true}}
-                    </article>
-                {{/foreach}}
-            {{/get}}
-            
-    </section>
+</section>
 
 <main id="content" class="gh-inner">
     <header class="with-action">
@@ -53,7 +49,7 @@
     </section>
 </main>
 
-<footer class="">
+<footer>
     <hr />
     {{pagination}}
 </footer>

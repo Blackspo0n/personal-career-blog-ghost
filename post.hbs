@@ -20,7 +20,7 @@
             <header class="gh-article-header">
                 <div class="gh-header-tags">{{tags seperator=", "}}</div>
                 <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
-                <time class="gh-card-date" datetime="{W{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{date}}</time>
+                <time class="gh-card-date" datetime="{{date published_at format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{date published_at}}</time>
                 <h1 class="gh-article-title">{{title}}</h1>
             </header>                    
             <figure class="article-image aspect-ratio">
@@ -61,10 +61,10 @@
             </section>
             <footer class="gh-article-footer">
                 <div class="gh-article-meta-inner">
-                    <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Published
+                    <time class="gh-article-date" datetime="{{date published_at format="YYYY-MM-DD"}}">Published
                     {{#if primary_tag}} in <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-                    {{/if}} on {{date}}</time><br />
-                    <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Last updated on {{date}}</time>
+                    {{/if}} on {{date published_at}}</time><br />
+                    <time class="gh-article-date" datetime="{{date updated_at format="YYYY-MM-DD"}}">Last updated on {{date updated_at }}</time>
                 </div>
                 <hr/>
                 <nav class="gh-navigation">

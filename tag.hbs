@@ -1,10 +1,9 @@
-{{!< default}}
 {{#tag}}
 {{#if accent_color}}
 {{#contentFor "themecolor"}}{{accent_color}}{{/contentFor}}
 {{/if}}
-
-<article class="gh-page tag {{post_class}} {{page_class}}">
+{{!< default}}
+<article class="gh-page tag {{post_class}}">
     <div class="wrapper">
     {{#if feature_image}}
         <figure class="article-image">
@@ -36,10 +35,9 @@
             {{#if description}}
             <div class="tag-description">{{description}}</div>
             <hr />
-            {{/if}}
-            
+            {{/if}} 
     {{/tag}}
-            <section class="featured-posts grid grid-auto">
+            <section class="grid grid-auto">
                 {{#foreach posts }}
                     {{> components/post-card showExcerp=true}}
                 {{else}}
@@ -48,18 +46,10 @@
             </section>
         </main>
     </div>
-    {{#tag}}
+
     <footer class="gh-article-footer">
-        <div class="gh-article-meta-inner">
-            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Published
-            {{#if primary_tag}} in <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            {{/if}} on {{date}}</time><br />
-            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">Last updated on {{date}}</time>
-    {{/tag}}            
-        
-        </div>
+            <div class="gh-article-meta-inner">There are {{plural pagination.total empty='posts' singular='% post' plural='% posts'}} with the tag {{tag.name}} on this blog.</div>
         <hr />
         {{pagination}}
     </footer>
-
 </article>
