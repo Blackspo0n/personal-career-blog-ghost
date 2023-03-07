@@ -8,7 +8,7 @@
 
 .timeline {
     display: flex;
-    gap: calc(var(--gap)/3);
+    gap: calc(var(--gap)/2);
     flex-flow: column;
 }
 
@@ -35,7 +35,7 @@
     font-size: 2.2rem;
 }
 
-.resume section p {
+.resume section .timeline p {
     text-align: justify;
 }
 .resume h3 {
@@ -54,6 +54,17 @@
     font-size: 1.5rem;
     letter-spacing: -0.05rem;
 }
+
+.resume .wrapper {
+    
+    text-align: center;
+    justify-items: center;
+}
+
+.resume dt::after {
+    content: ": ";
+  }
+
 .timeline-entry {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -124,6 +135,10 @@
 }
 .timeline-entry .responsive-icon {
     display: none;
+}
+
+.resume .wrapper {
+    padding: var(--gap) 0 ;
 }
 
 @media (max-width: 767px) {

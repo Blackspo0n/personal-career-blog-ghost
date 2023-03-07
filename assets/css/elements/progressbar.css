@@ -49,10 +49,10 @@
     height: 100%;
     width: 0;
     background-color: var(--color-background);
-    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200%;
+    background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200% var(--color-background);
     
   }
  
   .steps::after {
-    content: attr(value) " / " attr(max) " practice level archived";
+    content: "lvl. " attr(value) "/" attr(max) ;
   }

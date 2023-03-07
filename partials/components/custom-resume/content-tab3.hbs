@@ -1,6 +1,42 @@
 <div class=" skills grid grid-auto">
-    <div class="skill">
-        <h5 class="progress-label">Requirements Engineering</h5>
-        <progress class="steps" title="My daily business" max="10" value="8"></progress>
-    </div>
+    {{~>components/custom-resume/progress-bar
+        progressTitle="HTML/CSS"
+        progressDescription="Using it"
+        value="7"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle=".NET (C#, VB.NET, F#)"
+        progressDescription="Fundamentle knowledge"
+        value="8"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="Computer Architectur"
+        progressDescription="Built my own breadboard cpu"
+        value="7"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="Javascript / NodeJS"
+        progressDescription="Using it for advanced projects"
+        value="8"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="C & C++"
+        progressDescription="I know the important parts."
+        value="3"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="HTML/CSS"
+        progressDescription="Using it"
+        value="7"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="Webframeworks (Tailwind/Angular/Vue, etc)"
+        progressDescription="What a iceberg of different frameworks"
+        value="4"
+    ~}}
+    {{~>components/custom-resume/progress-bar
+        progressTitle="DevOps / Pipelining"
+        progressDescription="Worked with different tools"
+        value="7"
+    ~}}
 </div>
