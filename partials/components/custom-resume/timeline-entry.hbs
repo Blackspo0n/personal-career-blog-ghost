@@ -1,19 +1,30 @@
 <section class="timeline-entry">
-    <div class="timespan">
-        <div class="timespan-inner">
+    <aside class="meta {{#if even}}left{{else}}right{{/if}}">
+        <div class="meta-inner timespan-inner">
             {{#if imgURL}}                
             <img width="64" src="{{imgURL}}" />
-            <hr />
             {{/if}}
-            <time>{{from}}</time>
+            <div clas="timespan-wrapper">
+            <time>{{from}}</time> <br/>
             <time>{{to}}</time>
+            </div>
         </div>
-    </div>
-    <div class="station">
+        {{#if meta1}}
+        <div>
+            {{meta1}}
+        </div>
+        {{/if}}
+
+        <div class="meta-inner">
+           Go to <a href="{{companyURL}}" class="highlight" target="_blank">{{company}}</a>
+        </div>
+    </aside>
+    <div class="station {{#if even}}right{{else}}left{{/if}}">
+        <div class="station-inner">
         <header>
             <div class="timeline-wrapper">
-                <h2>{{position}}</h2>
-                <h3>{{company}}</h3>
+                <h3>{{position}}</h3>
+                <h4>{{company}}</h4>
                 <div class="timespan-inner">
                     <time>{{from}}</time>
                     <span>-</span>
@@ -31,8 +42,9 @@
         {{#if companyURL}}
         <hr />
         <footer>
-        <a href="{{companyURL}}" class="highlight" target="_blank">> Go to {{company}}</a>
+        Go to <a href="{{companyURL}}" class="highlight" target="_blank">{{company}}</a>
         </footer>
         {{/if}}
+        </div>
     </div>
 </section>

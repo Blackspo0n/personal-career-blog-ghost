@@ -1,6 +1,11 @@
+{{#if profile_image}}
+{{#contentFor "preload"}}
+<link rel="preload" as="image" href="{{img_url cover_image size="l"}}" />
+{{/contentFor}}
+{{/if}}
 {{!< default}}
 {{#author}}
-<div class="author-excerp gh-outer" style="--var-author-background: url('{{img_url cover_image size="xxl"}}')">
+<div class="author-excerp gh-outer" style="--var-author-background: url('{{img_url cover_image size="l"}}')">
     <div class="gh-inner">
         {{#if profile_image}}
             <img class="gh-author-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">

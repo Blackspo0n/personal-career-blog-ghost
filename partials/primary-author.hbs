@@ -1,12 +1,15 @@
 {{#primary_author}}
 <div class="primary-author">
     <a href="{{url}}"><img src="{{img_url profile_image size="s"}}"/></a>
+
     <section id="author">
+        <a href="{{url}}">
         <h4>{{name}}</h4>
         <main>
             {{bio}}
         </main>
         <hr />
+        </a>
         <footer>
             {{#if website}}
                 <a href="{{website}}" target="_blank" rel="noopener"><i class="las la-link"></i></a>

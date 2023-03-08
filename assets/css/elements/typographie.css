@@ -52,6 +52,38 @@ h1 {
     color: var(--color-primary);    
 }
 
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    max-width: 670px;
+}
+dl > * {
+    padding-top: 0.5em;
+}
+dt {
+    width:30%;
+    font-weight: bold;
+    text-align:right;
+}
+dd {
+    width:60%;
+    padding-left:1em;
+    margin-left: 0px;
+}
+dd + dd {
+    width: 100%;
+    padding-left: calc(30% + 1em);
+}
+dt + dt {
+    padding-right: 60%;
+}
+dt + dt + dd {
+    margin-top: -1.625em;
+    padding-left: calc(30% + 1em);
+}
+
+
 @media (min-width: 330px) {
   .full-width {
     width: 100vw;

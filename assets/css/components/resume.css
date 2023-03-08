@@ -6,11 +6,7 @@
     position: relative;
 }
 
-.timeline {
-    display: flex;
-    gap: calc(var(--gap)/2);
-    flex-flow: column;
-}
+
 
 .resume aside {
     grid-area: a;
@@ -35,9 +31,6 @@
     font-size: 2.2rem;
 }
 
-.resume section .timeline p {
-    text-align: justify;
-}
 .resume h3 {
     font-size: 1.8rem;
     color: var(--color-text-accient);
@@ -61,15 +54,7 @@
     justify-items: center;
 }
 
-.resume dt::after {
-    content: ": ";
-  }
 
-.timeline-entry {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-}
 
 .resume aside {
     position: sticky;
@@ -81,49 +66,6 @@
     align-items: center;
 }
 
-.timeline-entry .timespan .timespan-inner {
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    color: var(--color-text-accient-1);
-    font-size: 1.6rem;
-    padding: 0.5rem;
-    border: var(--color-border-2) solid 1px;
-    background-color: var(--color-background);
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
-    border-radius: 6px;
-    line-height: 2rem;
-    max-width: 10rem;
-    white-space: nowrap;
-}
-
-.timeline-entry .station {
-    border-left: var(--color-border-2) solid 2px;
-    padding-left: 2.5rem;
-    position: relative;
-    background-color: var(--color-background);
-    padding: 1rem 2rem;
-    border-radius:   0 10px 10px 0 ;
-    white-space: normal;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
-}
-.timeline-entry .station:before {
-    background-color: var(--color-background);
-    content: "\f1ce";
-    position: absolute;
-    left: -11px;
-    font-family: Line Awesome Free;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 19px;
-    color: var(--color-text-accient);
-
-}
-
-.timeline-entry .timespan-inner {
-    display: none;
-}
-
 .cv-photo {
     transform: rotate(5deg);
     border-width: 2px;
@@ -133,12 +75,10 @@
     border-image-slice: 1;
     width: fit-content;
 }
-.timeline-entry .responsive-icon {
-    display: none;
-}
+
 
 .resume .wrapper {
-    padding: var(--gap) 0 ;
+    padding: var(--gap) 0;
     
     justify-content: center;
     justify-items: center;
