@@ -139,6 +139,12 @@
 
 .resume .wrapper {
     padding: var(--gap) 0 ;
+    
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
