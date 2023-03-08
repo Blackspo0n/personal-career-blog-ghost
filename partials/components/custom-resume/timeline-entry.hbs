@@ -5,7 +5,7 @@
             <img width="64" src="{{imgURL}}" />
             {{/if}}
             <div clas="timespan-wrapper">
-            <time>{{from}}</time> <br/>
+            <time>{{from}}</time><br/>
             <time>{{to}}</time>
             </div>
         </div>
@@ -15,9 +15,7 @@
         </div>
         {{/if}}
 
-        <div class="meta-inner">
-           Go to <a href="{{companyURL}}" class="highlight" target="_blank">{{company}}</a>
-        </div>
+        <div class="meta-inner"><a href="{{companyURL}}" class="highlight" target="_blank">{{company}}</a></div>
     </aside>
     <div class="station {{#if even}}right{{else}}left{{/if}}">
         <div class="station-inner">
@@ -39,12 +37,6 @@
         <main>
         {{{description}}}
         </main>
-        {{#if companyURL}}
-        <hr />
-        <footer>
-        Go to <a href="{{companyURL}}" class="highlight" target="_blank">{{company}}</a>
-        </footer>
-        {{/if}}
         </div>
     </div>
 </section>
