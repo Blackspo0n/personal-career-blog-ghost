@@ -25,7 +25,12 @@
 .portfolio-card .image {
     flex-grow: 1;
     flex-basis: 45%;
-    align-self: center;
+    align-self: stretch;
+}
+
+.portfolio-card .image img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .portfolio-card:hover {
