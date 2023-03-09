@@ -1,0 +1,84 @@
+.portfolio-card {
+    margin: 5rem 2rem;
+    border: var(--color-border-2) solid 1px;
+    background-color: var(--color-background);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 2px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    transition: transform 0.2s ease-in-out;
+    display: flex;    
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+}
+
+.portfolio-card:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.portfolio-card .portfolio-description {
+    flex-grow: 6;
+    padding: 2rem;
+    text-align: center;
+    flex-basis: 55%;
+
+}
+.portfolio-card .image {
+    flex-grow: 1;
+    flex-basis: 45%;
+    align-self: center;
+}
+
+.portfolio-card:hover {
+    
+    transform: translate(0,-0.5rem);
+}
+
+.portfolio-card .image {
+    padding: 2rem;
+}
+
+.portfolio-card .portfolio-description .tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    flex-direction: row;
+    padding: 2rem 0;
+}
+
+.portfolio-card .portfolio-description .link {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.portfolio-card .portfolio-description .link a {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.portfolio-card .portfolio-description .tech-stack * {
+    background-color: var(--color-background);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 4px;
+    letter-spacing: -.05rem;
+    border-top: 2px solid var(--color-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -.05rem;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.portfolio-card .portfolio-description h3 {
+    font-size: 2rem;
+    color: var(--color-text-accient);
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+}
+
+.portfolio-card .portfolio-description h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.05rem;
+}

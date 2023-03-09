@@ -1,5 +1,10 @@
-{{!< default}}
 {{#post}}
+{{#if primary_tag.accent_color}}
+{{#contentFor "themecolor"}}{{primary_tag.accent_color}}{{/contentFor}}
+{{else}}
+{{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
+{{/if}}
+{{!< default}}
 <div class="gh-outer">
 <main class="gh-main gh-inner">
 
@@ -61,16 +66,17 @@
                         company="cronos automation GmbH - Münster"
                         position="Technical Head for Automation"
                         description= "
-                            <p>cronos automation was founded in 2020 as a 100 % subsidiary computer from cronos Unternehmensberatung</p>
-                            <p>The focus was not only to reach comanpies within the existing network. cauto want to reach other audience in other divisions too.</p>
-                            <p>
-                                My current position as \"Technical Head for Automation\" gives me an insight into the IT architectures of various customers.
-                                My task in this position is to guide us and customers too into the right direction in everything automation related. </p>
-                            <p>
-                                I also move projects with a focus on process optimisation and process automation together with customers
-                                into the phase in which an RPA developer can automate the business processes with the information and requirements developed.
-                                I am also available as a technical contact for questions from colleagues and customers.
-                            </p>
+                            <p>Cronos Automation was founded in 2020 as a 100% subsidiary company of Cronos Unternehmensberatung.</p>
+	<p>The focus was not only to reach companies within the existing network. Cauto wants to reach other audiences in other divisions too.</p>
+	<p>
+		My current position as \"Technical Head for Automation\" gives me insight into the IT architectures of various customers.
+		My task in this position is to guide both us and customers towards the right direction in everything automation-related.
+	</p>
+	<p>
+		I also move projects with a focus on process optimization and process automation together with customers
+		into the phase in which an RPA developer can automate the business processes with the information and requirements developed.
+		I am also available as a technical contact for questions from colleagues and customers.
+	</p>
                         "
                         imgURL="data:image/vnd.microsoft.icon;base64,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"
                         companyURL="https://www.cronos.de/robotic-process-automation"
@@ -181,6 +187,7 @@
                 </div>
             </div>
         </section>
+        {{#contentFor comment}}
         <section id="personal-feedback">
             <h1><span class="highlight text-gardient">References</span></h1>
             <p>
@@ -205,6 +212,7 @@
                 </ul>
             </div>
         </section>
+        {{/contentFor}}
         <section id="projects">
             <h1><span class="highlight text-gardient">Projects</span> I am worked on</h1>
             <p>
@@ -213,10 +221,37 @@
             <p>
                 But take a look at the list below to see what projects I have been involved in.
             </p>
-            <div class="grid grid-auto">
-                {{~> components/custom-resume/portfolio-card ~}}
-                {{~> components/custom-resume/portfolio-card ~}}
-                {{~> components/custom-resume/portfolio-card ~}}
+            <div class="projects-inner">
+                {{~> components/custom-resume/portfolio-card
+                    projectTitle="Postprocessing Stock Take Process"
+                    from="Sep 2021" until="Dez 2022"
+                    callToActions='<a href="{{@custom.github_link}}" class="gh-btn gh-primary-btn"  target="_blank">Visit details <i class="lab la-github"></i></a>
+            '
+                    imgUrl="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                    tech-stack="<span>Hallo</span>"
+                    position="IT Solution Architect"
+                    projectDescription="hallo"
+                ~}}
+                {{~> components/custom-resume/portfolio-card
+                    projectTitle="Postprocessing Stock Take Process"
+                    from="Sep 2021" until="Dez 2022"
+                    callToActions='<a href="{{@custom.github_link}}" class="gh-btn gh-primary-btn"  target="_blank">Visit details <i class="lab la-github"></i></a>
+            '
+                    imgUrl="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                    tech-stack="<span>Hallo</span>"
+                    position="IT Solution Architect"
+                    projectDescription="hallo"
+                ~}}
+                {{~> components/custom-resume/portfolio-card
+                    projectTitle="Postprocessing Stock Take Process"
+                    from="Sep 2021" until="Dez 2022"
+                    callToActions='<a href="{{@custom.github_link}}" class="gh-btn gh-primary-btn"  target="_blank">Visit details <i class="lab la-github"></i></a>
+            '
+                    imgUrl="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                    tech-stack="<span>Hallo</span>"
+                    position="IT Solution Architect"
+                    projectDescription="hallo"
+                ~}}
             </div>
         </section>
         <section id="education">
