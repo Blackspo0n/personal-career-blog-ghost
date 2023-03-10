@@ -4,6 +4,14 @@
 {{else}}
 {{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
 {{/if}}
+{{! TOC}}
+{{#contentFor "scripts"}}
+<script type="application/javascript" defer>
+window.addEventListener("load", () => {
+    ObserveSections();
+});
+</script>
+{{/contentFor}}
 {{!< default}}
 <div class="gh-outer">
 <main class="gh-main gh-inner">
@@ -575,13 +583,6 @@
         </nav>
     </aside>
 </article>
-
 </main>
 </div>
-<script type="application/javascript">
-window.addEventListener("load", () => {
-    ObserveSections();
-});
-</script>
-
 {{/post}}

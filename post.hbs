@@ -4,6 +4,14 @@
 {{else}}
 {{#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor}}
 {{/if}}
+
+{{#contentFor "scripts"}}
+<script type="application/javascript" defer>
+window.addEventListener("load", () => {
+    ObserveHeaders();
+});
+</script>
+{{/contentFor}}
 {{!< default}}
 <div class="gh-outer">
 <main class="gh-inner main-content grid-content">
@@ -117,9 +125,3 @@
 {{> comments}}
 {{/post}}
 </div>
-
-<script type="application/javascript">
-window.addEventListener("load", () => {
-    ObserveHeaders();
-});
-</script>
