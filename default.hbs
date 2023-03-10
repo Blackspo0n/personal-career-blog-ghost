@@ -26,17 +26,11 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" async />
     <link rel="shortcut icon" href="{{img_url @site.icon size="s"}}" />
-    <style>
-        :root {
-            --color-secondary: {{@custom.secondary_color}};
-        }
-    </style>
-
+    <style>:root {--color-secondary: {{@custom.secondary_color}};}</style>
     <script src="{{asset "built/main.min.js"}}" defer></script>
-    {{!- For future scripts remember use defer}}
-    {{!  i dont be a friend to place my scripts into the footer when i can simply use the defer statement}}
+    {{!-- For future scripts remember use defer}}
+    {{!--  i dont be a friend to place my scripts into the footer when i can simply use the defer statement}}
     {{{block "scripts"}}}
-    
     {{ghost_head}}
 </head>
 <body class="{{body_class}}{{{block "body_class"}}}">
@@ -49,4 +43,3 @@
 {{~ghost_foot~}}
 </body>
 </html>
-
