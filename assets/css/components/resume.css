@@ -94,35 +94,13 @@
     }
     .resume aside .toc {
         display: none;
-    }
-    
-.timeline-entry .responsive-icon {
-    display: block;
-}
-        
+    }   
     .resume {
         grid-template-columns: 1fr;
         grid-template-areas: 
         "a"
         "b";
     }
-    
-    .timeline-entry .timespan-inner {
-        display: block;
-    }
-    .timeline-entry header {
-        
-    display: grid;
-    grid-template-columns: 1fr auto;
-
-    }
-   
-.timeline-entry  .timespan {
-        display: none;
-    }
-.timeline-entry {
-    grid-template-columns: 1fr;
-}
 }
 
 
@@ -133,4 +111,8 @@
 
 .resume .toc h4 {
     padding-bottom: 1rem;;
+}
+
+.resume .hobby > div > i {
+    font-size: 6rem;
 }

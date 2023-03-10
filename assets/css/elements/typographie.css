@@ -52,36 +52,36 @@ h1 {
     color: var(--color-primary);    
 }
 
+
+
 dl {
-    display: flex;
-    flex-wrap: wrap;
     width:100%;
     max-width: 670px;
     margin: 0 auto;
 }
+
+
 dl > * {
     padding-top: 0.5em;
 }
+
 dt {
-    width:30%;
+    border-bottom: 0.5rem solid var(--color-border-2);
+    border-image-source: linear-gradient(to right top, var(--color-primary), var(--color-secondary));
+    border-image-slice: 1;
+}
+
+dt {
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: right;
     font-weight: bold;
-    text-align:right;
 }
+
 dd {
-    width:60%;
-    padding-left:1em;
-    margin-left: 0px;
-}
-dd + dd {
-    width: 100%;
-    padding-left: calc(30% + 1em);
-}
-dt + dt {
-    padding-right: 60%;
-}
-dt + dt + dd {
-    margin-top: -1.625em;
-    padding-left: calc(30% + 1em);
+    margin: 0 0 0 210px;
+    padding: 0 0 0.5em 0;
 }
 
 

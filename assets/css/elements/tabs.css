@@ -2,6 +2,8 @@
     display: inline-block;
     background-color: var(--color-background-accient-2);
     cursor: pointer;
+    transition: background,color 0.3s ease;
+    user-select: none;
 }
 
 input[type=radio] { display: none; }
@@ -28,6 +30,7 @@ input#tab4:checked ~ .tab-menu label[for=tab4],
 input#tab5:checked ~ .tab-menu label[for=tab5] {
     background: linear-gradient(310deg,var(--color-primary),var(--color-secondary),var(--color-primary)) 0 /200%;
     color: var(--color-white);
+    transition: background,color 0.3s ease;
 }
 
 .tabbed {
@@ -49,4 +52,21 @@ input#tab5:checked ~ .tab-menu label[for=tab5] {
 
 .tabbed {
     margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+    .tabbed.vertical {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .tabbed.vertical .tab-menu {
+        margin-bottom: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tabbed.vertical .tab-menu .tab-menu-entry {
+        margin: 0;
+        padding: 0.5rem
+    }
 }

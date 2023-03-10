@@ -1,0 +1,9 @@
+.flex {
+    display:flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.flex > * {
+    flex-basis: 300px;
+}
