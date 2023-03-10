@@ -1,3 +1,8 @@
+{{#if @custom.hero_image}}
+{{#contentFor "preload"}}
+<link rel="preload" as="image" href="{{@custom.hero_image}}" />
+{{/contentFor}}
+{{/if}}
 <div class="hero grid">
     <section class="about-hero">
         <header>

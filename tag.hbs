@@ -2,6 +2,11 @@
 {{#if accent_color}}
 {{#contentFor "themecolor"}}{{accent_color}}{{/contentFor}}
 {{/if}}
+{{#if feature_image}}
+{{~#contentFor "preload"~}}
+<link rel="preload" as="image" imagesrcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 2000w" href="{{img_url feature_image size="s"}}" imagesizes="50vw" />
+{{~/contentFor~}}
+{{/if}}
 {{!< default}}
 <article class="gh-page tag {{post_class}}">
     <div class="wrapper">

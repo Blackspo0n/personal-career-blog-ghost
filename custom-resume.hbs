@@ -561,9 +561,16 @@ window.addEventListener("load", () => {
     </main>
     <aside>
         <figure class="cv-photo">
+            
             {{#if primary_author.profile_image}}
+            {{~#contentFor "preload"~}}
+            <link rel="preload" as="image" imagesrcset="{{img_url primary_author.profile_image size="s"}} 300w, {{img_url primary_author.profile_image size="m"}} 600w, {{img_url primary_author.profile_image size="l"}} 1000w, {{img_url primary_author.profile_image size="xl"}} 2000w" href="{{img_url primary_author.profile_image size="m"}}" imagesizes="50vw" />
+            {{~/contentFor~}}
             <img src="{{img_url primary_author.profile_image size="m"}}"/>
             {{else}}
+            {{~#contentFor "preload"~}}
+            <link rel="preload" as="image" imagesrcset="{{img_url @custom.hero_image size="s"}} 300w, {{img_url @custom.hero_image size="m"}} 600w, {{img_url @custom.hero_image size="l"}} 1000w, {{img_url @custom.hero_image size="xl"}} 2000w" href="{{img_url @custom.hero_image size="m"}}" imagesizes="50vw" />
+            {{~/contentFor~}}
             <img src="{{img_url  @custom.hero_image size="m"}}"/>
             {{/if}}
         </figure>
