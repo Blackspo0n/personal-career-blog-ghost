@@ -69,9 +69,6 @@ dt {
     border-bottom: 0.5rem solid var(--color-border-2);
     border-image-source: linear-gradient(to right top, var(--color-primary), var(--color-secondary));
     border-image-slice: 1;
-}
-
-dt {
     float: left;
     clear: left;
     width: 200px;
@@ -84,6 +81,18 @@ dd {
     padding: 0 0 0.5em 0;
 }
 
+@media (max-width: 640px) {
+    dt {
+        float: unset;
+        width: 100%;
+        text-align: left;
+
+    }
+
+    dd {
+        margin: 0;
+    }
+}
 
 @media (min-width: 330px) {
   .full-width {
