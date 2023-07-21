@@ -1,19 +1,17 @@
 {{#if @member}}
-<a href="javascript:" data-members-signout>Sign out</a>
+<a href="javascript:" data-members-signout>{{{t "Sign out"}}}</a>
 {{else}}
 <form data-members-form="subscribe" class="subscribe-form">
-    <p style="word-wrap: break-word;">
-        Subscribe and stay informed!
-    </p>
+    <p style="word-wrap: break-word;">{{{t "Get the latest posts delivered right to your inbox"}}}</p>
     <div class="gh-connected-input" >
-    <input data-members-email type="email" required="true" placeholder="Your email address"/>
-    <button class="gh-btn gh-primary-btn">Subscribe <i class="las la-spinner"></i></button>
+        <input data-members-email type="email" required="true" placeholder="{{t "Your email address"}}"/>
+        <button class="gh-btn gh-primary-btn">{{t "Subscribe"}} <i class="las la-spinner"></i></button>
     </div>
     <div class="status status-success">
-        Great! Check your inbox and click the link.
+        {{{t "Subscribe Successful"}}}
     </div>
     <div class="status status-error">
-        Sorry, something went wrong. Please try again.
+        {{{t "Sorry, something went wrong. Please try again."}}}
     </div>
 </form>
 {{/if}}

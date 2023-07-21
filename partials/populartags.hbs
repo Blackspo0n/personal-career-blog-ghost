@@ -1,19 +1,18 @@
 <section class="relevant-tags">
-<header class="with-action">
-    <div class="pretext">I love to learn new things!</div>
-    <h2 class="heading">Relevant topics on this site</h2>
-    <div class="actions">
-        <a href="/tags" class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
-    </div>
-</header>
-
-<main class="grid grid-auto-fill">
-{{#get "tags" limit=6 include="count.posts" order="count.posts desc"}}
-{{#foreach tags}}
-    {{> components/tag-card}}
-{{else}}
-<p>There were no tags...</p>
-{{/foreach}}
-{{/get}}
-</main>
+    <header class="with-action">
+        <div class="pretext">{{t "Tags Subline" }}</div>
+        <h2 class="heading">{{t "Tags Headline" }}</h2>
+        <div class="actions">
+            <a href="/tags" class="gh-btn gh-outline-secondary-btn">{{{t "View All Tags"}}}</a>
+        </div>
+    </header>
+    <main class="grid grid-auto-fill">
+    {{#get "tags" limit=6 include="count.posts" order="count.posts desc"}}
+    {{#foreach tags}}
+        {{> components/tag-card}}
+    {{else}}
+        <p>{{t "No Tags"}}</p>
+    {{/foreach}}
+    {{/get}}
+    </main>
 </section>

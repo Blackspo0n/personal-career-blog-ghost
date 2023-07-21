@@ -4,37 +4,37 @@
 {{~/contentFor~}}
 {{/if}}
 <article class="gh-card post-card {{tag_class}}">
-<a class="gh-card-link post-card-link" href="{{url}}">
-{{^if small}}
-<div class="gh-card-image-content post-card-header">
-    <figure class="gh-card-image">
-        <div class="aspect-ratio">
-            {{#if feature_image}}
-        <img class="aspect-ratio-in"
-                srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w"
-                src="{{img_url feature_image size="s"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" sizes="50vw" />
-        {{else}}
-            <div class="aspect-ratio-in{{#if accent_color}}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color}}{{accent_color}}{{/if}};"></div>
-        {{/if}}
+    <a class="gh-card-link post-card-link" href="{{url}}">
+    {{^if small}}
+        <div class="gh-card-image-content post-card-header">
+            <figure class="gh-card-image">
+                <div class="aspect-ratio">
+                    {{#if feature_image}}
+                <img class="aspect-ratio-in"
+                        srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w"
+                        src="{{img_url feature_image size="s"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" sizes="50vw" />
+                {{else}}
+                    <div class="aspect-ratio-in{{#if accent_color}}{{else}} gh-gardient-btn{{/if}}" style="background-color: {{#if accent_color}}{{accent_color}}{{/if}};"></div>
+                {{/if}}
+                </div>
+            </figure>
+            <div class="gh-header-title">
+                <h2>{{name}}</h2>
+            </div>
         </div>
-    </figure>
-    <div class="gh-header-title">
-        <h2>{{name}}</h2>
-    </div>
-</div>
-{{#if excerpt}}
-<main class="gh-card-content">
-    <div class="gh-card-text">{{excerpt}}</div>
-</main>
-{{/if}}
-<footer class="gh-card-footer">
-    Explore {{count.posts}} posts in {{name}}
-</footer>    
-{{else}}
-<div>
-    {{name}}
-</div>
-{{/if}}
-</a>
+        {{#if excerpt}}
+        <main class="gh-card-content">
+            <div class="gh-card-text">{{excerpt}}</div>
+        </main>
+        {{/if}}
+        <footer class="gh-card-footer">
+            {{t "Explore {postCount} posts in {tagName}" postCount=count.posts tagName=name}}
+        </footer>    
+        {{else}}
+        <div>
+            {{name}}
+        </div>
+    {{/if}}
+    </a>
 </article>

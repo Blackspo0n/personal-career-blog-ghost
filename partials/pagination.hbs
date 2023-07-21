@@ -1,15 +1,15 @@
 <nav class="gh-navigation">
     <div class="gh-navigation-previous">
     {{#if prev}}
-        <a class="gh-navigation-link" href="{{page_url prev}}">← Previous</a>
+        <a class="gh-navigation-link" href="{{page_url prev}}">{{t "Previous" }}</a>
     {{/if}}
     </div>
     <div class="gh-navigation-middle">
-        <span class="page-number">Page {{page}} of {{pages}}</span>
+        <span class="page-number">{{{t "Page {page} of {pages}" page=page pages=pages}}}</span>
     </div>
     <div class="gh-navigation-next">
     {{#if next}}
-        <a class="gh-navigation-link" href="{{page_url next}}">Next →</a><br />
+        <a class="gh-navigation-link" href="{{page_url next}}">{{t "Next"}}</a><br />
     {{/if}}
     </div>
 </nav>

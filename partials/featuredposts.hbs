@@ -1,20 +1,19 @@
 <section class="featured-posts">
     <header class="with-action">
-        <div class="pretext">Featured posts! Every one has a blog! Why not me too?</div>
-        <h2 class="heading">🔥 My hot stuff on the blog 🔥</h2>
+        <div class="pretext">{{t "Featured Post Subline"}}</div>
+        <h2 class="heading">{{t "Featured Post Headline"}}</h2>
         <div class="actions">
-            <a href="/featured" class="gh-btn gh-outline-secondary-btn">View all Featured<i class="las la-arrow-right"></i></a>
-            <a href="/blog" class="gh-btn gh-outline-secondary-btn">View Latest <i class="las la-arrow-right"></i></a>
+            <a href="/featured" class="gh-btn gh-outline-secondary-btn">{{{t "View Featured Posts"}}}</a>
+            <a href="/blog" class="gh-btn gh-outline-secondary-btn">{{{t "View Latest Posts"}}}</a>
         </div>
     </header>
-
     <main class="grid grid-auto">
-        {{#get "posts" filter="featured:true" include="tags" limit="all"}}
-        {{#foreach posts limit="6"}}
-            {{> components/post-card showExcerp=true}}
-        {{else}}
-            <p>There were no featured posts...</p>
-        {{/foreach}}
-        {{/get}}
+    {{#get "posts" filter="featured:true" include="tags" limit="all"}}
+    {{#foreach posts limit="6"}}
+        {{> components/post-card showExcerp=true}}
+    {{else}}
+        <p>{{t "No Featured Posts" }}</p>
+    {{/foreach}}
+    {{/get}}
     </main>
 </section>

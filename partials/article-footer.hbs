@@ -1,0 +1,33 @@
+<footer class="gh-article-footer">
+    <div class="gh-article-meta-inner">
+        <time class="gh-article-date" datetime="{{date published_at format="YYYY-MM-DD"}}">
+            {{#if primary_tag}}
+                {{{t "Published in {tagUrl} on {published}" tagUrl=(concat "<a class=\"gh-article-tag\" href=\"" primary_tag.url "\">" primary_tag.name "</a>") published=(date published_at) }}}
+            {{else}}
+                {{{t "Published on {published}" published=(date published_at) }}}
+            {{/if}}</time><br />
+        <time class="gh-article-date" datetime="{{date updated_at format="YYYY-MM-DD"}}">{{t "Last updated on {lastUpdate}" lastUpdate=(date updated_at) }}</time>
+    </div>
+    {{#if showNavigation}}
+    <hr/>
+    <nav class="gh-navigation">
+        <div class="gh-navigation-previous">
+            {{#prev_post}}
+                <div>
+                    <a class="gh-navigation-link" href="{{url}}">{{t "Previous"}}</a> <br />
+                    {{title}}
+                </div>
+            {{/prev_post}}
+        </div>
+        <div class="gh-navigation-middle"></div>
+        <div class="gh-navigation-next">
+            {{#next_post}}
+            <div>
+                <a class="gh-navigation-link" href="{{url}}">{{t "Next"}}</a><br />
+                {{title}}
+            </div>
+            {{/next_post}}
+        </div>
+    </nav>
+    {{/if}}
+</footer>

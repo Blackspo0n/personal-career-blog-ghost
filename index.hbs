@@ -1,56 +1,54 @@
 {{!< default}}
 <div class="gh-main gh-outer blog-template">
-<header class="gh-inner">
-    <h1 class="heading">Browse <span class="highlight text-gardient">{{@site.title}}</span>!</h1>
-    <p>{{@site.description}}</p>
-</header>
-<aside class="populartags gh-inner">        
-    <header class="with-action">
-        <div class="pretext">Browse some topics!</div>
-        <h2 class="heading">Tags &amp; Categories:</h2>
-        <div class="actions">
-            <a href="/tags" class="gh-btn gh-outline-secondary-btn">View all Topics <i class="las la-arrow-right"></i></a>
-        </div>
+    <header class="gh-inner">
+        <h1 class="heading">{{{t "Explore {siteName}" siteName=@site.title}}}</h1>
+        <p>{{@site.description}}</p>
     </header>
-    <main class="tags">
-    {{#get "tags" limit=11 order="count.posts desc"}}
-    {{#foreach tags}}
-        <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
-            {{name}}
-        </a>
-    {{else}}
-    <p>There were no tags...</p>
-    {{/foreach}}
-    {{/get}}
-    </main>
-</aside>
-
-<section id="announced" class="post-article-annoucement gh-inner">
-        <header>
-            <div class="pretext">Imho good stuff to read.</div>
-            <h2 class="heading">Featured article</h2>
+    <aside class="populartags gh-inner">        
+        <header class="with-action">
+            <div class="pretext">{{{t "Tags and Topics Subline"}}}</div>
+            <h2 class="heading">{{{t "Tags and Topics"}}}</h2>
+            <div class="actions">
+                <a href="/tags" class="gh-btn gh-outline-secondary-btn">{{{t "View Tags"}}}</a>
+            </div>
         </header>
-        {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
-        {{#foreach posts}}
-            {{> components/post-card showExcerp=true vertical=true}}
+        <main class="tags">
+        {{#get "tags" limit=11 order="count.posts desc"}}
+        {{#foreach tags}}
+            <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
+                {{name}}
+            </a>
+        {{else}}
+        <p>{{t "No Tags"}}</p>
         {{/foreach}}
         {{/get}}
-</section>
-
-<main id="content" class="gh-inner">
-    <header class="with-action">
-        <div class="pretext">My last writings. Please be kind!</div>
-        <h2 class="heading">Recently writings:</h2>
-    </header>
-    <section id="latest" class="grid grid-auto">
+        </main>
+    </aside>
+    {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
     {{#foreach posts}}
-        {{> components/post-card showExcerp=true}}
-    {{/foreach}}
+    <section id="announced" class="post-article-annoucement gh-inner">
+        <header>
+            <div class="pretext">{{{t "Featured Article Subline" }}}</div>
+            <h2 class="heading">{{{t "Featured Article Headline" }}}</h2>
+        </header>
+        {{> components/post-card showExcerp=true vertical=true}}
     </section>
-</main>
+    {{/foreach}}
+    {{/get}}
+    <main id="content" class="gh-inner">
+        <header class="with-action">
+            <div class="pretext">{{{t "Recent Writings Subline"}}}</div>
+            <h2 class="heading">{{{t "Recent Writings Headline"}}}</h2>
+        </header>
+        <section id="latest" class="grid grid-auto">
+        {{#foreach posts}}
+            {{> components/post-card showExcerp=true}}
+        {{/foreach}}
+        </section>
+    </main>
 
-<footer>
-    <hr />
-    {{pagination}}
-</footer>
+    <footer>
+        <hr />
+        {{pagination}}
+    </footer>
 </div>

@@ -31,7 +31,7 @@
         <header class="article-header{{#if accent_color }} gradient-effect{{else}} default-color{{/if}}" style="background-color: {{#if accent_color }}{{accent_color}}{{/if}};">
             <div class="article-title">
                 <h1>{{name}}</h1>
-                {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
             </div>
         </header>
     </div>
@@ -46,14 +46,14 @@
                 {{#foreach posts }}
                     {{> components/post-card showExcerp=true}}
                 {{else}}
-                    <p>There were no featured posts...</p>
+                    <p>{{t "No posts"}}</p>
                 {{/foreach}}
             </section>
         </main>
     </div>
 
     <footer class="gh-article-footer">
-            <div class="gh-article-meta-inner">There are {{plural pagination.total empty='posts' singular='% post' plural='% posts'}} with the tag {{tag.name}} on this blog.</div>
+        <div class="gh-article-meta-inner">{{t "There are {posts} with the tag {tagName} on this blog" posts=(plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")) tagName=tag.name }}</div>
         <hr />
         {{pagination}}
     </footer>
