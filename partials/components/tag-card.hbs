@@ -29,7 +29,7 @@
         </main>
         {{/if}}
         <footer class="gh-card-footer">
-            {{t "Explore {postCount} posts in {tagName}" postCount=count.posts tagName=name}}
+            {{plural count.posts empty="No Tag" singular=(t "Explore 1 post in {tagName}" tagName=name) plural=(t "Explore {postCount} posts in {tagName}" postCount=count.posts tagName=name)}}
         </footer>    
         {{else}}
         <div>

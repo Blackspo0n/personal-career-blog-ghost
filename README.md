@@ -28,6 +28,7 @@ The following features are already in a useable state:
 * [X] Authors
 * [X] Koenig Editor Embeds
 * [X] Logo / Primary Color / Secondary Color
+* [X] English Translation via Theme Locales
 
 The following features are active in development:
 

@@ -24,6 +24,8 @@
     "Latest Posts": "Latest Posts",
     "View Tags": "View all Topics <i class=\"las la-arrow-right\"></i>",
     "Explore {count} posts in {name}": "Explore {count} posts in Browse <span class=\"highlight text-gardient\">{name}</span>",
+    "Explore {postCount} posts in {tagName}": "Explore {postCount} posts in {tagName}",
+    "Explore 1 post in {tagName}": "Explore 1 post in {tagName}",
     "Featured Post Headline": "🔥 My hot stuff on the blog 🔥",
     "Featured Post Subline": "Featured posts! Every one has a blog! Why not me too?",
     "Tags Subline": "I love to learn new things!",
