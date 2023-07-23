@@ -2,8 +2,14 @@
 {{{block "preload"}}}
 <div class="gh-outer">
 <main class="gh-main gh-inner">
-{{> components/custom-hero/hero}}
-{{> components/custom-hero/aboutme}}
+{{#> (concat "custom-components/" @site.locale "/custom-hero/hero" )}}
+  No template matched for "{{concat "custom-components/" @site.locale "/custom-hero/hero"}}"
+{{/undefined}}
+
+{{#> (concat "custom-components/" @site.locale "/custom-hero/aboutme" )}}
+  No template matched for "{{concat "custom-components/" @site.locale "/custom-hero/aboutme"}}"
+{{/undefined}}
+
 {{> featuredposts}}
 {{> populartags}}
 </main>

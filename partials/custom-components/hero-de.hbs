@@ -1,0 +1,28 @@
+{{#if @custom.hero_image}}
+{{#contentFor "preload"}}
+<link rel="preload" as="image" href="{{@custom.hero_image}}" />
+{{/contentFor}}
+{{/if}}
+<div class="hero grid">
+    <section class="about-hero">
+        <header>
+            <div class="pretext">Verständnis für Anforderungen und deren Umsetzung in Lösungen!</div>
+            <h1 class="heading">Hallo! Ich bin <span class="highlight text-gardient">Mario Kellner</span>!<br/>IT-Lösungsarchitekt.</h1>
+        </header>
+        <main>
+            <p>Schön, dass du hier bist! Lass mich kurz erklären, was ein IT-Lösungsarchitekt macht. Eine solche Person muss mögliche Lösungen entwickeln, um Geschäftsprobleme mithilfe von IT zu lösen. Und genau das tue ich. Mir macht es Spaß, verschiedene IT-Systeme, Technologien, Schnittstellen, Frameworks usw. zu verstehen, um verschiedene Lösungsansätze für ein Problem oder Anwendungsszenario zu entwickeln.</p>
+            <p>Derzeit lebe ich in Bocholt, Deutschland, einer kleinen Stadt in der Nähe von Münster, und arbeite Vollzeit für die Firma Cronos Automation GmbH. Ich möchte mich mehr dem Schreiben widmen und meine Sprachkenntnisse weiter verbessern.</p>
+        </main>
+        <footer>
+            <a href="/blog"class="gh-btn gh-outline-btn">Zu meinem Blog</a>
+            <a href="mailto:hello@kellner-digital.com" class="gh-btn gh-primary-btn gh-gardient-btn">Kontakt aufnehmen</a>
+        </footer>
+    </section>
+    <section class="hero-photo">
+        {{#if @custom.hero_image}}
+        <img src="{{img_url @custom.hero_image size="l"}}"/>
+        {{else}}
+        <img src="{{img_url @site.cover_image size="l"}}"/>
+        {{/if}}
+    </section>
+</div>

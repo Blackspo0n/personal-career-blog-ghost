@@ -2,11 +2,11 @@
     <div class="portfolio-description">
         <h3>{{projectTitle}}</h3>
         <div>
-            <time datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> From: {{from}}</time>
-            <time datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{#if until }}Until: {{until}}{{else}}still a project{{/if}}</time>
+            <time datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{t "From:"}} {{from}}</time>
+            <time datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{#if until }}{{t "Until:"}} {{until}}{{else}}{{t "still a project"}}{{/if}}</time>
         </div>        
         {{{projectDescription}}}
-        <h4>As: {{position}}</h4>
+        <h4>{{t "As:"}} {{position}}</h4>
         <div class="tech-stack">
             {{{tech-stack}}}
         </div>

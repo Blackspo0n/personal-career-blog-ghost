@@ -1,0 +1,570 @@
+<article class="resume">
+    <main>
+        <section id="myprofile">
+            <header>
+                {{#primary_author}}
+                <div class="pretext">My Resume!</div>
+                <h1 class="heading">Who is <span class="highlight text-gardient">{{name}}</span></h1>
+                {{/primary_author}}
+            </header>
+            <p>
+                {{content}}
+            </p>
+        </section>
+        <section id="contact">
+            <h1>Contact <span class="highlight text-gardient">&amp;</span> Platforms</h1>
+            <p>
+                I have different channels of communication.
+            </p>
+            <div class="wrapper flex">
+                <div>
+                    <h2>E-Mail <i class="lab la-mail"></i></h2>
+                    <p>
+                        You can contact me any time at the following e-mail address:
+                        <span class="highlight">hello@kellner-digital.com</span>
+                    </p>
+                    <a class="gh-btn gh-primary-btn" href="mailto:hello@kellner-digital.com">Contact me</a>
+                </div>
+            </div>
+            If you don´t want to write an e-mail here are the places where you can reach me:
+            <div class="wrapper flex">
+                <div>
+                    <h2>Linkedin <i class="lab la-linkedin-in"></i></h2>
+                    <p>
+                       My German LinkedIn profile, where I sometimes post things. This is my main contact point where you can reach me.
+                    </p>
+                    <a href="{{@custom.linkedin_link}}" class="gh-btn gh-primary-btn" target="_blank">Visit me on <i class="lab la-linkedin-in"></i></a>
+                </div>
+                <div>
+                    <h2>Xing <i class="lab la-xing"></i></h2>
+                    <p>
+                        My German xing profile. Leave me a message if you like.
+                    </p>
+                    <a href="{{@custom.xing_link}}" class="gh-btn gh-primary-btn" target="_blank" >Visit me on <i class="lab la-xing"></i></a>
+
+                </div>
+                <div>
+                    <h2>Github <i class="lab la-github"></i></h2>
+                    <p>This is my github profile. If you like what you see there, please feel free to collaborate.</p>
+                    <a href="{{@custom.github_link}}" class="gh-btn gh-primary-btn"  target="_blank">Visit me on <i class="lab la-github"></i></a>
+                </div>
+            </div>
+            <p>
+                <h3>Do I have twitter or co?</h3>
+                Currently not. At the moment I don´t feel the need to have such socials.
+            </p>
+        </section>
+        <section id="experience">
+            <h1>My <span class="highlight text-gardient">Experience</span> as a Professional</h1>
+            <main>
+                <div class="timeline">
+                    {{> custom-components/timeline-entry 
+                        from="Jan 2020" to="Today" 
+                        company="cronos automation GmbH - Münster"
+                        position="Technical Head for Automation"
+                        description= "
+                            <p>
+                                Cronos Automation was founded in 2020 as a 100% subsidiary company of Cronos Unternehmensberatung GmbH.
+                            </p>
+                            <p>
+                                The focus was not only to reach companies within the existing network.
+                                Cauto wants to reach other audiences in other sectors.
+                            </p>
+                            <p>
+                                My current position as \"Technical Head for Automation\" gives me an insight into the IT architectures of various customers.
+                                My role in this position is to guide both us and our customers towards the right direction in everything automation-related.
+                            </p>
+                            <p>
+                                I also move projects with a focus on process optimization and process automation together with customers
+                                into the phase in which an RPA developer can automate the business processes with the information and requirements developed.
+                                I am also available as a technical contact for questions from colleagues and customers.
+                            </p>
+                        "
+                        imgURL="data:image/vnd.microsoft.icon;base64,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"
+                        companyURL="https://www.cronos.de/robotic-process-automation"
+                        even=true
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Sep 2018" to="Dez 2019" 
+                        company="cronos Unternehmensberatung GmbH - Münster"
+                        position="IT-Process Consultant"
+                        description= "
+                            <p>cronos Unternehmenberatung GmbH is a consulting company for utilities customers with a focus on SAP.</p>
+                            <p>In the department I worked in, I was a pre-sales engineer helping to introduce the UiPath technology to our customers</p>
+                            <p>My tasks were:</p>
+                            <ul>
+                                <li>Faciliateting process workshops with a focus on value engineering</li>
+                                <li>Setup customers UiPath Infrastructure</li>
+                                <li>Writing down requirements and working in close collaboration with the business analyst</li>
+                                <li>Teaching other colleagues things over .NET</li>
+                            </ul>
+                        "
+                        imgURL="data:image/png;base64,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"
+                        companyURL="https://www.cronos.de/robotic-process-automation"
+
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Mar 2018" to="Sep 2018" 
+                        company="cronos Unternehmensberatung GmbH - Münster"
+                        position="Practice phase/Bachelor thesis"
+                        description= "
+                            <p>cronos is where I started my career as Solution architect. But everyone has to start small to go ahead.</p>
+                            <p>Three months of practice and after that I wrote a bachelor thesis about different rpa-companies.</p>
+                            <p>If you are interested in reading this thesis get in contact with me.</p>
+                        "
+                        imgURL="data:image/png;base64,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"
+                        companyURL="https://www.cronos.de/robotic-process-automation"
+                        even=true
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Sep 2016" to="Mai 2018" 
+                        company="Westfälische Hochschule - Bocholt"
+                        position="Student assistant"
+                        description= "
+                            <p>
+                                I studied business informatics at the University of Applied Sciences. To make it through the courses I worked at my school.
+                            </p>
+                            <p>
+                                I wrote a textbook on the basics of HTML5 and CSS for my professor.
+                            </p>
+                            <p>
+                                After that I checked the portals where people can post different documents about common vulnerabilities like SQL Injection and XSS.
+                            </p>
+                            <p>
+                                I supported a lot of classes with different kinds of resources.
+                            </p>
+                        "
+                        imgURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBESEhgVEhIYFBQYGBUSFhESERgYGRIZGhgZGRgYHBkcIS4lHB4rHxYYJjgmOC81NTY1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjQlIys0NDQ0NDE0NDQxNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABgcBBAUDAv/EAEAQAAIBAgIGBwUGBQIHAAAAAAABAgMRBAUGEiExQXEiUVJhgZGxE0JiocEjMnKSwtIkorLR8BQzFiVjgoOT4v/EABoBAQADAQEBAAAAAAAAAAAAAAADBAUCAQb/xAAuEQACAgECAwYFBQEAAAAAAAAAAQIDEQQhEjFhBSJBUXGxMpGh0fAjgcHh8VL/2gAMAwEAAhEDEQA/ALmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMXAMg5ea5zSw66TvLhTjtk+fUu86FJtxTas2k2uruOVOLk4p7o8z4HoADo9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMXMgHhicRCnHWnJRiuLIjm2lM53jQWrHd7R/efJe768jb04n9nTj1ylLyjb9RDzL1mpmpOuOxBZNp4R74WDnVgm7uc4ptva7yVy0kV1o1S18XDqTlJ+EXb52LFRJ2fHuSfX89z2lbNmQAaBMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYuc/Ms1pYdXnLbwgtspeHDmzl6T5zUoOMKdlKUXJye1xV7Ky3de0hk5yk3KTcpPa5Sd2/FlDUaxQbhFZf0/sinbw7IluVZ9UxGKjFpRg1NKC27Urpt8XsfmSsrXIJ6uKpP47fmTj9SyUd6KyU4NyeXk9rk2tyG6bzvUpx6oyl5u36SMHb0vqa2Ka7MIx9ZfqOIZmqebpepBZ8TJFoVSvXnLswt4ya/aycEV0IpWhUl1yjHyV/wBRKjV0SxSvzxJ6liKAALRIAAAAAAAAAAAAAAAAAAAAAAAADFzTx+Y0qEdapK3VFbZS5IhubaR1a14w+zh1J9KS+J/RfMr3amFXPn5HEpqJNqOKpzlKMJKUo2UknfVvw+TNghmg87VKkeuEZeTt+omZ1p7XZBSZ7CXEskC0wnfFW7MYr1f1OGdLSGetiqj6pKPlFL6HNMS95tk+rKs33meuEnq1IS7Moy8pJlqFTMtPCz1oRl1xT80mXuzn8S9CWnxK80gnrYqq/i1fypL6GgemMqa9ScuuUn5yZ5GdN5k31ZC+bJ/onS1cLF9pzl/NZfJHbNLKqWpQpx4qEb87Jv5m6fQVR4YJdEXI7JAAEh6AAAAAAAAAAAAAAAAAAAAAAAAVZjnL2k9eTlJSlFyk7t2bX0PA6eklLUxU11tT/Mk387nMPnLI8M2ur9ylLmdvRGpq4pLtQlH5a36SfFbZBU1cVSfxav5k4/UsarLVi31JvyRq9ny/SfR/wWKfhKwx89erOXXOT/mZ4C/9zJkN5eSsCw8pr/wUJ9mm/wCW6+hXhLsvrWyyfdGrD80n+4uaGfDOXp7EtT3foRA+6ENecY9pqPm7Hyb+QUtfFU18Wt+VOX0KkI8UlH0I0ssshKx9GEZPpC6AAAAAAAAAAAAAAAAAAAAAAAAAAAQjTWjarTn2oteMX/8ASI4TTTWjelCXZlq+El/eKIYYesjw3PruVbViR6YWepUhLszjLykmWNnFTVw9V/BP5qy9Ss2T3PsRfAuXbVP+ZxJdFPELPTPudVPCZAzbhR/h5T6qsIeGrNv6God6jQvls5f9VS8nGP1ZVqjxZ6JkcVk4J2cLXtgK0eurT+bj+w4x6wq2hKHalCX5VJfqOa5cOeqa+Yi8Hkd/Q2lrYly7MJPxbS9LnAJboRS/3Zd8ILwu36ol0izdE9rWZIloAN4tgAAAA0swzKlQjepKz4RW2UuSPG1FZfIG4aUczoOp7NVIufZvx6r7r928hua6R1a14w+zhu1YvpSXfL6L5nFM6zXpPEFn88CGVvkWzcyQTKdJalO0at6kN2tfpx8fe/zaTHB4ynVjrU5KS7t67muDLdOohau7z8iSM1LkbQAJzoAAAAAAAAAAAA5OklHXwtTuSn+Vp+iZXZamIpqcJRe6UXHzViq9VrY962PmZPaEe/F9Pb/Svct0zJJs1r3y6gutqP5NZfQjB0sTiL4WjDsyq/pa/rKtUuGM15r+UcReE/Q5pMMPQ/5XJdcZz8p63oiIFhYOh/AxhbfR3d7jf1ZPoo8Upej+p1UstlemDCMlJERknOh9LVw1+1KcvK0f0kGLIyOlqYamvhUnzl0n6l7s+ObG/Je5LStzogA2CyAAAc/Nv9R7N/6e2t8W+3w8L8yusU568vaa2vfpa19bxuWozn5jlVLERtOO3hNbJR8ePLcU9Vpnbunv5eBHOHEVuYOrm2RVcPd214duK3fiXDnuOWY84Sg+GSwys01szB7YTFTpT16cnGXdx7muKPEHibTyjwm2UaTQqWjVtCe7W9yXjwfcSMqY62U59VoWi3r0+xJ7Y/hfDluNGjXeFnz+5PC3wkWIDQy3M6VeN4S28YvZKPNfU3zTjJSWVuifOeQAB6AAAAAADBWec0dTEVI/G2uUnrL5Ms0gWmFHVxOt24xl4q8foih2hHNafkyK5d3JwjLk7W4K7S52v6IwDIKxhlq0qdoqPUlHyVisMHDWqQj1zgvOSLUNPs5fE/Qnp8SqKsNWTj1Nx8nY+TbzaGriKi+Ofzk39TUM2Sw2iF88BJt2W97F4lrUoKKUVuSSXhsK0yqKdeGs7RTUpN7lGPSbfdZEhzXSvfHDr/yyX9MX6vyL2jshVGUpPp8v9JapKKbZIMwzKlQV6kknwitspckQ/MNJq85fZv2UU7pKzk/xN+nqcarVlOTlOTlJ75Sd2z4I7tZOzaOy+pzKxvlsTPKdJ4TtGvaEu37sufZ9CSxknuKoOplWeVcPsT1ocacnu/C/d9CajXNbWfM6jd4SLFBzsszWliFem+klthLZKPhxXedE04yUlmLyixzPmyI5m2jEJ3lRtCe/V9yX7X8u462ZZnSw6vUlt4QW2UuS+pDM10hrV7xj9nDdqxe2S+KX09SrqraVHhnu/Lx/ojslHGGcmrTcJOMt6dnZpq/NbGfIBilUAAA+6VWUJKUJOMlulF2aJVlOlKdoYjY93tUtj/Elu5rZyIkCWq6dTzFnUZuPItanOMkmmmntTTunyZ6FaZZm1bDvoSvHjB/df9n3k1yrOqWISSerPjTk9vh1o16NXCzbk/L7fbmWY2KXqdYAFo7AAABEtOKOynPvlB+Nmv6WS04WltLWwrfGMoT+er+or6qPFTJdPY4msxZAzABglQ6GQQ1sVSXxt+Sb+hZJANEoa2Kj8MZS+Vv1E/Njs9fpt9SzT8JXWksdXF1O9xl5wie2U6PVa1pS+zh2mtsl8K+vqTCeVUZVvbSjrTsktbao24pdfeb5zHRJzcp8svY8VSy2zTy/LaVCOrTjbrk9snzZys30ap1LypWpz32t0Jc17vNEiBblTCUeFrYlcU1gqzGYSpRlq1IuL79z70+KPAtHF4SnVjq1IqUeprd3p8H3kPzfRmdO86N5x36vvx/d6mXfopw3huvqV51NciPAWBSIj6pzlFqUW4yW1STs14nb/wCKMT7PU6Ovu9rbbbluv3/I4QO4WTh8LweqTXI+qk5Tk5SblJ7XJu7fifIBweAH3QoTnJRhFyk90Yq5K8q0VStLEPWe/wBnF7P+58eXqS1UztfdX7+B1GDlyI9luV1cQ+hHo8Zy2Rj48eR85hl9WhLVqRt1TW2MuT+hZVKnGKSikktiilZLkjFehGcXGcVKL3xkrpmg+z48GM7+fgTOlYKsMEnzfReUbzw+1b3Tb6S/C3v5epGZRabTTTWxpqzXgZ1tU63iSIZRcXuYCdndbGtqa3p9YBGcklynSiULRr3nHcqi+9HmveXz5kuw2JhUipQkpRfFMq062j9DFOetQvGPvTl9x9zXvf5uL+m1c01Bpy9yaFjzh7lhA1NWv24f+uX7ganF0f5+5Obhp5nR9pRqR64tLnbZ8zcMHTWVg95lSn3CLk0opyb2JJNt+COzhtHa1SpJW1KcZSjrSW9JtdFcee4l2WZTRw66EelxnLbJ+PBdxiU6Oc3vsitGts5OjOS1KMnUq2UnHVUN7SbTd3u4biTGQbFVUa48MSxFJLCAAJD0AAAGDIAONm2RUq95LoVO3Fb/AMS4+pC8xyyrh5WnHZwmtsZePB9xZp5VqUZxcZJNPY01dMqX6SFm62f5zI51qW/iVWYJVm2irV5Yfat7pSf9Lfo/Mi84Si3GScZLY4tWa8DJtpnU8SRXlFx5nyACI5O3kGdrD9GcE4N7ZxS1lz7SJthMVTqxUqclKPWnu7muDKuPfB4ypRlrU5uL49Uu5rii7RrJV4jLdEsLGtmWmCO5TpLTq2jVtTnuvfoyfc3u5MkKNauyNizF5LCae6FjmZpk9LELpq0uE47JLn1ruOoD2UVJYksoNZ5lbZrk9XDu8lrR4TS2ePZZpUKMqklGEXKT92K/yy7y05RTVmrp7Gmt54YXBU6SapwUE3d6q3mfLs9OXdeF9SJ0rPMj+VaLRjaWIes9/s0+ivxPjy3cyTwgkrRSSWxJKyXgfYLtdMK1iKJYxUdkYMgEp6AAAAAAAAAAAAAAAAAAAAADm5plNLELpq0vdnHZKP8Addx0gcyipLDWUOZXGa5JVw+1rWhwnFbF+Je6c0tZxutu7vI3m2jEJ3lQtCW9wf3Jcuz6GZfoWt6/l9iCdX/JDAeuJw86ctSpFwkuDXzT4rvPIz+WzIAdjKdIKtC0ZdOn2W9sfwv6ehyqFCdSSjTi5SfBL/LIluU6LRjaWIes9/s4vor8T48t3Mn00LZSzX8/A7gpN907+X46FeOvTd1u2qzT6mbZ504KKtFJJbEkrJHobsc435lsAA9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABqY3A060dWpFSXB7nHvT3oja0QftP9z7Lfu6XLq8fkS8ENlFdjzJZOXBPmaeCwFOjHVpwUVxe9y7297NwAlSSWEdAAHoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k="
+                        companyURL="https://www.w-hs.de"
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Jul 2015" to="Sep 2015" 
+                        company="mention Software GmbH - Berlin"
+                        position=".NET Developer"
+                        description= "
+                            <p>mention Software GmbH is a manufacturer of enterprise resource planning systems based on the programming languages FoxPro and .NET.</p>
+                            <p>After successfully completing my training, mention Software GmbH hired me on as a permanent employee.</p>
+                            My tasks were:
+                            <ul>
+                                <li>Developing XML-Interfaces for dsimport to various shop systems such as Magento and Shopware</li>
+                                <li>Further the development of the erp-cloud-system called mention cloud</li>
+                                <li>Second level - B2B Support</li>
+                            </ul>
+                        "
+                        imgURL="data:image/jpeg;base64,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"
+                        companyURL="https://www.mention.de"
+                        even="true"
+                    }}
+                </div>
+            </main>
+        </section>
+
+        <section id="skills">
+            <h1>My Capabilities <span class="highlight text-gardient">&amp;</span> Skills</h1>
+            <p>
+                The following list gives you an idea of what my skills are.
+
+                My goal is not to understand everything in order to archive 110% out of 100%.
+                My goal is to have a wide range of knowledge to make it easier to combine and analyse complex systems.
+
+                Below is a list of skills that are important to me.
+            </p>
+            <div class="tabbed vertical">
+                <input type="radio" name="tabs" id="tab1" checked />
+                <input type="radio" name="tabs" id="tab2" />
+                <input type="radio" name="tabs" id="tab3" />
+                <input type="radio" name="tabs" id="tab4" />
+                <div class="tab-menu">
+                    <label for="tab1" class="tab-menu-entry">Key skills</label>
+                    <label for="tab2" class="tab-menu-entry">Management</label>
+                    <label for="tab3" class="tab-menu-entry">Dev &amp; Deploy</label>
+                    <label for="tab4" class="tab-menu-entry">Languages</label>
+                </div>
+                <div class="tab-elements" >
+                    <div class="tab content1">
+                        {{#> (concat "custom-components/" @site.locale "/custom-resume/content-tab1")}}{{/undefined}}
+                    </div>
+                    <div class="tab content2">
+                        {{#> (concat "custom-components/" @site.locale "/custom-resume/content-tab2")}}{{/undefined}}
+                    </div>
+                    <div class="tab content3">
+                        {{#> (concat "custom-components/" @site.locale "/custom-resume/content-tab3")}}{{/undefined}}
+                    </div>
+                    <div class="tab content4">
+                        {{#> (concat "custom-components/" @site.locale "/custom-resume/content-tab4")}}{{/undefined}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{#contentFor comment}}
+        <section id="personal-feedback">
+            <h1><span class="highlight text-gardient">References</span></h1>
+            <p>
+                These are people's opinions about my work.
+            </p>
+            <div class="cssSlider">
+                <input type="radio" name="slider" id="slide01" checked="checked">
+                <input type="radio" name="slider" id="slide02">
+                <input type="radio" name="slider" id="slide03">
+                <input type="radio" name="slider" id="slide04">
+                <ul class="sliderElements">
+                </ul>
+                <ul class="sliderControls">
+                    <li><label for="slide01">1</label></li>
+                    <li><label for="slide02">2</label></li>
+                    <li><label for="slide03">3</label></li>
+                    <li><label for="slide04">4</label></li>
+                </ul>
+            </div>
+        </section>
+        {{/contentFor}}
+        <section id="projects">
+            <h1><span class="highlight text-gardient">Projects</span> I am worked on</h1>
+            <p>
+                Since I work full time for cronos automation, I don't have a large portfolio like a typical freelancer to show you.
+            </p>
+            <p>
+                But take a look at the list below to see what projects I have been involved in.
+            </p>
+            <div class="projects-inner">
+                {{~> custom-components/portfolio-card
+                    projectTitle="Postprocessing Stock Take Process"
+                    from="Sep 2021" until="Dez 2022"
+                    imgUrl="/content/images/uipath.png"
+                    tech-stack="
+                        <span>Solution Design</span>
+                        <span>SAP Utilities</span>
+                        <span>Office 365</span>
+                        <span>UiPath</span>
+                        <span>SAP NCO & RFC</span>
+                        <span>Backlog Planning</span>
+                        "
+                    position="IT Solution Architect"
+                    projectDescription="
+                        <p>
+                            For a large food chain from Essen, Germany, I automated the post-processing of the inventory together with colleagues.
+                        </p>
+                        <p>
+                            I wrote the migration concept from iRPA to UiPath and ensured that the process can be used in an end-user oriented way.
+                        </p>
+                        <p>
+                            I also made recommendations on what real-time monitoring within Office 365 could look like and how the business processes can efficiently process inventory data.
+                        </p>
+                    "
+                ~}}
+                {{~> custom-components/portfolio-card
+                    projectTitle="Alert Management & Monitoring System"
+                    from="Sep 2021"
+                    imgUrl="/content/images/alertManagement.jpg"
+                    tech-stack="
+                        <span>Project Management</span>
+                        <span>Requirement Engineerig</span>
+                        <span>NodeJS</span>
+                        <span>UiPath</span>
+                        <span>Solution Design</span>
+                        <span>HTML5/CSS</span>
+                        <span>OAS 3</span>
+                        "
+                    position="Project Manager"
+                    projectDescription="
+                        <p>
+                            cronos Automation GmbH offers its customers a maintenance contract for RPA processes. Customers do not need to actively contact cronos in the event of an error.
+                        </p>
+                        <p>
+                            The Alert Management System supports the employees by recognising anomalies and informing the support managers via various channels.
+                        </p>
+                        <p>
+                            In 2022, the system was expanded to include real-time monitoring. Thus, customers using the maintenance contract have access to information logged by the RPA processes.
+                        </p>
+                        <p>
+                            I maintain the solution and record new requirements and carry out code reviews on the developers committed code.
+                        </p>
+                    "
+                ~}}
+                {{~> custom-components/portfolio-card
+                    projectTitle="ERP-Cloud Software"
+                    from="Sep 2013" until="Dez 2015"
+                    imgUrl="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                    tech-stack="
+                        <span>PHP</span>
+                        <span>MYSQL</span>
+                        <span>HTML/CSS/Javascript</span>
+                        <span>REST/SOAP</span>
+                        <span>Doctrine</span>
+                        "
+                    position="Cloud Developer"
+                    projectDescription="
+                        <p>
+                            At mention Software GmbH I developed a cloud solution that can be used in addition to the existing FoxPro solution. The system is multi-client capable and can be used by several clients.
+                        </p>
+                        <p>
+                            Based on PHP, my colleagues and I created the foundation for the main system processes for a cloud ERP system. The system was designed to be directly server-based to most shop systems at regular intervals and to synchronise items.
+                        </p>
+                    "
+                ~}}
+            </div>
+            
+                <p>
+                    If you are interested into what I have done at my current position you can request my consultant profile at the company I´m working for.
+                </p>
+        </section>
+        <section id="education">
+            <h1>My <span class="highlight text-gardient">Education</span></h1>
+            <main>
+                <div class="timeline">
+                    {{> custom-components/timeline-entry 
+                        from="Sep 2015" to="Aug 2018" 
+                        company="Westfälische Hochschule - Bocholt"
+                        position="Study of business informatics - Bachelor"
+                        description= "
+                            <p>
+                                W-HS is a University of Applied Sciences.</p>
+                            <p>
+                                After successfully completing my apprenticeship 
+                                and being offered a permanent position at .NET Developer at mention software,
+                                I decided that I wanted to learn more about working with customers and meeting business needs.
+                            </p>
+                            <p>
+                                My goal was to complete the university within six semesters. 
+                                I am glad that I did.
+                                It was a tough road, but I did it in six semesters.
+                            </p>
+                            <p>
+                                I really liked this time. 
+                                Maybe next year i beginn with a extra-occupational master degree. But lets see how things go.
+                            </p>
+                            <p>
+                                I also worked a lot for some professors. 
+                            </p>
+                            <hr />
+                            <p><strong>Final grade:</strong> 2.1</p>
+                        "
+                        imgURL="data:image/jpeg;base64,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"
+                        companyURL="https://www.w-hs.de"
+                        even="true"
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Sep 2013" to="Jun 2015" 
+                        company="mention Software GmbH - Berlin"
+                        position="Trainee IT Specialist: Application Development"
+                        description= "
+                            <p>mention Software GmbH is a manufacturer of enterprise resource planning systems based on the programming language FoxPro and .NET.</p>
+                            <p>After I moved to Berlin I started working at mention to complete my training.</p>
+                            <p>
+                                At mention my colleague and I were responsible to port the existing FoxPro solution to the Web.
+                                This was a quite challinging task because the solution should look identicaly to the existing solution.
+                                As a trainee this was a huge task and a goal to reach. In this two years I got so deep into PHP and the Webstack!
+                            </p>
+                            <p>During this time I was also allowed to attended the vocational school Oberstufenzentrum für Informations- und Medizintechnik Berlin-Neukölln </p>
+                            My tasks were:
+                            <ul>
+                                <li>Developing mention Cloud</li>
+                                <li>Update existing shop connectors to the new version of .NET and PHP</li>
+                                <li>B2B Support</li>
+                                <li>Drinking a lot of coffee</li>
+                            </ul>
+                            <hr />
+                            <p><strong>Final grade:</strong> 1</p>
+                        "
+                        imgURL="data:image/jpeg;base64,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"
+                        companyURL="https://www.mention.de"
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Jul 2012" to="Aug 2013" 
+                        company="Amenotec Evolution GmbH - Bocholt"
+                        position="Trainee IT Specialist: Application Development"
+                        description= "
+                            <p>Amenotec Evolution GmbH is a small company with focus on contant management and ads.</p>
+                            <p>After my completed degree I was working as Trainee at amenotec. I got a lot of insights how small company are working and which tools are important</p>
+                            <p>During this time, I was also allowed to attend the vocational school Bocholt West.</p>
+                            My tasks where:
+                            <ul>
+                                <li>Program a flash-u backend for photo taker machines placed on events</li>
+                                <li>Learning much about the Typo3 CMS System</li>
+                                <li>Program Plugins for WP customers</li>
+                            </ul>
+                            <p>After a year I decided that I want to life in a big city. I moved to berlin and took my year of trainee experience with me.</p>
+                        "
+                        imgURL="data:image/jpeg;base64,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"
+                        companyURL="http://www.amenotec-evolution.com"
+                        even="true"
+                    }}
+                    {{> custom-components/timeline-entry 
+                        from="Aug 2010" to="Aug 2012" 
+                        company="Nell-Breuning-Berufskolleg - Rhöndorf"
+                        position="Higher commercial school"
+                        description= "
+                            <p>This school has a focus on economics and management. At this school, I did my vocational baccalaureate. </p>
+                            <p>I learned a lot how the world is functioning and how complex taxes could be in germany.</p>
+                            <p>Sadly the informatics part was kinda small.</p>
+                            <hr />
+                            <p><strong>Final grade:</strong> 2.8</p>
+                        "
+                        imgURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAwAEADAREAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAYBAgMFBwQJ/8QALxAAAQQBAwMCAwgDAAAAAAAAAgEDBAUGAAcRCBITIVEUMUEVIiQzQmFxgaHB4f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EACMRAQEAAQIFBQEAAAAAAAAAAAABAgMRBBITMTIUIUFRYXH/2gAMAwEAAhEDEQA/APod1E4B1Rx+pzK8gwyXZz8Ej7gU1lW0Tb4tyJ8BnHFCQjT5zAabiFYIIuRzZ5cc5PvQVVdBqtst3+tRmHFiXeGypp2M2OzDnOVtWBR2BtIhSHZgpIaQVWA5IAEAUVTa+QqncobSVjPU/vx0RVFRkbdxT7hluPUNzZkeSNMUmiCTGKY8YwZDTrTHCyQVsHkdIW/QzRRMoHPtrcE63NmKmZIqXbLJLSJDCnbq8lsGJ9fONtvISSW2+68shsBcGnEO8lccB0EeIyEzCRuos7rct2glR2Sgy5VI8iWDtZB8zhMNXz0Vt2Ib6sNPuvjUtOG2A8g8i/c4XxhdU7fdYMWXk5vWF1Lh292d6kKWcXkiK7gtNwmHgfQ40RqtB93xhwpKK9ykRGDgajOb3rmzzZG7q7StsqqwtDsI7buLwK5mxiy1jseGOLrkkUCu8iyu2Y3+IRQaRe5CUlCR2WW9dN8zlLbMKqpnmrC2eglHqID4teGFZOwYzBuvcPRn3m6wPKYo4hPvIpIn5Idq3t2S3Qus9yO7x2xnRQmZA03DGLLcCU3B+zGG1cRSkfDqyMlDVWVYQlVFLu9wzzKnelzO3hbft0fZsyr4s7xwlhnS/EEiy3A5QVsOFThEbQOxEXs5VUQPFkAb6LktV3rkLgVFvI87kNmuFiTUeM2gk8cp5J68kSNKKs93YvjHhOQlO2WMbp5JnWP2+WWFozW1tzKIIADEjg9C+AUI7spGuSJ4nXCUgEkADH0HtFFUO9IKInyTQV4T2TQU7U9k0DtT2TQV40DjQYLKe1U178p4kBqO2Thkv0RE5XVc8pjjcr8Iysk3rxYS46/iNc48io67HAyRfpynP+9c+Htuljb9KaW/JN2012dDQNA0DQWPvhFZJx0wbbBOSIl4QU91XUWyTelu3vUEs7Zzdy1Ssgd6UMdxCmyuFRJPC8o2H7e6/wDOfOzzvE5dPDwne/f4yZZXVvLj4/KegCNggiiIIpwiJ9E16UjWroGgaBoIaWSZha+kWhhwBX9cuShcf0PrrB1eJy8cJP7Wbn1b2x2WhthNyN0XMktnZ4CvKRI6eJhP549V/wAaj0eepd9fLf8AJ2Ohll76l3S6BXsVcRtiM02wy0nAgA8CKa3Y4TGcuM2jRJJNozask0DQNA0DQNA0DQNA0DQNB//Z"
+                    }}
+                    {{!> custom-components/timeline-entry 
+                        from="Mar 2006" to="Today" 
+                        company="Try to understand how things work"
+                        position="My first Computer"
+                        description= ""
+                        imgURL=""
+                        even="true"
+                    }}
+                </div>
+            </main>
+        </section>
+        <section id="certifications">
+            <h1><span class="highlight text-gardient">Certifications</span></h1>
+            <p>
+                Here are some of my certifications that I made over the last years.
+            </p>
+            <p>
+                cronos automation GmbH is a certified USN company. 
+                The USN programm allows a company to be placed on the UiPath website and get early access to newer products.
+                In total I completed three exams to grant cronos access this status. 
+            </p>
+            <dl>
+                <div>
+                <dt>UiPath - USN Developer</dt>
+                <dd>2022</dd>
+                <dd>In this exam I was asked to develop a robust RPA flow for an acme app. The result was evaluated by UiPath.</dd>
+                <hr />
+
+                <dt>UiPath - USN Infrastructure Engineer</dt>
+                <dd>2022</dd>
+                <dd>In this exam UiPath's infrastructure engineers asked me about load balancing, networking, disaster recovery and redis.</dd>
+
+                <hr />
+                <dt>UiPath - USN Solution Architect</dt>
+                <dd>2021</dd>
+                <dd>
+                    In this exam, I had to dig deep into an existing business process and a fairly basic solution design. I have to make recommendations to a fictional UiPath RPA Developer on changes that can be made to the current solution to make the business process more reliable.
+                    My findings were evaluated by UiPath.
+                </dd>
+                
+                <hr />
+                <dt>Celonis Data Engineer</dt>
+                <dd>2019</dd>
+                <dd>This certification was awarded upon completion of the Celonis Data Engineer training. This includes creating an event log, writing Vertica SQL transformation jobs and working with various KPI expressions.</dd>
+
+                <hr />
+                <dt>UiPath Process Mining</dt>
+                <dd>2019</dd>
+                <dd>
+                    The UPM certificate was awarded upon completion of the UiPath Advanced Process Mining training.
+                    It includes connecting the AppOne Connector to different systems, creating different event logs and creating a dashboard.
+                </dd>
+                
+                <hr />
+                <dt>MCSD: Web Applications</dt>
+                <dd>2014</dd>
+                <dd>This certification is for developing solutions for the web.
+                    It involves creating web pages using HTML and CSS and developing in C#.
+                    The result was an ASP.NET MVC web application.
+                </dd>
+                
+            </dl>
+        </section>
+        <section id="hobbies">
+            <h1>My <span class="highlight text-gardient">Interests</span></h1>
+            <div class="wrapper flex">
+                <div class="hobby">
+                    
+                    <h2>Programming</h2>
+                    <p>
+                        I have liked programming since I had my own computer.
+                        I spent a lot of my spare time programming extensions for various games
+                        and I made a website for my game server in 2008.
+                    </p>
+                    <div><i class="las la-code"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Setting up IT-Systems</h2>
+                    <p>
+                        Knowing how different systems work together is still a great hobby.
+                        So I came along different operating systems and knew a good handful of system commands for Linux, FreeBSD and Windows.
+                    </p>
+                    <div><i class="las la-project-diagram"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Understanding Things</h2>
+                    <p>
+                        I like to understand core concepts, therefore I built a CPU by my own with a little help of <a href="https://eater.net" class="highlight">Ben Eater</a>.
+                    </p>
+                    <div><i class="las la-microchip"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Long bike tours</h2>
+                    <p>
+                        I like to ride my bike. Usually my bike rides are 50 - 60 km long and 
+                        I like to get sweaty and feel the need for speed.
+                        I also have a good bike from the local manufacturer <a class="highlight" href="https://www.rosebikes.de" target="blank">Rosebikes</a>. 
+                    </p>
+                    <div><i class="las la-bicycle"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Sweat Lodge</h2>
+                    <p>
+                        I like to go to the sauna and various thermal baths.
+                        Sweating and then relaxing in an ice-cold bath is just the thing.
+                    </p>
+                    <div><i class="las la-fire"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>I am a bit nerdy</h2>
+                    <p>
+                        I am still a bit nerdy to this day. I am a big fan of the Zelda series of games.
+                        I love helping Link on his adventures through Hyrule.
+                    </p>
+                    <div><i class="las la-gamepad"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Get more scientific knowledge</h2>
+                    <p>
+                        I like to spend my free time reading scientific articles and
+                        learning more about physics, space and technology in general. It also helps me to think outside the box.
+                    </p>
+                    <div><i class="las la-book"></i></div>
+                </div>
+                <div class="hobby">
+                    <h2>Investing</h2>
+                    <p>
+                        At the moment I am working my way into different areas of investing.
+                        I am trying to build up a diversified ETF and stock portfolio, while also taking advantage of opportunities in P2P lending and cryptos.
+                    </p>
+                    <div><i class="las la-city"></i></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <figure class="cv-photo">
+            
+            {{#if primary_author.profile_image}}
+            {{~#contentFor "preload"~}}
+            <link rel="preload" as="image" imagesrcset="{{img_url primary_author.profile_image size="s"}} 300w, {{img_url primary_author.profile_image size="m"}} 600w, {{img_url primary_author.profile_image size="l"}} 1000w, {{img_url primary_author.profile_image size="xl"}} 2000w" href="{{img_url primary_author.profile_image size="m"}}" imagesizes="50vw" />
+            {{~/contentFor~}}
+            <img src="{{img_url primary_author.profile_image size="m"}}"/>
+            {{else}}
+            {{~#contentFor "preload"~}}
+            <link rel="preload" as="image" imagesrcset="{{img_url @custom.hero_image size="s"}} 300w, {{img_url @custom.hero_image size="m"}} 600w, {{img_url @custom.hero_image size="l"}} 1000w, {{img_url @custom.hero_image size="xl"}} 2000w" href="{{img_url @custom.hero_image size="m"}}" imagesizes="50vw" />
+            {{~/contentFor~}}
+            <img src="{{img_url  @custom.hero_image size="m"}}"/>
+            {{/if}}
+        </figure>
+        <nav class="toc">
+            <h4>Resume Content</h4>
+            <ul>
+                <li><a href="#myprofile">Me!</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                {{!-- <li><a href="#personal-feedback">References</a></li> --}}
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#hobbies">My Interests</a></li>
+            </ul>
+        </nav>
+    </aside>
+</article>
