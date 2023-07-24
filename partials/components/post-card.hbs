@@ -30,7 +30,7 @@
     <h2 class="gh-card-header"><a class="gh-card-link post-card-link" href="{{url}}">{{title}}</a></h2>    
     <div class="gh-card-meta">
         {{#if showExcerp}}  
-        <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
+        <div class="read-time"><i class="las la-clock"></i> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
         {{/if}}
         <time class="gh-card-date" datetime="{{date format="YYYY-MM-DD"}}"><i class="las la-calendar"></i> {{date}}</time>
     </div>
