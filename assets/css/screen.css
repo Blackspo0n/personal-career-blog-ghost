@@ -30,7 +30,7 @@ html {
 
 body {
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: min-content auto 1fr auto auto;
     height: 100%;
     color: var(--color-primary-text);
     background-color: var(--color-washed);

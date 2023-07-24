@@ -73,9 +73,15 @@
         "custom": {
             "secondary_color": {
                 "type": "color",
-                "default": "#15171a"
+                "default": "#15171a",
+                "description": "The secondary color of the theme. Used to generate some gardients."
             },
-
+            
+            "title_appendix": {
+                "type": "text",
+                "default": "blog",
+                "description": "Attach a static text behnd the meta title."
+            },
             "github_link": {
                 "type": "text"
             },
@@ -88,7 +94,8 @@
             },
             "hero_image": {
                 "type": "image",
-                "group": "homepage"
+                "group": "homepage",
+                "description": "The hero image is used on the custom-components element named hero. It is used by the home.hbs template."
             },
             
             "color_scheme": {
@@ -98,7 +105,8 @@
                     "Dark",
                     "Auto"
                 ],
-                "default": "Light"
+                "default": "Light",
+                "description": "Select which color screen should be used. (Not implemeted at the moment"
             }
         }
     }
