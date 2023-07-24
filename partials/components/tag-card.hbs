@@ -20,7 +20,9 @@
                 </div>
             </figure>
             <div class="gh-header-title">
-                <h2>{{name}}</h2>
+                <h2 class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
+                    {{name}}
+                </h2>   
             </div>
         </div>
         {{#if excerpt}}

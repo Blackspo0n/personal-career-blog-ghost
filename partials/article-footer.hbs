@@ -13,19 +13,19 @@
     <nav class="gh-navigation">
         <div class="gh-navigation-previous">
             {{#prev_post}}
-                <div>
-                    <a class="gh-navigation-link" href="{{url}}">{{t "Previous"}}</a> <br />
+                <a class="gh-navigation-link" href="{{url}}"><div>
+                    {{t "Previous"}}<br />
                     {{title}}
-                </div>
+                </div></a>
             {{/prev_post}}
         </div>
         <div class="gh-navigation-middle"></div>
         <div class="gh-navigation-next">
             {{#next_post}}
-            <div>
-                <a class="gh-navigation-link" href="{{url}}">{{t "Next"}}</a><br />
+            <a class="gh-navigation-link" href="{{url}}"><div>
+                {{t "Next"}}<br />
                 {{title}}
-            </div>
+            </div></a>
             {{/next_post}}
         </div>
     </nav>

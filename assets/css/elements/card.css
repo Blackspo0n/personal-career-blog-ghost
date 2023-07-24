@@ -9,7 +9,7 @@
 }
 
 
-.gh-card:hover, .gh-tag:hover {
+.gh-card:hover, .tags .gh-tag:hover {
     transform: translate(0,-0.5rem);
 }
 
@@ -149,21 +149,32 @@
     width: 65%;
 }
 
+.gh-header-tags .gh-tag {
+    font-size: 1.4rem;
+}
+
 .gh-tag {
     background-color: var(--color-background);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 4px;
     letter-spacing: -.05rem;
     border-top: 2px solid var(--color-secondary);
-    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: -.05rem;
     padding: 0.5rem 2rem;
     text-align: center;
     text-transform: uppercase;
-    transition: transform 0.2s ease-in-out;
 }
 
-.tags .gh-tag:hover {
+.gh-tag {
+    transition: transform 0.2s ease-in-out;
+}
+.tags .gh-tag:hover, .gh-header-tags .gh-tag:hover,.gh-card-link:hover .gh-header-title .gh-tag {
     color: var(--color-hover, var(--color-secondary));
+}
+.gh-article-header .gh-header-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
 }
