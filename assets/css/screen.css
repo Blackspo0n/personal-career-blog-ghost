@@ -30,7 +30,7 @@ html {
 
 body {
     display: grid;
-    grid-template-rows: min-content auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto auto;
     height: 100%;
     color: var(--color-primary-text);
     background-color: var(--color-washed);
@@ -43,10 +43,10 @@ a:not(.gh-btn):hover {
 
 /** Content **/
 .gh-main {
-    padding-top: 6rem;
+    padding-top: 4rem;
     display: flex;
     flex-flow: column;
-    gap: var(--gap);
+    gap: calc(var(--gap)/2);
 }
 
 .article-sidebar {

@@ -36,8 +36,8 @@
     </div>
     <div class="gh-inner gh-article">
         <header class="gh-article-header">
-            <div class="gh-header-tags">{{tags seperator=", "}}</div>
-            <div class="read-time"><i class="las la-clock"></i> {{reading_time}}</div>
+            {{> components/tag-label}}
+            <div class="read-time"><i class="las la-clock"></i> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
         </header> 
         <main class="gh-content">
             {{content}}

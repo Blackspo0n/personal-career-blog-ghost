@@ -63,7 +63,7 @@
 
 .gh-article .gh-article-header {
     padding: 1rem 2rem;
-    
+    gap: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

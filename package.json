@@ -3,7 +3,7 @@
     "description": "A theme for ghost.js to host a career boosting blog with resume and thinks a indiviual could love.",
     "demo": "https://www.kellner-digital.com",
     "private" : true,
-    "version": "1.0.0",
+    "version": "1.1.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -75,12 +75,6 @@
                 "type": "color",
                 "default": "#15171a",
                 "description": "The secondary color of the theme. Used to generate some gardients."
-            },
-            
-            "title_appendix": {
-                "type": "text",
-                "default": "blog",
-                "description": "Attach a static text behnd the meta title."
             },
             "github_link": {
                 "type": "text"

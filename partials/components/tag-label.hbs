@@ -1,0 +1,9 @@
+<div class="gh-header-tags">
+{{#foreach tags}}
+    <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
+        {{name}}
+    </a>
+{{else}}
+    <p>{{t "No Tags"}}</p>
+{{/foreach}}
+</div>
