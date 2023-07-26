@@ -14,10 +14,11 @@ header .pretext {
 }
 
 
-header .heading {
+header .heading, hr {
     border-bottom: 2px dashed var(--color-border-2);
     margin-bottom: 1rem;
-    padding-bottom: 1rem
+    padding-bottom: 1rem;
+    background: transparent;
 }
 
 header.with-action {

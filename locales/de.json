@@ -30,7 +30,7 @@
     "Explore {count} posts in {name}": "Es gibt {count} Artikel mit dem Thema <span class=\"highlight text-gardient\">{name}</span>",
     "Explore {postCount} posts in {tagName}": "Gehe zu {postCount} Artikeln",
     "Explore 1 post in {tagName}": "Gehe zu 1 Artikel",
-    "Featured Post Headline": "🔥 Lesenswerte & relevante Artikel 🔥",
+    "Featured Post Headline": "🔥 Hervorgehobene Artikel 🔥",
     "Featured Post Subline": "Interessante Artikel! Verfolge die neusten Artikel in meinem Blog!",
     "Tags Subline": "Ich mag es Dinge zu verstehen!",
     "Tags Headline": "Relevante Themen auf diesem Blog",

@@ -1,50 +1,24 @@
 {{!< default}}
 <div class="gh-main gh-outer blog-template">
+    {{#unless page}}
     <header class="gh-inner">
         <h1 class="heading">{{{t "Explore {siteName}" siteName=@site.title}}}</h1>
         <p>{{@site.description}}</p>
     </header>
-    <aside class="populartags gh-inner">        
-        <header class="with-action">
-            <div class="pretext">{{{t "Tags and Topics Subline"}}}</div>
-            <h2 class="heading">{{{t "Tags and Topics"}}}</h2>
-            <div class="actions">
-                <a href="/tags" class="gh-btn gh-outline-secondary-btn">{{{t "View Tags"}}}</a>
-            </div>
-        </header>
-        <main class="tags">
-        {{#get "tags" limit=11 order="count.posts desc"}}
-        {{#foreach tags}}
-            <a class="gh-tag" href="{{url}}" style="{{#if accent_color}}border-color: {{accent_color}}; --color-hover: {{accent_color}};{{/if}}">
-                {{name}}
-            </a>
-        {{else}}
-        <p>{{t "No Tags"}}</p>
-        {{/foreach}}
-        {{/get}}
-        </main>
-    </aside>
-    {{#get "posts" limit="1" filter="tag:hash-announcement" include="tags" orderby="published_at desc"}}
+    {{else}}
+    {{#page}}
+    {{! If we use rewrite rules the description and title are empty by defa }}
+    <header class="gh-inner">
+        <div class="pretext">{{excerpt}}</div>
+        <h1 class="heading">{{title}}</h1>
+        <p>{{content}}</p>
+    </header>
+    {{/page}}
+    {{/unless}}
+    <main id="content" class="gh-inner grid grid-auto">
     {{#foreach posts}}
-    <section id="announced" class="post-article-annoucement gh-inner">
-        <header>
-            <div class="pretext">{{{t "Featured Article Subline" }}}</div>
-            <h2 class="heading">{{{t "Featured Article Headline" }}}</h2>
-        </header>
-        {{> components/post-card showExcerp=true vertical=true}}
-    </section>
+        {{> components/post-card showExcerp=true}}
     {{/foreach}}
-    {{/get}}
-    <main id="content" class="gh-inner">
-        <header class="with-action">
-            <div class="pretext">{{{t "Recent Writings Subline"}}}</div>
-            <h2 class="heading">{{{t "Recent Writings Headline"}}}</h2>
-        </header>
-        <section id="latest" class="grid grid-auto">
-        {{#foreach posts}}
-            {{> components/post-card showExcerp=true}}
-        {{/foreach}}
-        </section>
     </main>
 
     <footer>

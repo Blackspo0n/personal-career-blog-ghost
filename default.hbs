@@ -1,4 +1,3 @@
-
 {{~>theme-config~}}
 {{~^is "tag, page, post"}}
 {{~#contentFor "themecolor"}}{{@site.accent_color}}{{/contentFor~}}
@@ -6,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
-    <title>{{#is "home"}}{{t "Homepage"}}{{else}}{{meta_title page=(t " (Page %)")}}{{/is}} - {{#is "page"}}{{@site.site_title}}{{/is}}</title>
+    <title>{{#is "index"}}{{t "Homepage"}} - {{@site.title}}{{else}}{{meta_title page=(t " (Page %)")}}{{/is}}{{#is "page"}} - {{@site.title}}{{/is}}</title>
     <meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
