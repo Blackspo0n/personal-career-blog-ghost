@@ -39,6 +39,32 @@ The following features are active in development:
 * preloads
 * CSS Rewamp - I used a lot claasses exlusive to there corresponding handlebar files. I need to clean up some rules
 
+## routes.yaml
+My current routes.yaml is defined as:
+```yaml
+routes:
+  /: home  
+  /featured/:
+    controller: channel
+    permalink: /featured/{slug}/
+    template: index
+    data: page.featured
+    filter: featured:true
+  
+collections:
+  /blog/:
+    permalink: /blog/{primary_tag}/{slug}/
+    template: blog
+    data: page.blog
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
+
+```
+To overcome an ongoing ossue with a empty description in head when using rewrites, the routes.yaml invokes two pages:
+* featured (For all featured articles)
+* blog (for the blog frontpage)
 ## License
 
 Copyright &copy; 2023 by Mario Kellner. Released under the [MIT license](https://github.com/Blackspo0n/personal-career-blog-ghost/blob/main/LICENSE).
