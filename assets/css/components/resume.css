@@ -54,7 +54,9 @@
     justify-items: center;
 }
 
-
+.resume .grid-auto {
+    grid-template-columns: repeat(auto-fit,minmax(min(27rem,100%),min(300px,100%)));
+}
 
 .resume aside {
     position: sticky;

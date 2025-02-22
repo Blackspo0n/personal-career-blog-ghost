@@ -72,3 +72,6 @@ dist
 .tern-port
 
 assets/images/screely.png
+.yarn/
+.yarnrc.yml
+yarn.lock

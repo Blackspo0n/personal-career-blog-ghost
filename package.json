@@ -2,7 +2,7 @@
     "name": "personal-career-blog",
     "description": "A theme for ghost.js to host a career boosting blog with resume and thinks a indiviual could love.",
     "demo": "https://www.kellner-digital.com",
-    "private" : true,
+    "private": true,
     "version": "1.1.0",
     "engines": {
         "ghost": ">=5.0.0"
@@ -20,7 +20,6 @@
         "email": "mario@kellner-digital.com",
         "url": "https://www.kellner-digital.com/"
     },
-
     "keywords": [
         "ghost",
         "theme",
@@ -31,6 +30,7 @@
     ],
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
+        "@tryghost/shared-theme-assets": "2.0.1",
         "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
         "cssnano": "5.1.12",
@@ -43,9 +43,9 @@
         "gulp-zip": "5.1.0",
         "inquirer": "8.2.4",
         "postcss": "8.2.13",
+        "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0",
-        "@tryghost/shared-theme-assets": "2.0.1"
+        "pump": "3.0.0"
     },
     "config": {
         "posts_per_page": 25,
@@ -79,7 +79,6 @@
             "github_link": {
                 "type": "text"
             },
-            
             "xing_link": {
                 "type": "text"
             },
@@ -89,9 +88,8 @@
             "hero_image": {
                 "type": "image",
                 "group": "homepage",
-                "description": "The hero image is used on the custom-components element named hero. It is used by the home.hbs template."
+                "description": "The hero image is used on the custom-components element named hero."
             },
-            
             "color_scheme": {
                 "type": "select",
                 "options": [
